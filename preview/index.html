@@ -652,7 +652,7 @@ var nav=document.getElementById("topnav");
 window.addEventListener("scroll",function(){nav.classList.toggle("scrolled",window.scrollY>40);},{passive:true});
 
 /* ============ 订阅（Buttondown，四态：待提交 / 提交中 / 成功 / 失败·重复） ============ */
-var BUTTONDOWN_USERNAME=""; /* 站长提供 Buttondown 用户名后填入此常量，表单即通；为空时按钮禁用显示「即将开放」，不假提交 */
+var BUTTONDOWN_USERNAME="fengwuzhi"; /* 站长提供 Buttondown 用户名后填入此常量，表单即通；为空时按钮禁用显示「即将开放」，不假提交 */
 var subForm=document.getElementById("subForm"), subBtn=document.getElementById("subBtn"),
     subEmail=document.getElementById("subEmail"), subStatus=document.getElementById("subStatus"),
     subDone=document.getElementById("subDone");
