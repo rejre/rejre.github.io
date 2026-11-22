@@ -20,12 +20,13 @@
 | term-dongzhi-hero-alt | Pexels | https://www.pexels.com/photo/10810992/ | aliona zueva | Pexels License | 2667×4000 | 首页 · 冬至首屏备选（双烛松枝静物，竖） | 备选 |
 | term-xiaohan-hero | Pexels | https://www.pexels.com/photo/31177224/ | Susanne Jutzeler, suju-foto | Pexels License | 7292×4101 | 首页 · 小寒首屏（冻湖日出） | 定稿 · 待站长实拍替换 |
 | term-xiaohan-hero-alt | Pexels | https://www.pexels.com/photo/6448245/ | Keserü Tamás | Pexels License | 4032×3024 | 首页 · 小寒首屏备选（蓝调冻湖霜树） | 备选 |
-| term-dahan-hero | Pexels | https://www.pexels.com/photo/33959338/ | İSKENDER BERBER | Pexels License | 2700×1800 | 首页 · 大寒首屏（霜林云海山谷） | 定稿 · 待站长实拍替换 |
-| term-dahan-hero-alt | Pexels | https://www.pexels.com/photo/31418795/ | Jędrzej Koralewski | Pexels License | 6000×3375 | 首页 · 大寒首屏备选（金色日照雪山脊） | 备选 |
+| term-dahan-hero | Pexels | https://www.pexels.com/photo/33959338/ | İSKENDER BERBER | Pexels License | 2700×1800 | 首页 · 大寒首屏（霜林云海山谷） | 备选（原定稿；第 2 批 C2 调整降为备选：原图长边仅 2700px，不足桌面主用） |
+| term-dahan-hero-alt | Pexels | https://www.pexels.com/photo/31418795/ | Jędrzej Koralewski | Pexels License | 6000×3375 | 首页 · 大寒首屏（金色日照雪山脊） | 定稿 · 待站长实拍替换（第 2 批 C2 升为大寒桌面主用） |
 | term-lichun-hero | Pexels | https://www.pexels.com/photo/36780690/ | Gosia K | Pexels License | 3789×2460 | 首页 · 立春首屏（带霜柳芽迎晨光） | 定稿 · 待站长实拍替换 |
 | term-lichun-hero-alt | Pexels | https://www.pexels.com/photo/31252893/ | Ebahir | Pexels License | 2560×3840 | 首页 · 立春首屏备选（雾中疏枝初花，竖） | 备选 |
 
 备注：term-dahan-hero 原图长边 2700px，未达「长边 ≥3000px」的优选线（本批唯一一张），因物候与构图最贴大寒而保留，竖版输出因此为 1200×1800（源图所限）。小雪/大雪/冬至定稿均为竖图，横版首屏使用时需大幅裁切，竖版（portrait）输出即为其主用版本——详见 BATCH1_REPORT.md 未达标项。
+【第 2 批 C2 更新，2026-11-23】大寒主用/备选已对调：term-dahan-hero-alt（6000×3375 横版）升为桌面主用定稿，term-dahan-hero 降为备选；大雪、冬至的横版桌面图已由第 2 批 term-daxue-hero-wide / term-dongzhi-hero-wide 补齐（见下「五」），原竖版保留作移动端。
 
 ## 二、治愈美食（6）
 
@@ -59,3 +60,47 @@
 | journey-04 | Pexels | https://www.pexels.com/photo/16452784/ | merve yesilyurt | Pexels License | 2448×3264 | 远方风光栏目页主图（松林石径，竖） | 定稿 · 待站长实拍替换 |
 | journey-05 | Pexels | https://www.pexels.com/photo/32265509/ | Allan Carvalho | Pexels License | 3024×4032 | 远方风光栏目页主图（雾谷湖山日出，竖） | 定稿 · 待站长实拍替换 |
 | journey-06 | Pexels | https://www.pexels.com/photo/31091291/ | Piotr Baranowski | Pexels License | 4000×6000 | 远方风光栏目页主图（暗色山脊远景行者剪影，竖；人物为远景剪影，符合规则；下载量约 1.3K） | 定稿 · 待站长实拍替换 |
+
+---
+
+# 第 2 批（2026-11-23）
+
+- 新增条数：16 条（节气首屏 6 定稿 + 6 备选；横版补图 2；临时季节图 2）
+- 来源口径：同第 1 批，全部 **Pexels**（Pexels License），逐张在来源页核对作者与原图尺寸（核对时间 2026-11-22 21:39 UTC），并下载原图后以本地实测尺寸复核，两者一致。Unsplash / Pixabay 本机仍不通，未采用；本批未用 Wikimedia Commons（Pexels 已满足全部槽位）。
+- 选图口径：本批定稿一律横版；节气定稿原图长边全部 ≥3840（最低 term-chunfen-hero-alt 3887，为备选；定稿最低 term-qingming-hero 4032）。逐张看图筛除清晰人脸 / 商标 Logo / 水印，并避开 Pexels 站内 AIGC 合成图。
+- 输出文件：同第 1 批规格（五档 WebP+JPEG + 2:3 竖版 + LQIP），管线脚本 `pipeline2.py`；另出 1600w AVIF（见 BATCH2_REPORT.md C7 节）。
+- 状态口径：S 级（节气首屏定稿、横版补图、临时季节图）一律标「定稿 · 待站长实拍替换」；节气备选标「备选」。
+- 原创度：**未做 TinEye / 以图搜图反查**（工具不可用）；S 级定稿清单已导出 `reverse-check-list.md` 交站长自行反查。本批定稿在 Pexels 的下载量多为数十至数百次（最高 term-dongzhi-hero-wide 591 次、term-daxue-hero-wide 405 次）。
+
+## 五、节气首屏（第 2 批：6 定稿 + 6 备选）
+
+| 文件名 | 来源站 | 原图链接 | 作者 | 许可类型 | 原图尺寸 | 拟使用页面 | 状态 |
+|---|---|---|---|---|---|---|---|
+| term-yushui-hero | Pexels | https://www.pexels.com/photo/12689417/ | Helena Jankovičová Kováčová | Pexels License | 5688×3792 | 首页 · 雨水首屏（春雨打池塘，睡莲初开，水面涟漪） | 定稿 · 待站长实拍替换 |
+| term-yushui-hero-alt | Pexels | https://www.pexels.com/photo/18933048/ | PHILIPPE SERRAND | Pexels License | 5455×3636 | 首页 · 雨水首屏备选（油菜花田上空雨云压境） | 备选 |
+| term-jingzhe-hero | Pexels | https://www.pexels.com/photo/37085959/ | Miluše Weberová | Pexels License | 6016×4016 | 首页 · 惊蛰首屏（山坡桃林始华，成行花树） | 定稿 · 待站长实拍替换 |
+| term-jingzhe-hero-alt | Pexels | https://www.pexels.com/photo/15211335/ | Péter Kövesi | Pexels License | 5923×3949 | 首页 · 惊蛰首屏备选（春雷雨幕垂落草原，双树与微虹） | 备选 |
+| term-chunfen-hero | Pexels | https://www.pexels.com/photo/37786663/ | Cara Denison | Pexels License | 4239×2825 | 首页 · 春分首屏（雾野日出，水洼映光，昼夜平分之意） | 定稿 · 待站长实拍替换 |
+| term-chunfen-hero-alt | Pexels | https://www.pexels.com/photo/34083820/ | Bitnik Gao | Pexels License | 3887×2591 | 首页 · 春分首屏备选（双燕掠过绿野，玄鸟至） | 备选 |
+| term-qingming-hero | Pexels | https://www.pexels.com/photo/9002009/ | Tatjana Zmushko | Pexels License | 4032×3024 | 首页 · 清明首屏（雾润新绿，溪流穿林，空气清新） | 定稿 · 待站长实拍替换 |
+| term-qingming-hero-alt | Pexels | https://www.pexels.com/photo/37127476/ | eberhard grossgasteiger | Pexels License | 4500×3000 | 首页 · 清明首屏备选（雾锁松林） | 备选 |
+| term-guyu-hero | Pexels | https://www.pexels.com/photo/6872257/ | Quang Nguyen Vinh | Pexels License | 8000×6000 | 首页 · 谷雨首屏（茶园丘陵，雨生百谷） | 定稿 · 待站长实拍替换 |
+| term-guyu-hero-alt | Pexels | https://www.pexels.com/photo/38169669/ | Irina Iriser | Pexels License | 7008×4672 | 首页 · 谷雨首屏备选（牡丹园盛放，谷雨看牡丹） | 备选 |
+| term-lixia-hero | Pexels | https://www.pexels.com/photo/39778189/ | Tue Simon | Pexels License | 4608×3456 | 首页 · 立夏首屏（荷塘初盛，荷叶田田向阳） | 定稿 · 待站长实拍替换 |
+| term-lixia-hero-alt | Pexels | https://www.pexels.com/photo/12784471/ | POI | Pexels License | 6000×3376 | 首页 · 立夏首屏备选（荷叶俯瞰，一朵荷花初开） | 备选 |
+
+## 六、节气首屏横版补图（C1）
+
+| 文件名 | 来源站 | 原图链接 | 作者 | 许可类型 | 原图尺寸 | 拟使用页面 | 状态 |
+|---|---|---|---|---|---|---|---|
+| term-daxue-hero-wide | Pexels | https://www.pexels.com/photo/5943331/ | Helena Jankovičová Kováčová | Pexels License | 4128×2742 | 首页 · 大雪首屏桌面横版（雪村临溪，晨光暖屋；原竖版 term-daxue-hero 保留作移动端） | 定稿 · 待站长实拍替换 |
+| term-dongzhi-hero-wide | Pexels | https://www.pexels.com/photo/6232552/ | Anastasia Shuraeva | Pexels License | 7952×5304 | 首页 · 冬至首屏桌面横版（冬夜烛光餐桌，暖光虚化；原竖版 term-dongzhi-hero 保留作移动端） | 定稿 · 待站长实拍替换 |
+
+备注：大雪横版初选 751606（雪原黄昏村落灯火）原图仅 3002×1996，未达横版规格（长边 ≥3840 优先），已淘汰改选 5943331，理由登记于 BATCH2_REPORT.md。
+
+## 七、临时季节图
+
+| 文件名 | 来源站 | 原图链接 | 作者 | 许可类型 | 原图尺寸 | 拟使用页面 | 状态 |
+|---|---|---|---|---|---|---|---|
+| season-summer-hero | Pexels | https://www.pexels.com/photo/18378383/ | Clément Proust | Pexels License | 7008×4672 | 首页 · 夏季季节图（绿谷云雾，夏山葱郁） | 定稿 · 待站长实拍替换（临时季节图，待第 3/4 批节气图替换） |
+| season-autumn-hero | Pexels | https://www.pexels.com/photo/34176711/ | JP | Pexels License | 6240×4160 | 首页 · 秋季节图（秋林临湖，倒影斑斓） | 定稿 · 待站长实拍替换（临时季节图，待第 3/4 批节气图替换） |
