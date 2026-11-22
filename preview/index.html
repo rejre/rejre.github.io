@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=1920&auto=format&fit=crop" id="heroPreload">
+<link rel="preload" as="image" href="/assets/img/term-xiaoxue-hero-2400.webp" id="heroPreload">
 <style>
 :root{
   --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
@@ -257,8 +257,8 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   <section class="hero" aria-label="首屏">
     <div class="hero-img-wrap">
       <img class="hero-img warm" id="heroImg"
-        src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=1600&auto=format&fit=crop"
-        srcset="https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=768&auto=format&fit=crop 768w, https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=1280&auto=format&fit=crop 1280w, https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=1920&auto=format&fit=crop 1920w"
+        src="/assets/img/term-xiaoxue-hero-1600.webp"
+        srcset="/assets/img/term-xiaoxue-hero-800.webp 768w, /assets/img/term-xiaoxue-hero-1200.webp 1280w, /assets/img/term-xiaoxue-hero-2400.webp 1920w"
         sizes="100vw" alt="冬日雪山，云层之上是连绵的雪原" fetchpriority="high">
       <div class="hero-veil"></div>
       <canvas id="motes" aria-hidden="true"></canvas>
@@ -481,9 +481,10 @@ var SEASONS={
   spring:{paper:"#F3F1E4",accent:"#8FA07A",grain:.03,label:"春",hero:"photo-1522383225653-ed111181a951",heroAlt:"春日樱花，粉白花簇缀满枝头"},
   summer:{paper:"#F5F0E2",accent:"#7A9A8C",grain:.02,label:"夏",hero:"photo-1441974231531-c6227db76b6e",heroAlt:"夏日林间小径，阳光穿过层层绿叶"},
   autumn:{paper:"#F4EBDD",accent:"#B5704F",grain:.04,label:"秋",hero:"photo-1507371341162-763b5e419408",heroAlt:"秋日湖畔，红叶林倒映在平静的水面"},
-  winter:{paper:"#EFEAE2",accent:"#7C766E",grain:.05,label:"冬",hero:"photo-1418985991508-e47386d96a71",heroAlt:"冬日雪山，云层之上是连绵的雪原"}
+  winter:{paper:"#EFEAE2",accent:"#7C766E",grain:.05,label:"冬",hero:"photo-1418985991508-e47386d96a71",heroAlt:"小雪时节的松林，初雪覆满枝头，雪原安静开阔"}
 };
-function heroURL(id,w){return U+id+"?q=80&w="+w+"&auto=format&fit=crop";}
+var LOCALHERO={"photo-1418985991508-e47386d96a71":{f:"term-xiaoxue-hero",m:{"768":800,"1280":1200,"1600":1600,"1920":2400}}};
+function heroURL(id,w){var L=LOCALHERO[id];if(L)return "/assets/img/"+L.f+"-"+(L.m[w]||1600)+".webp";return U+id+"?q=80&w="+w+"&auto=format&fit=crop";}
 function heroSrcset(id){return heroURL(id,768)+" 768w, "+heroURL(id,1280)+" 1280w, "+heroURL(id,1920)+" 1920w";}
 
 var root=document.documentElement;
