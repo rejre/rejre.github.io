@@ -5,67 +5,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>秋天，把家收拾成暖的样子：原木、陶土与一盏暖灯 · 风物志</title>
 <style>*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#fafaf7;--surface:#fff;--ink:#23221f;--soft:#6e6a61;--line:#e4e1d9;--bronze:#8a6d3b;--bronze-deep:#6f5627;--footer:#f1efe9}
-body{background:var(--bg);color:var(--ink);font-family:"Noto Serif CJK SC","Songti SC","SimSun",serif;line-height:1.9;font-size:17px}
-a{color:inherit;text-decoration:none}
-.topbar{max-width:1180px;margin:0 auto;padding:20px 26px;display:flex;align-items:center;justify-content:space-between}
-.brand-en{letter-spacing:.42em;font-size:14px}
+:root{--bg:#F8F6F2;--surface:#F2EFE9;--ink:#262320;--soft:#78716A;--line:rgba(38,35,32,.1);--accent:#9C6B4E;--accent-deep:#7D5239;--footer:#F2EFE9}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Serif SC","Songti SC","STSong","SimSun",serif;line-height:1.8;font-size:17px}
+a{color:inherit;text-decoration:none;transition:all .25s ease}
+.en,.brand-en,.meta,.date,.sec-head .en,.page-head .en{font-family:Georgia,"Times New Roman",serif;text-transform:uppercase}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(248,246,242,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:16px 26px;display:flex;align-items:center;justify-content:space-between}
+.brand-en{letter-spacing:.42em;font-size:13.5px}
 .topnav{display:flex;gap:30px;font-size:14.5px;letter-spacing:.14em;color:var(--soft)}
-.topnav a:hover{color:var(--bronze-deep)}
+.topnav a{padding-bottom:3px;border-bottom:1px solid transparent}
+.topnav a:hover{color:var(--accent-deep);border-bottom-color:var(--accent)}
+.topnav a.active{color:var(--ink);border-bottom-color:var(--accent)}
 .ph{background-size:cover;background-position:center;background-repeat:no-repeat}
-.hero{position:relative;max-width:1180px;margin:6px auto 0;border-radius:10px;overflow:hidden;border:1px solid var(--line);height:540px}
-.hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(250,250,247,.55) 0%,rgba(250,250,247,0) 62%)}
+.zoom{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;transition:transform .25s ease}
+.hero{position:relative;max-width:1180px;margin:26px auto 0;border-radius:10px;overflow:hidden;border:1px solid var(--line);height:560px}
+.hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(248,246,242,.5) 0%,rgba(248,246,242,0) 60%),linear-gradient(to top,rgba(38,35,32,.14),rgba(38,35,32,0) 45%)}
 .hero-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%}
-.hero-center .logo-img{width:104px;height:104px;object-fit:contain}
-.hero-center h1{font-size:46px;font-weight:600;letter-spacing:.32em;text-indent:.32em;color:#2a2822;margin-top:6px;text-shadow:0 1px 6px rgba(255,255,255,.75)}
-.hero-center .tag{font-size:14.5px;letter-spacing:.5em;text-indent:.5em;color:#4c473e;margin-top:4px;text-shadow:0 1px 4px rgba(255,255,255,.8)}
-.hero-center .btn{display:inline-block;margin-top:22px;background:var(--bronze);color:#fff;font-size:14.5px;letter-spacing:.3em;text-indent:.3em;padding:9px 30px;border-radius:999px}
-.hero-center .btn:hover{background:var(--bronze-deep)}
+.seal{display:inline-block;border:1px solid rgba(38,35,32,.55);padding:10px 12px;background:rgba(248,246,242,.55)}
+.seal-in{border:1px solid rgba(38,35,32,.35);padding:20px 40px 16px}
+.seal-zh{font-size:52px;font-weight:600;letter-spacing:.34em;text-indent:.34em;color:#262320;line-height:1.25}
+.seal-en{font-size:11.5px;letter-spacing:.5em;text-indent:.5em;color:var(--accent-deep);margin-top:8px}
+.hero-center .tag{font-size:15px;letter-spacing:.52em;text-indent:.52em;color:#3d3831;margin-top:22px;text-shadow:0 1px 5px rgba(248,246,242,.9)}
+.hero-center .btn{display:inline-block;margin-top:26px;background:rgba(248,246,242,.6);border:1px solid rgba(38,35,32,.55);color:#262320;font-size:14.5px;letter-spacing:.32em;text-indent:.32em;padding:10px 36px;border-radius:6px}
+.hero-center .btn:hover{background:rgba(156,107,78,.85);border-color:rgba(156,107,78,.85);color:#fff}
 main{max-width:1180px;margin:0 auto;padding:0 26px}
-.sec-head{text-align:center;padding:62px 0 30px}
-.sec-head .en{font-size:12px;letter-spacing:.5em;text-indent:.5em;color:var(--bronze)}
-.sec-head .zh{font-size:24px;font-weight:600;letter-spacing:.18em;margin-top:8px}
+.sec-head{text-align:center;padding:92px 0 34px}
+.sec-head .en{font-size:12px;letter-spacing:.5em;text-indent:.5em;color:var(--accent)}
+.sec-head .zh{font-size:24px;font-weight:600;letter-spacing:.18em;margin-top:10px}
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.cat{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;padding-bottom:26px}
-.cat .pic{height:190px}
-.cat h3{font-size:19px;font-weight:600;letter-spacing:.22em;margin-top:20px}
-.cat p{color:var(--soft);font-size:14.5px;margin:8px 22px 0;line-height:1.8}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;padding-bottom:28px;transition:all .25s ease}
+.cat:hover{box-shadow:0 8px 28px rgba(38,35,32,.08)}
+.cat .pic{height:190px;overflow:hidden}
+.cat:hover .zoom{transform:scale(1.03)}
+.cat h3{font-size:19px;font-weight:600;letter-spacing:.22em;margin-top:22px}
+.cat p{color:var(--soft);font-size:14.5px;margin:8px 22px 0}
 .posts{display:flex;flex-direction:column;gap:22px;padding-bottom:6px}
-.post{display:flex;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;align-items:center}
-.post .thumb{flex:0 0 250px;height:158px;border-radius:6px;border:1px solid var(--line)}
-.post .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--bronze-deep);border:1px solid var(--bronze);border-radius:999px;padding:1px 12px}
+.post{display:flex;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;align-items:center;transition:all .25s ease}
+.post:hover{box-shadow:0 8px 28px rgba(38,35,32,.08)}
+.post .thumb{flex:0 0 250px;height:158px;border-radius:6px;border:1px solid var(--line);overflow:hidden;display:block}
+.post:hover .zoom{transform:scale(1.03)}
+.post .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--accent-deep);border:1px solid var(--accent);border-radius:999px;padding:1px 12px}
 .post h3{font-size:21px;font-weight:600;line-height:1.55;margin-top:10px}
-.post a:hover h3{color:var(--bronze-deep)}
-.post p{color:var(--soft);font-size:15px;margin-top:8px;line-height:1.85}
-.post .meta{color:#a09a8d;font-size:13px;letter-spacing:.12em;margin-top:10px}
-footer{background:var(--footer);border-top:1px solid var(--line);margin-top:70px}
-.foot{max-width:1180px;margin:0 auto;padding:46px 26px 30px;display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
+.post a:hover h3{color:var(--accent-deep)}
+.post p{color:var(--soft);font-size:15px;margin-top:8px}
+.post .meta{color:#a89f93;font-size:13px;letter-spacing:.18em;margin-top:10px}
+.more-wrap{text-align:center;padding:30px 0 4px}
+.more-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent-deep);font-size:14.5px;letter-spacing:.3em;text-indent:.3em;padding:10px 36px;border-radius:6px}
+.more-btn:hover{background:var(--accent);color:#fff}
+footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px}
+.foot{max-width:1180px;margin:0 auto;padding:52px 26px 34px;display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
 .foot .fbrand{display:flex;gap:16px;align-items:flex-start}
 .foot .flogo-img{width:52px;height:52px;object-fit:contain}
 .foot .fname{font-size:21px;font-weight:600;letter-spacing:.3em}
 .foot .ftag{color:var(--soft);font-size:13px;letter-spacing:.2em;margin-top:2px}
-.foot h4{font-size:13px;letter-spacing:.34em;color:var(--bronze-deep);margin-bottom:12px;font-weight:600}
+.foot h4{font-size:13px;letter-spacing:.34em;color:var(--accent-deep);margin-bottom:12px;font-weight:600}
 .foot .flinks{display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--soft)}
 .socials{display:flex;gap:12px}
-.soc{width:42px;height:42px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--bronze-deep)}
-.soc:hover{background:var(--bronze);color:#fff}
+.soc{width:42px;height:42px;border:1px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent-deep)}
+.soc:hover{background:var(--accent);color:#fff}
 .soc svg{width:19px;height:19px}
-.copyright{max-width:1180px;margin:0 auto;padding:0 26px 30px;color:#a09a8d;font-size:12.5px;letter-spacing:.14em}
-.article-wrap{max-width:760px;margin:0 auto;padding:52px 26px 10px}
-.article-wrap .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--bronze-deep);border:1px solid var(--bronze);border-radius:999px;padding:1px 12px}
+.copyright{max-width:1180px;margin:0 auto;padding:0 26px 34px;color:#a89f93;font-size:12.5px;letter-spacing:.14em}
+.article-wrap{max-width:760px;margin:0 auto;padding:56px 26px 10px}
+.article-wrap .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--accent-deep);border:1px solid var(--accent);border-radius:999px;padding:1px 12px}
 .article-wrap h1{font-size:28px;line-height:1.55;font-weight:600;margin:16px 0 10px}
-.article-wrap .meta{color:#a09a8d;font-size:13.5px;letter-spacing:.12em;padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.article-wrap .meta{color:#a89f93;font-size:13.5px;letter-spacing:.18em;padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.article-wrap .post-img{width:100%;border-radius:8px;border:1px solid var(--line);margin-bottom:28px;display:block}
 .article-wrap h2{font-size:20px;font-weight:600;margin:34px 0 12px}
 .article-wrap p{margin-bottom:16px}
 .article-wrap hr{border:none;border-top:1px solid var(--line);margin:34px 0}
-.back{display:inline-block;margin-top:10px;color:var(--bronze-deep);font-size:15px;letter-spacing:.1em}
-@media (max-width:760px){.cats{grid-template-columns:1fr}.post{flex-direction:column;align-items:stretch}.post .thumb{flex:none}.hero{height:420px}.hero-center h1{font-size:34px}.topnav{gap:16px}}</style>
+.back{display:inline-block;margin-top:10px;color:var(--accent-deep);font-size:15px;letter-spacing:.1em}
+.page-head{max-width:1180px;margin:0 auto;padding:64px 26px 6px;text-align:center}
+.page-head .en{font-size:12px;letter-spacing:.5em;text-indent:.5em;color:var(--accent)}
+.page-head .zh{font-size:26px;font-weight:600;letter-spacing:.18em;margin-top:10px}
+.list-wrap{max-width:1180px;margin:0 auto;padding:26px}
+@media (max-width:760px){.cats{grid-template-columns:1fr}.post{flex-direction:column;align-items:stretch}.post .thumb{flex:none}.hero{height:440px}.seal-zh{font-size:36px}.topnav{gap:16px}.sec-head{padding:64px 0 28px}}</style>
 </head>
 <body>
-<div class="topbar">
+<div class="topbar"><div class="topbar-in">
 <div class="brand-en">FENGWUZHI</div>
 <nav class="topnav"><a href="/">首页</a><a href="/#cats">治愈美食</a><a href="/#cats">居家质感</a><a href="/#cats">远方风光</a></nav>
-</div>
+</div></div>
 <div class="article-wrap">
 <span class="chip">居家质感</span>
 <h1>秋天，把家收拾成暖的样子：原木、陶土与一盏暖灯</h1>
@@ -91,7 +110,7 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:70px
 <p>秋天的家，不需要焕然一新，只需要暖一点、软一点、慢一点。原木、陶土、亚麻、一盏暖灯，再加一个留白的角落——这些都不贵，收拾一个周末就够。</p>
 <p>《风物志》记录美好事物，也记录这些让日子变软的小改动。天凉了，先把家收拾成暖的样子，再慢慢过冬。</p>
 <hr>
-<a class="back" href="/">← 回到首页</a>
+<a class="back" href="/posts/">← 全部文章</a>
 </div>
 <footer>
 <div class="foot">
