@@ -4,8 +4,67 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>风物志 · 记录美好事物</title>
-<link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fafaf7;--surface:#fff;--ink:#23221f;--soft:#6e6a61;--line:#e4e1d9;--bronze:#8a6d3b;--bronze-deep:#6f5627;--footer:#f1efe9}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Serif CJK SC","Songti SC","SimSun",serif;line-height:1.9;font-size:17px}
+a{color:inherit;text-decoration:none}
+.topbar{max-width:1180px;margin:0 auto;padding:20px 26px;display:flex;align-items:center;justify-content:space-between}
+.brand-en{letter-spacing:.42em;font-size:14px}
+.topnav{display:flex;gap:30px;font-size:14.5px;letter-spacing:.14em;color:var(--soft)}
+.topnav a:hover{color:var(--bronze-deep)}
+.hero{position:relative;max-width:1180px;margin:6px auto 0;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.hero .scene{height:540px}
+.hero .scene svg{width:100%;height:100%;display:block}
+.hero-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%}
+.hero-center .logo{width:96px;height:96px;margin:0 auto}
+.hero-center .logo svg{width:96px;height:96px;display:block}
+.hero-center h1{font-size:46px;font-weight:600;letter-spacing:.32em;text-indent:.32em;color:#2a2822;margin-top:10px;text-shadow:0 1px 0 rgba(255,255,255,.5)}
+.hero-center .tag{font-size:14.5px;letter-spacing:.5em;text-indent:.5em;color:#5c574c;margin-top:4px}
+.hero-center .btn{display:inline-block;margin-top:22px;background:var(--bronze);color:#fff;font-size:14.5px;letter-spacing:.3em;text-indent:.3em;padding:9px 30px;border-radius:999px}
+.hero-center .btn:hover{background:var(--bronze-deep)}
+main{max-width:1180px;margin:0 auto;padding:0 26px}
+.sec-head{text-align:center;padding:62px 0 30px}
+.sec-head .en{font-size:12px;letter-spacing:.5em;text-indent:.5em;color:var(--bronze)}
+.sec-head .zh{font-size:24px;font-weight:600;letter-spacing:.18em;margin-top:8px}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;padding-bottom:26px}
+.cat .pic{height:190px}
+.cat .pic svg{width:100%;height:100%;display:block}
+.cat h3{font-size:19px;font-weight:600;letter-spacing:.22em;margin-top:20px}
+.cat p{color:var(--soft);font-size:14.5px;margin:8px 22px 0;line-height:1.8}
+.posts{display:flex;flex-direction:column;gap:22px;padding-bottom:6px}
+.post{display:flex;gap:28px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;align-items:center}
+.post .thumb{flex:0 0 250px;height:158px;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.post .thumb svg{width:100%;height:100%;display:block}
+.post .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--bronze-deep);border:1px solid var(--bronze);border-radius:999px;padding:1px 12px}
+.post h3{font-size:21px;font-weight:600;line-height:1.55;margin-top:10px}
+.post a:hover h3{color:var(--bronze-deep)}
+.post p{color:var(--soft);font-size:15px;margin-top:8px;line-height:1.85}
+.post .meta{color:#a09a8d;font-size:13px;letter-spacing:.12em;margin-top:10px}
+footer{background:var(--footer);border-top:1px solid var(--line);margin-top:70px}
+.foot{max-width:1180px;margin:0 auto;padding:46px 26px 30px;display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between}
+.foot .fbrand{display:flex;gap:16px;align-items:flex-start}
+.foot .fbrand .flogo{width:52px;height:52px}
+.foot .fbrand .flogo svg{width:52px;height:52px;display:block}
+.foot .fname{font-size:21px;font-weight:600;letter-spacing:.3em}
+.foot .ftag{color:var(--soft);font-size:13px;letter-spacing:.2em;margin-top:2px}
+.foot h4{font-size:13px;letter-spacing:.34em;color:var(--bronze-deep);margin-bottom:12px;font-weight:600}
+.foot .flinks{display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--soft)}
+.socials{display:flex;gap:12px}
+.soc{width:42px;height:42px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--bronze-deep)}
+.soc:hover{background:var(--bronze);color:#fff}
+.soc svg{width:19px;height:19px}
+.copyright{max-width:1180px;margin:0 auto;padding:0 26px 30px;color:#a09a8d;font-size:12.5px;letter-spacing:.14em}
+.article-wrap{max-width:760px;margin:0 auto;padding:52px 26px 10px}
+.article-wrap .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--bronze-deep);border:1px solid var(--bronze);border-radius:999px;padding:1px 12px}
+.article-wrap h1{font-size:28px;line-height:1.55;font-weight:600;margin:16px 0 10px}
+.article-wrap .meta{color:#a09a8d;font-size:13.5px;letter-spacing:.12em;padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.article-wrap h2{font-size:20px;font-weight:600;margin:34px 0 12px}
+.article-wrap p{margin-bottom:16px}
+.article-wrap hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+.back{display:inline-block;margin-top:10px;color:var(--bronze-deep);font-size:15px;letter-spacing:.1em}
+@media (max-width:760px){.cats{grid-template-columns:1fr}.post{flex-direction:column;align-items:stretch}.post .thumb{flex:none}.hero .scene{height:420px}.hero-center h1{font-size:34px}.topnav{gap:16px}}</style>
 </head>
 <body>
 <div class="topbar">
@@ -15,25 +74,29 @@
 
 <div class="hero">
 <div class="scene"><svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
-<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#f8f5ee"/><stop offset="0.55" stop-color="#efe9dc"/><stop offset="1" stop-color="#e7dfcd"/>
-</linearGradient>
-<linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#ddd5c0"/><stop offset="1" stop-color="#cfc4ab"/>
-</linearGradient>
-</defs>
-<rect width="1600" height="900" fill="url(#sky)"/>
-<circle cx="1150" cy="330" r="70" fill="#c9a86a" opacity="0.35"/>
-<path d="M0 470 L220 380 L430 450 L660 350 L900 440 L1130 360 L1360 440 L1600 380 L1600 900 L0 900 Z" fill="#d9d2c0"/>
-<path d="M0 560 L260 460 L520 540 L820 440 L1100 530 L1340 470 L1600 540 L1600 900 L0 900 Z" fill="#bcb29c"/>
-<rect x="0" y="600" width="1600" height="26" fill="#ffffff" opacity="0.28"/>
-<path d="M0 680 L300 600 L640 670 L980 590 L1300 660 L1600 610 L1600 900 L0 900 Z" fill="#948a72"/>
-<rect x="0" y="742" width="1600" height="158" fill="url(#lake)" opacity="0.85"/>
-<rect x="0" y="742" width="1600" height="3" fill="#ffffff" opacity="0.35"/>
-</svg></div>
-<div class="hero-word"><div class="zh">风物志</div><div class="tag">记录美好事物</div></div>
-<div class="hero-logo"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="风物志商标">
+<defs><linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2ecdf"/><stop offset="1" stop-color="#e9dfc9"/></linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffedb8" stop-opacity="0.85"/><stop offset="1" stop-color="#ffedb8" stop-opacity="0"/></radialGradient></defs>
+<rect width="1600" height="900" fill="url(#wall)"/>
+<polygon points="60,0 420,0 300,620 60,620" fill="#ffffff" opacity="0.35"/>
+<rect x="880" y="120" width="620" height="26" rx="6" fill="#b08d5f"/>
+<path d="M960 120 c-26 -34 26 -52 52 -44 c22 7 30 26 18 44 z" fill="#c9bda6"/>
+<path d="M1120 120 c-34 -48 34 -72 66 -58 c28 12 36 38 22 58 z" fill="#b7ab98"/>
+<path d="M1300 120 c-26 -34 26 -52 52 -44 c22 7 30 26 18 44 z" fill="#c2b49b"/>
+<rect x="0" y="618" width="1600" height="282" fill="#c39a68"/>
+<rect x="0" y="618" width="1600" height="14" fill="#a87f4f"/>
+<line x1="533" y1="632" x2="533" y2="900" stroke="#a87f4f" stroke-width="4"/>
+<line x1="1066" y1="632" x2="1066" y2="900" stroke="#a87f4f" stroke-width="4"/>
+<path d="M210 618 c-30 -70 30 -105 78 -92 c40 11 56 52 38 92 z" fill="#b0a28c"/>
+<g stroke="#8a7a5f" stroke-width="5" fill="none" stroke-linecap="round"><path d="M268 540 C250 460 210 420 160 380"/><path d="M268 540 C280 450 330 410 380 385"/><path d="M268 540 C262 470 268 420 262 360"/></g>
+<g fill="#b6a888"><ellipse cx="158" cy="372" rx="16" ry="8" transform="rotate(-32 158 372)"/><ellipse cx="384" cy="378" rx="16" ry="8" transform="rotate(28 384 378)"/><ellipse cx="260" cy="352" rx="15" ry="7"/><ellipse cx="205" cy="415" rx="14" ry="7" transform="rotate(-20 205 415)"/><ellipse cx="330" cy="420" rx="14" ry="7" transform="rotate(18 330 420)"/></g>
+<path d="M120 640 q60 26 130 10 l-8 26 q-56 12 -114 -10 z" fill="#ddd3bd"/>
+<circle cx="1230" cy="520" r="120" fill="url(#glow)"/>
+<rect x="1180" y="430" width="104" height="150" rx="48" fill="#f6ead2" stroke="#d8c49c" stroke-width="3"/>
+<rect x="1224" y="580" width="16" height="38" fill="#8a6d3b"/>
+<ellipse cx="1232" cy="622" rx="34" ry="7" fill="#8a6d3b"/>
+<path d="M1400 618 c-22 -40 22 -58 52 -50 c26 7 36 28 26 50 z" fill="#a89a83"/>
+<ellipse cx="640" cy="606" rx="86" ry="20" fill="#9c8b6e"/><ellipse cx="640" cy="600" rx="86" ry="20" fill="#cbb894"/></svg></div>
+<div class="hero-center"><div class="logo"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="风物志商标">
 <path d="M22 96 C36 62 48 36 57 20" stroke="#141414" stroke-width="11" stroke-linecap="round"/>
 <path d="M98 96 C84 62 72 36 63 20" stroke="#141414" stroke-width="11" stroke-linecap="round"/>
 <path d="M22 96 C27 84 32 72 37 62" stroke="#2f7fd0" stroke-width="6.5" stroke-linecap="round"/>
@@ -46,24 +109,23 @@
 <circle cx="60" cy="58" r="10" fill="#f2b705" stroke="#141414" stroke-width="3.5"/>
 <circle cx="40" cy="86" r="11" fill="#43a047" stroke="#141414" stroke-width="3.5"/>
 <circle cx="80" cy="86" r="11" fill="#e05252" stroke="#141414" stroke-width="3.5"/>
-</svg></div>
-<div class="hero-sub">治愈美食 · 居家质感 · 远方风光</div>
+</svg></div><h1>风物志</h1><div class="tag">记录美好事物</div><a class="btn" href="#posts">开始探索</a></div>
 </div>
 <main>
 <div class="sec-head" id="cats"><div class="en">CATEGORIES</div><div class="zh">三个栏目，记录生活的美好</div></div>
 <div class="cats">
-<div class="cat"><div class="motif"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><g stroke="#8a6d3b" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M45 78 h110 a0 0 0 0 1 0 0 a55 30 0 0 1 -110 0"/><path d="M38 78 h124"/><path d="M82 58 c-4 -6 4 -8 0 -14 M102 58 c-4 -6 4 -8 0 -14 M122 58 c-4 -6 4 -8 0 -14"/></g></svg></div><h3>治愈美食</h3><p>慢火细炖的温暖，从一碗汤开始，抚慰身心的日常滋味。</p></div>
-<div class="cat"><div class="motif"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><g stroke="#8a6d3b" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M78 108 v-38 a22 14 0 0 1 44 0 v38"/><path d="M72 108 h56"/><path d="M132 108 v-16 a10 8 0 0 1 20 0 v16"/><path d="M128 108 h28"/><path d="M58 108 h-8"/></g></svg></div><h3>居家质感</h3><p>原木、亚麻、陶土，营造宁静舒适的家居氛围与质感。</p></div>
-<div class="cat"><div class="motif"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><g stroke="#8a6d3b" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M20 112 L72 58 L104 92 L132 64 L180 112"/><circle cx="152" cy="38" r="10"/></g></svg></div><h3>远方风光</h3><p>走出房间，山野与自然，记录远行的光与风。</p></div>
+<div class="cat"><div class="pic"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f0e9da"/><rect y="212" width="400" height="88" fill="#c39a68"/><rect y="212" width="400" height="8" fill="#a87f4f"/><g stroke="#a89a83" stroke-width="4" fill="none" stroke-linecap="round"><path d="M168 108 c-8 -12 8 -16 0 -28"/><path d="M202 108 c-8 -12 8 -16 0 -28"/><path d="M236 108 c-8 -12 8 -16 0 -28"/></g><path d="M96 150 h208 a0 0 0 0 1 0 0 a104 62 0 0 1 -208 0 z" fill="#a89a83"/><ellipse cx="200" cy="150" rx="104" ry="16" fill="#8f8069"/><ellipse cx="200" cy="150" rx="88" ry="12" fill="#d9b878"/><circle cx="172" cy="148" r="5" fill="#7a9a52"/><circle cx="222" cy="152" r="5" fill="#c96f4a"/><circle cx="200" cy="146" r="4" fill="#7a9a52"/><path d="M316 196 a20 16 0 1 1 12 -30 l4 22 a14 12 0 0 1 -16 8z" fill="#b7ab98"/></svg></div><h3>治愈美食</h3><p>慢火细炖的温暖，从一碗汤开始，抚慰身心的日常滋味。</p></div>
+<div class="cat"><div class="pic"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f2ecdf"/><rect y="216" width="400" height="84" fill="#c39a68"/><rect y="216" width="400" height="8" fill="#a87f4f"/><path d="M120 216 c-22 -52 22 -78 56 -68 c30 9 42 38 30 68 z" fill="#b0a28c"/><path d="M238 216 c-16 -36 16 -52 40 -44 c22 7 30 26 20 44 z" fill="#c9bda6"/><g stroke="#a08b62" stroke-width="3.5" fill="none" stroke-linecap="round"><path d="M148 160 C140 120 118 100 96 84"/><path d="M148 160 C156 118 182 98 206 86"/><path d="M148 160 C146 124 150 104 146 74"/></g><g fill="#c2b28c"><ellipse cx="94" cy="80" rx="11" ry="5" transform="rotate(-30 94 80)"/><ellipse cx="208" cy="82" rx="11" ry="5" transform="rotate(26 208 82)"/><ellipse cx="145" cy="70" rx="10" ry="5"/></g></svg></div><h3>居家质感</h3><p>原木、亚麻、陶土，营造宁静舒适的家居氛围与质感。</p></div>
+<div class="cat"><div class="pic"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sk2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8f5ee"/><stop offset="1" stop-color="#e9e1cf"/></linearGradient></defs><rect width="400" height="300" fill="url(#sk2)"/><circle cx="308" cy="74" r="24" fill="#c9a86a" opacity="0.55"/><path d="M0 168 L84 118 L160 156 L248 104 L400 162 L400 300 L0 300 Z" fill="#cfc6ae"/><path d="M0 214 L110 158 L210 202 L300 164 L400 208 L400 300 L0 300 Z" fill="#a89a7c"/><rect x="0" y="196" width="400" height="9" fill="#ffffff" opacity="0.3"/><path d="M0 258 L130 216 L260 250 L400 224 L400 300 L0 300 Z" fill="#7e7358"/></svg></div><h3>远方风光</h3><p>走出房间，山野与自然，记录远行的光与风。</p></div>
 </div>
-<div class="sec-head"><div class="en">RECENT POSTS</div><div class="zh">最近发帖</div></div>
+<div class="sec-head" id="posts"><div class="en">RECENT POSTS</div><div class="zh">最近发帖</div></div>
 <div class="posts">
-<div class="post"><a class="thumb" href="/posts/autumn-soups.html"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><g stroke="#8a6d3b" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M45 78 h110 a0 0 0 0 1 0 0 a55 30 0 0 1 -110 0"/><path d="M38 78 h124"/><path d="M82 58 c-4 -6 4 -8 0 -14 M102 58 c-4 -6 4 -8 0 -14 M122 58 c-4 -6 4 -8 0 -14"/></g></svg></a><div>
+<div class="post"><a class="thumb" href="/posts/autumn-soups.html"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#f0e9da"/><rect y="212" width="400" height="88" fill="#c39a68"/><rect y="212" width="400" height="8" fill="#a87f4f"/><g stroke="#a89a83" stroke-width="4" fill="none" stroke-linecap="round"><path d="M168 108 c-8 -12 8 -16 0 -28"/><path d="M202 108 c-8 -12 8 -16 0 -28"/><path d="M236 108 c-8 -12 8 -16 0 -28"/></g><path d="M96 150 h208 a0 0 0 0 1 0 0 a104 62 0 0 1 -208 0 z" fill="#a89a83"/><ellipse cx="200" cy="150" rx="104" ry="16" fill="#8f8069"/><ellipse cx="200" cy="150" rx="88" ry="12" fill="#d9b878"/><circle cx="172" cy="148" r="5" fill="#7a9a52"/><circle cx="222" cy="152" r="5" fill="#c96f4a"/><circle cx="200" cy="146" r="4" fill="#7a9a52"/><path d="M316 196 a20 16 0 1 1 12 -30 l4 22 a14 12 0 0 1 -16 8z" fill="#b7ab98"/></svg></a><div>
 <span class="chip">治愈美食</span>
 <a href="/posts/autumn-soups.html"><h3>天凉了，这五碗汤最暖：入秋暖身汤单</h3></a>
 <p>秋风一起，胃就先知道了。不需要多高明的厨艺，秋天的汤讲究一个「暖」字——暖身，也暖心。这五碗，收好了。</p>
 <div class="meta">2026.11.14</div></div></div>
-<div class="post"><a class="thumb" href="/posts/autumn-home.html"><svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg"><g stroke="#8a6d3b" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M78 108 v-38 a22 14 0 0 1 44 0 v38"/><path d="M72 108 h56"/><path d="M132 108 v-16 a10 8 0 0 1 20 0 v16"/><path d="M128 108 h28"/><path d="M58 108 h-8"/></g></svg></a><div>
+<div class="post"><a class="thumb" href="/posts/autumn-home.html"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="gl2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffedb8" stop-opacity="0.9"/><stop offset="1" stop-color="#ffedb8" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="#efe8d8"/><rect y="218" width="400" height="82" fill="#c39a68"/><rect y="218" width="400" height="8" fill="#a87f4f"/><circle cx="272" cy="140" r="86" fill="url(#gl2)"/><rect x="238" y="76" width="70" height="104" rx="32" fill="#f6ead2" stroke="#d8c49c" stroke-width="3"/><rect x="268" y="180" width="10" height="38" fill="#8a6d3b"/><path d="M96 218 v-34 a26 20 0 0 1 52 0 v34 z" fill="#a89a83"/><path d="M86 218 h72" stroke="#8f8069" stroke-width="5"/><g stroke="#bdb2a0" stroke-width="4" fill="none" stroke-linecap="round"><path d="M112 160 c-6 -9 6 -12 0 -22"/><path d="M132 160 c-6 -9 6 -12 0 -22"/></g></svg></a><div>
 <span class="chip">居家质感</span>
 <a href="/posts/autumn-home.html"><h3>秋天，把家收拾成暖的样子：原木、陶土与一盏暖灯</h3></a>
 <p>天一凉，家就该换个样子。木头的温、陶土的糙、布料的软，和一盏不刺眼的灯——摆对了，人就先松下来一半。</p>
@@ -73,7 +135,7 @@
 
 <footer>
 <div class="foot">
-<div class="fbrand"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="风物志商标">
+<div class="fbrand"><div class="flogo"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="风物志商标">
 <path d="M22 96 C36 62 48 36 57 20" stroke="#141414" stroke-width="11" stroke-linecap="round"/>
 <path d="M98 96 C84 62 72 36 63 20" stroke="#141414" stroke-width="11" stroke-linecap="round"/>
 <path d="M22 96 C27 84 32 72 37 62" stroke="#2f7fd0" stroke-width="6.5" stroke-linecap="round"/>
@@ -86,7 +148,7 @@
 <circle cx="60" cy="58" r="10" fill="#f2b705" stroke="#141414" stroke-width="3.5"/>
 <circle cx="40" cy="86" r="11" fill="#43a047" stroke="#141414" stroke-width="3.5"/>
 <circle cx="80" cy="86" r="11" fill="#e05252" stroke="#141414" stroke-width="3.5"/>
-</svg><div><div class="fname">风物志</div><div class="ftag">记录美好事物</div></div></div>
+</svg></div><div><div class="fname">风物志</div><div class="ftag">记录美好事物</div></div></div>
 <div><h4>栏目</h4><div class="flinks"><a href="/#cats">治愈美食</a><a href="/#cats">居家质感</a><a href="/#cats">远方风光</a></div></div>
 <div><h4>关注我们</h4><div class="socials">
 <a class="soc" href="https://x.com/cnre" target="_blank" rel="noopener" aria-label="X / 推特"><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.9 3H21l-6.78 7.74L22.2 21h-6.24l-4.89-6.4L5.47 21H2.34l7.25-8.28L1.8 3h6.4l4.42 5.85L17.9 3zm-1.1 16.13h1.73L7.7 4.77H5.85L16.8 19.13z"/></svg></a>
