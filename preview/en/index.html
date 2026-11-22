@@ -5,9 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fengwuzhi · A Seasonal Journal — Notes on Beautiful Things</title>
 <meta name="description" content="Fengwuzhi is a digital journal that changes with the twenty-four solar terms: Healing Food, Home & Texture, Distant Views. Notes on beautiful things — beginning with a bowl of soup, a lamp, a mountain path.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/fengwuzhi-serif-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fengwuzhi-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{
+  font-family:"Noto Serif SC";
+  src:url("/assets/fonts/fengwuzhi-serif-700.woff2") format("woff2");
+  font-weight:700;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Noto Sans SC";
+  src:url("/assets/fonts/fengwuzhi-sans-400.woff2") format("woff2");
+  font-weight:400;
+  font-display:swap;
+}
+</style>
 <link rel="preload" as="image" href="/assets/img/term-xiaoxue-hero-1600.webp?v=r3" id="heroPreload">
 <style>
 :root{

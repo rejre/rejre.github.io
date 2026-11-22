@@ -5,9 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>这一页被风吹走了 · 风物志</title>
 <meta name="description" content="这一页被风吹走了。返回风物志首页。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/fengwuzhi-serif-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fengwuzhi-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{
+  font-family:"Noto Serif SC";
+  src:url("/assets/fonts/fengwuzhi-serif-700.woff2") format("woff2");
+  font-weight:700;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Noto Sans SC";
+  src:url("/assets/fonts/fengwuzhi-sans-400.woff2") format("woff2");
+  font-weight:400;
+  font-display:swap;
+}
+</style>
 <style>
 :root{
   --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;

@@ -5,9 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>关于 · 风物志 FENGWUZHI</title>
 <meta name="description" content="关于风物志：一本随二十四节气变化的数字手账。品牌故事、节气概念、站长署名与版权声明。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/fengwuzhi-serif-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fengwuzhi-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{
+  font-family:"Noto Serif SC";
+  src:url("/assets/fonts/fengwuzhi-serif-700.woff2") format("woff2");
+  font-weight:700;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Noto Sans SC";
+  src:url("/assets/fonts/fengwuzhi-sans-400.woff2") format("woff2");
+  font-weight:400;
+  font-display:swap;
+}
+</style>
 <style>
 :root{
   --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
@@ -132,6 +145,9 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 @media (max-width:860px){.col-links{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
+<link rel="alternate" hreflang="zh-CN" href="https://cnre.ccwu.cc/preview/about/">
+<link rel="alternate" hreflang="en" href="https://cnre.ccwu.cc/preview/en/about/">
+<link rel="alternate" hreflang="x-default" href="https://cnre.ccwu.cc/preview/about/">
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
@@ -147,6 +163,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <button type="button" id="menuOpen" data-cursor="进">栏目</button>
     <a href="/posts/" class="hide-m" data-cursor="进">全部文章</a>
     <a href="/preview/about/" data-cursor="进">关于</a>
+    <a href="/preview/en/about/">EN</a>
   </nav>
 </header>
 
@@ -206,7 +223,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 
     <section aria-label="站长署名">
       <h2>站长<span class="p-en">Editor</span></h2>
-      <p>风物志站长 Belfort。白天有白天的事，晚上给这本手账添页。站里的文字与排版出自站长，图片来源逐张记录于 CREDITS。慢工，偶有错漏，欢迎在社交平台留言指正。</p>
+      <p>风物志站长 Belfort。白天有白天的事，晚上给这本手账添页。站内部分图片来自图库，站长实拍图正在逐步替换，来源逐张记录于<a href="/assets/CREDITS.md" data-cursor="看">图片来源页</a>。慢工，偶有错漏，欢迎在社交平台留言指正。</p>
     </section>
 
     <section aria-label="联系方式">

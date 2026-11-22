@@ -5,9 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>远方风光 · 风物志 FENGWUZHI</title>
 <meta name="description" content="风物志「远方风光」栏目：山路慢慢走，风景慢慢看。远山白屋、青山小院与青瓦庭院，记录走出门之后的风景。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/fengwuzhi-serif-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fengwuzhi-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{
+  font-family:"Noto Serif SC";
+  src:url("/assets/fonts/fengwuzhi-serif-700.woff2") format("woff2");
+  font-weight:700;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Noto Sans SC";
+  src:url("/assets/fonts/fengwuzhi-sans-400.woff2") format("woff2");
+  font-weight:400;
+  font-display:swap;
+}
+</style>
 <style>
 :root{
   --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
@@ -108,6 +121,9 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 @media (max-width:860px){.masonry{columns:1}.foot-grid{grid-template-columns:1fr}.nav-links a.hide-m{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
+<link rel="alternate" hreflang="zh-CN" href="https://cnre.ccwu.cc/preview/journey/">
+<link rel="alternate" hreflang="en" href="https://cnre.ccwu.cc/preview/en/journey/">
+<link rel="alternate" hreflang="x-default" href="https://cnre.ccwu.cc/preview/journey/">
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
@@ -123,6 +139,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <button type="button" id="menuOpen" data-cursor="进">栏目</button>
     <a href="/posts/" class="hide-m" data-cursor="进">全部文章</a>
     <a href="/preview/about/" data-cursor="进">关于</a>
+    <a href="/preview/en/journey/">EN</a>
   </nav>
 </header>
 
@@ -186,16 +203,6 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
           <p>石板路被脚步磨得发亮，两侧松影斜斜压下来，走一步，鞋底轻响一声。</p>
         </div>
       </a>
-    </article>
-    <article class="m-card soon" data-kind="season">
-      <div>
-        <div class="mc-img mid"><img class="warm" src="/assets/img/term-xiaoxue-hero-800.webp" alt="初雪覆满松林，雪地开阔安静" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">节气 · 小雪</span><span class="mc-kind">即将发布</span></div>
-          <h2>小雪：一锅炖汤上桌，冬天就算来了</h2>
-          <p>小雪节气特辑正在筹备，敬请期待。</p>
-        </div>
-      </div>
     </article>
     <p class="m-empty" id="mEmpty">这一类暂时还没有文章。</p>
   </section>
