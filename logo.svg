@@ -1,0 +1,14 @@
+<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="风物志商标">
+<path d="M22 96 C36 62 48 36 57 20" stroke="#141414" stroke-width="11" stroke-linecap="round"/>
+<path d="M98 96 C84 62 72 36 63 20" stroke="#141414" stroke-width="11" stroke-linecap="round"/>
+<path d="M22 96 C27 84 32 72 37 62" stroke="#2f7fd0" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M37 62 C43 48 49 34 54 25" stroke="#43a047" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M54 25 C55 23 56 21 57 20" stroke="#e05252" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M98 96 C93 84 88 72 83 62" stroke="#43a047" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M83 62 C77 48 71 34 66 25" stroke="#f2b705" stroke-width="6.5" stroke-linecap="round"/>
+<circle cx="57" cy="14" r="6" fill="#2f7fd0" stroke="#141414" stroke-width="3"/>
+<circle cx="68" cy="17" r="5" fill="#f2b705" stroke="#141414" stroke-width="3"/>
+<circle cx="60" cy="58" r="10" fill="#f2b705" stroke="#141414" stroke-width="3.5"/>
+<circle cx="40" cy="86" r="11" fill="#43a047" stroke="#141414" stroke-width="3.5"/>
+<circle cx="80" cy="86" r="11" fill="#e05252" stroke="#141414" stroke-width="3.5"/>
+</svg>
