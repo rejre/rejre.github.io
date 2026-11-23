@@ -248,6 +248,28 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   .prologue-text .ch{opacity:1}
 }
 @media (max-height:450px){.hero{height:min(100svh - 54px,336px)}.hero-center{top:48px}.hero-en{display:none}.hero-seal{width:28px;height:28px}.hero-seal span{font-size:11px}.hero-shade{height:70px}}
+
+/* ---------- 2026-11-23 首页改版：栏目静态居中行 + 精选左一右二等高 ---------- */
+.handscroll--static{padding:clamp(80px,12vh,140px) clamp(18px,5vw,72px);max-width:1560px;margin:0 auto}
+.hs-head{text-align:center;margin-bottom:clamp(34px,5vh,58px)}
+.hs-head .hs-kicker{font-size:11.5px;letter-spacing:.32em;color:var(--season-accent)}
+.hs-head h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,44px);font-weight:600;letter-spacing:.14em;line-height:1.5;margin-top:12px}
+.hs-head p{font-size:15px;opacity:.65;margin-top:12px}
+.hs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,34px)}
+.hs-row .hs-card{flex:none}
+.hs-row .hs-img{height:clamp(230px,32vh,340px)}
+.feat-even .feat-card>a{display:flex;flex-direction:column;height:100%}
+.feat-even .feat-big .fc-img{flex:1 1 auto;height:auto;min-height:300px}
+.feat-even .feat-side{grid-template-rows:1fr 1fr}
+.feat-even .feat-side .fc-img{flex:1 1 auto;height:auto;min-height:120px}
+@media (max-width:860px){
+  .hs-row{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+  .hs-row .hs-img{height:300px}
+  .feat-even .feat-card>a{display:block;height:auto}
+  .feat-even .feat-big .fc-img{height:300px}
+  .feat-even .feat-side{grid-template-rows:none}
+  .feat-even .feat-side .fc-img{height:210px}
+}
 </style>
 <link rel="alternate" hreflang="zh-CN" href="https://cnre.ccwu.cc/">
 <link rel="alternate" hreflang="en" href="https://cnre.ccwu.cc/en/">
@@ -335,30 +357,30 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   </section>
 
   <!-- ======= HANDSCROLL ======= -->
-  <section class="handscroll" id="handscroll" aria-label="三个栏目">
-    <div class="hs-track" id="hsTrack">
-      <div class="hs-intro">
-        <p class="en" style="font-size:11.5px;color:var(--season-accent)">Columns · 手账</p>
-        <h2>三个栏目<br>一本手账</h2>
-        <p>随节气翻页：吃食、居所、远方，各表一枝。</p>
-      </div>
+  <section class="handscroll handscroll--static" id="handscroll" aria-label="三个栏目">
+    <div class="hs-head">
+      <p class="hs-kicker en">Columns · 手账</p>
+      <h2>三个栏目 · 一本手账</h2>
+      <p>随节气翻页：吃食、居所、远方，各表一枝。</p>
+    </div>
+    <div class="hs-row" id="hsTrack">
       <article class="hs-card">
         <a href="/food/" data-cursor="看" aria-label="治愈美食栏目">
-          <div class="hs-img"><img class="warm" src="/assets/img/legacy/index-2.jpg" alt="粗陶碗里热气腾腾的炖菜，摆在原木桌上" loading="lazy" width="800" height="533"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/food-07-1200.jpg" alt="深色原木桌上，白瓷金边的盖盅盛着一盅清汤" loading="lazy" width="1200" height="713"></div>
           <div class="wash" style="background:var(--clay)"></div>
           <div class="hs-meta"><div><span class="hs-no">01 / COLUMN</span><h3>治愈美食</h3><p>慢火细炖，把日子熬出香气。</p></div><span class="hs-dot" style="background:var(--clay)"></span></div>
         </a>
       </article>
       <article class="hs-card">
         <a href="/home/" data-cursor="看" aria-label="居家质感栏目">
-          <div class="hs-img"><img class="warm" src="/assets/img/legacy/index-3.jpg" alt="陶土花器、干花与一盏暖灯，静置在原木桌上" loading="lazy" width="800" height="533"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/home-07-1200.jpg" alt="大理石花器里插着干花，旁置一盏玻璃球灯与大理石台面" loading="lazy" width="1200" height="800"></div>
           <div class="wash" style="background:var(--wood)"></div>
           <div class="hs-meta"><div><span class="hs-no">02 / COLUMN</span><h3>居家质感</h3><p>原木与亚麻之间，安放日常。</p></div><span class="hs-dot" style="background:var(--wood)"></span></div>
         </a>
       </article>
       <article class="hs-card">
         <a href="/journey/" data-cursor="看" aria-label="远方风光栏目">
-          <div class="hs-img"><img class="warm" src="/assets/img/journey-01-1200.webp" srcset="/assets/img/journey-01-480.webp 480w, /assets/img/journey-01-800.webp 800w, /assets/img/journey-01-1200.webp 1200w" sizes="(max-width:860px) 100vw, 68vw" alt="雾中山村，屋舍隐在层叠山影里" loading="lazy" width="1200" height="800"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/journey-01-1200.webp" srcset="/assets/img/journey-01-480.webp 480w, /assets/img/journey-01-800.webp 800w, /assets/img/journey-01-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="雾中山村，屋舍隐在层叠山影里" loading="lazy" width="1200" height="800"></div>
           <div class="wash" style="background:var(--moss)"></div>
           <div class="hs-meta"><div><span class="hs-no">03 / COLUMN</span><h3>远方风光</h3><p>山路慢慢走，风景慢慢看。</p></div><span class="hs-dot" style="background:var(--moss)"></span></div>
         </a>
@@ -369,7 +391,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   <!-- ======= FEATURED ======= -->
   <section class="section" aria-label="本季精选">
     <div class="sec-head"><span class="sec-no">其一</span><h2>本季精选</h2><span class="sec-en">Featured</span></div>
-    <div class="feat-grid">
+    <div class="feat-grid feat-even">
       <article class="feat-card feat-big">
         <a href="/posts/shenzhen-civic-night.html" data-cursor="看">
           <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-civic-night-1.jpg" alt="夜幕下的深圳市民中心，弧形屋顶覆着暖金色的光，左侧楼体打着紫粉色光影" loading="lazy" width="1600" height="900"></div>
@@ -382,30 +404,21 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
       </article>
       <div class="feat-side">
         <article class="feat-card">
+          <a href="/posts/xiaoxue-warmth.html" data-cursor="看">
+            <div class="fc-img"><img class="warm" src="/assets/img/food-08-1200.webp" srcset="/assets/img/food-08-480.webp 480w, /assets/img/food-08-800.webp 800w, /assets/img/food-08-1200.webp 1200w" sizes="(max-width:860px) 100vw, 40vw" alt="白瓷碗里盛着肉末土豆炖菜，撒着青豆与葱花" loading="lazy" width="1200" height="800"></div>
+            <div class="fc-body">
+              <div class="fc-tags"><span class="fc-tag" style="background:var(--clay)">治愈美食</span><span class="fc-date">2026.11.22</span></div>
+              <h3>小雪：一锅炖汤上桌，冬天就算来了</h3>
+            </div>
+          </a>
+        </article>
+        <article class="feat-card">
           <a href="/posts/autumn-home.html" data-cursor="看">
-            <div class="fc-img"><img class="warm" src="/assets/img/legacy/index-3.jpg" alt="陶土花器、干花与一盏暖灯，静置在原木桌上" loading="lazy" width="800" height="533"></div>
+            <div class="fc-img"><img class="warm" src="/assets/img/home-07-1200.jpg" alt="大理石花器里插着干花，旁置一盏玻璃球灯与大理石台面" loading="lazy" width="1200" height="800"></div>
             <div class="fc-body">
               <div class="fc-tags"><span class="fc-tag" style="background:var(--wood)">居家质感</span><span class="fc-date">2026.11.22</span></div>
               <h3>秋天，把家收拾成暖的样子：原木、陶土与一盏暖灯</h3>
               <p>不装修、不大采购，只动四处小地方：原木、陶土、布料与一盏暖灯，秋天就住进家里了。</p>
-            </div>
-          </a>
-        </article>
-        <article class="feat-card">
-          <a href="/posts/autumn-soups.html" data-cursor="看">
-            <div class="fc-img"><img class="warm" src="/assets/img/legacy/index-4.jpg" alt="一碗清汤卧在亚麻布上，热气袅袅" loading="lazy" width="1100" height="733"></div>
-            <div class="fc-body">
-              <div class="fc-tags"><span class="fc-tag" style="background:var(--clay)">治愈美食</span><span class="fc-date">2026.11.14</span></div>
-              <h3>天凉了，这五碗汤最暖：入秋暖身汤单</h3>
-            </div>
-          </a>
-        </article>
-        <article class="feat-card">
-          <a href="/posts/xiaoxue-warmth.html" data-cursor="看">
-            <div class="fc-img"><img class="warm" src="/assets/img/food-02-1200.webp" srcset="/assets/img/food-02-480.webp 480w, /assets/img/food-02-800.webp 800w, /assets/img/food-02-1200.webp 1200w" sizes="(max-width:860px) 100vw, 40vw" alt="粗陶碗里盛着炖到入味的根茎菜，汤汁浓亮" loading="lazy" width="1200" height="800"></div>
-            <div class="fc-body">
-              <div class="fc-tags"><span class="fc-tag" style="background:var(--clay)">治愈美食</span><span class="fc-date">2026.11.22</span></div>
-              <h3>小雪：一锅炖汤上桌，冬天就算来了</h3>
             </div>
           </a>
         </article>
@@ -762,7 +775,7 @@ if(canvas && !reduced){
 var PIN_OK=window.matchMedia("(min-width:861px) and (hover:hover) and (pointer:fine)").matches;
 if(!PIN_OK||typeof gsap==="undefined"){
   var hs=document.getElementById("handscroll"), tr=document.getElementById("hsTrack");
-  if(hs&&tr){hs.style.overflowX="auto";tr.style.paddingBottom="18px";}
+  if(hs&&tr&&!hs.classList.contains("handscroll--static")){hs.style.overflowX="auto";tr.style.paddingBottom="18px";}
 }
 var lenis=null;
 if(!reduced && typeof Lenis!=="undefined"){
@@ -781,12 +794,8 @@ if(!reduced && typeof gsap!=="undefined"){
     gsap.to("#prologueText .ch",{opacity:1,stagger:.06,ease:"none",
       scrollTrigger:{trigger:".prologue",start:"top 78%",end:"top 22%",scrub:.6}});
   }
-  /* 横向手账：桌面竖滚转横移 */
+  /* 栏目行：静态居中排布（2026-11-23 改版，不再竖滚转横移），仅保留下方卡片图片视差 */
   if(PIN_OK){
-    var track=document.getElementById("hsTrack");
-    var dist=function(){return Math.max(0,track.scrollWidth-window.innerWidth+72);};
-    gsap.to(track,{x:function(){return -dist();},ease:"none",
-      scrollTrigger:{trigger:"#handscroll",start:"top top",end:function(){return "+="+dist();},scrub:1,pin:true,anticipatePin:1,invalidateOnRefresh:true}});
     /* 卡片图片视差 */
     document.querySelectorAll(".hs-card").forEach(function(card){
       var img=card.querySelector("img");
