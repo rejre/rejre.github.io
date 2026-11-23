@@ -119,6 +119,26 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px
 <p>一碗汤的时间，是秋天留给生活的缝隙。不必山珍海味，一锅热汤、一盏暖灯，就是人间烟火里最踏实的幸福。</p>
 <p>《风物志》记录美好事物，也记录这些微小而确定的温暖。天凉了，记得喝汤。</p>
 <hr>
+<style>
+.rel-articles{margin:46px 0 8px;border-top:1px solid var(--line);padding-top:28px}
+.rel-articles .rel-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.rel-articles .rel-head h2{font-size:21px;font-weight:600;letter-spacing:.12em;margin:0}
+.rel-articles .rel-head .rel-en{font-size:11px;letter-spacing:.4em;color:var(--soft);text-transform:uppercase}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:640px){.rel-grid{grid-template-columns:1fr}}
+a.rel-card{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface);text-decoration:none;color:var(--ink)}
+a.rel-card img{width:100%;height:112px;object-fit:cover;display:block}
+a.rel-card .rc-cat{display:block;padding:10px 12px 0;font-size:11.5px;letter-spacing:.2em;color:var(--accent-deep)}
+a.rel-card .rc-title{display:block;padding:3px 12px 12px;font-size:15px;line-height:1.55}
+</style>
+<section class="rel-articles" aria-label="相关文章">
+<div class="rel-head"><h2>相关文章</h2><span class="rel-en">Related</span></div>
+<div class="rel-grid">
+<a class="rel-card" href="/posts/xiaoxue-warmth.html"><img src="/assets/img/legacy/posts-xiaoxue-warmth-1.jpg" alt="小雪：一锅炖汤上桌，冬天就算来了" loading="lazy"><span class="rc-cat">治愈美食</span><span class="rc-title">小雪：一锅炖汤上桌，冬天就算来了</span></a>
+<a class="rel-card" href="/posts/midnight-soup.html"><img src="/assets/img/legacy/posts-midnight-soup-1.jpg" alt="原汤化原食：一碗热气腾腾的深夜慰藉" loading="lazy"><span class="rc-cat">治愈美食</span><span class="rc-title">原汤化原食：一碗热气腾腾的深夜慰藉</span></a>
+<a class="rel-card" href="/posts/fish-bento.html"><img src="/assets/img/legacy/posts-fish-bento-1.jpg" alt="人间烟火：一饭一菜里的寻常温暖" loading="lazy"><span class="rc-cat">治愈美食</span><span class="rc-title">人间烟火：一饭一菜里的寻常温暖</span></a>
+</div>
+</section>
 <a class="back" href="/posts/">← 全部文章</a>
 </div>
 <footer>
