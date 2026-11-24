@@ -57,6 +57,7 @@
   ph: "ph-home"
 - slug: shenzhen-apec-trip
   title: "深圳 APEC 会议后旅行"
+  title_en: "Shenzhen After APEC"
   url: "/posts/shenzhen-apec-trip.html"
   column: "journey"
   date: "2026-11-24"
@@ -65,6 +66,7 @@
   en: false
   cover: "/assets/img/shenzhen-apec-1.jpg"
   cover_alt: "莲花山顶望福田中心区，市民中心与平安金融中心同框，前景簕杜鹃盛开"
+  cover_alt_en: "Futian skyline from the top of Lianhua Mountain, the Civic Center and Ping An Finance Centre framed by bougainvillea"
   cover_w: 1600
   cover_h: 900
   img_class: "mid"
@@ -73,6 +75,7 @@
   excerpt_feat_en: "APEC 2026 has wrapped up in Shenzhen — the flower beds, street banners and early-winter blooms are still in place."
 - slug: shenzhen-civic-night
   title: "深圳 · 市民中心的夜"
+  title_en: "Shenzhen · A Night at the Civic Center"
   url: "/posts/shenzhen-civic-night.html"
   column: "journey"
   date: "2026-11-23"
@@ -81,6 +84,7 @@
   en: false
   cover: "/assets/img/shenzhen-civic-night-1.jpg"
   cover_alt: "深圳市民中心夜景，弧形大屋顶覆着暖金色的光"
+  cover_alt_en: "Shenzhen Civic Center at night, its curved roof washed in golden light"
   cover_w: 1600
   cover_h: 900
   img_class: "mid"
