@@ -55,12 +55,6 @@ button{font-family:inherit;background:none;border:none;color:inherit}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .en{font-family:var(--sans);text-transform:uppercase;letter-spacing:.32em;font-weight:500}
 .warm{filter:sepia(.14) saturate(.88) brightness(1.02) contrast(.98)}
-#cursor{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--ink);z-index:4000;pointer-events:none;display:none;align-items:center;justify-content:center;transform:translate(-50%,-50%);transition:width .3s,height .3s,background-color .3s}
-#cursor span{font-family:var(--serif);font-size:15px;color:var(--paper);opacity:0;transition:opacity .2s}
-#cursor.big{width:72px;height:72px;background:var(--clay)}
-#cursor.big span{opacity:1}
-html.has-cursor,html.has-cursor a,html.has-cursor button{cursor:none}
-html.has-cursor #cursor{display:flex}
 #ink{position:fixed;inset:0;z-index:3500;pointer-events:none;background:radial-gradient(circle at var(--ix,50%) var(--iy,50%),var(--ink) 0%,#3A372F 55%,var(--ink) 100%);clip-path:circle(0% at var(--ix,50%) var(--iy,50%));opacity:0}
 #ink.go{opacity:1;transition:clip-path .7s var(--ease);clip-path:circle(150% at var(--ix,50%) var(--iy,50%))}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(18px,4vw,54px);transition:background-color .4s,box-shadow .4s}
@@ -159,7 +153,6 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
-<div id="cursor" aria-hidden="true"><span id="cursorTxt">看</span></div>
 <div id="ink" aria-hidden="true"></div>
 
 <header class="nav" id="topnav">
@@ -168,9 +161,9 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <span><span class="brand-name">风物志</span><br><span class="brand-en">Fengwuzhi</span></span>
   </a>
   <nav class="nav-links" aria-label="主导航">
-    <button type="button" id="menuOpen" data-cursor="进">栏目</button>
-    <a href="/posts/" class="hide-m" data-cursor="进">全部文章</a>
-    <a href="/about/" data-cursor="进">关于</a>
+    <button type="button" id="menuOpen">栏目</button>
+    <a href="/posts/" class="hide-m">全部文章</a>
+    <a href="/about/">关于</a>
     <a href="/en/about/">EN</a>
   </nav>
 </header>
@@ -181,10 +174,10 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <button type="button" class="menu-close" id="menuClose">关闭 ✕</button>
   </div>
   <nav class="menu-list" aria-label="栏目列表">
-    <a href="/food/" data-cursor="进"><span class="no">01</span><span class="ml-name" style="color:var(--clay)">治愈美食</span><span class="ml-line">慢火细炖，把日子熬出香气</span></a>
-    <a href="/home/" data-cursor="进"><span class="no">02</span><span class="ml-name" style="color:var(--wood)">居家质感</span><span class="ml-line">原木与亚麻之间，安放日常</span></a>
-    <a href="/journey/" data-cursor="进"><span class="no">03</span><span class="ml-name" style="color:var(--moss)">远方风光</span><span class="ml-line">山路慢慢走，风景慢慢看</span></a>
-    <a href="/posts/" data-cursor="进"><span class="no">04</span><span class="ml-name">全部文章</span><span class="ml-line">本站所有文章</span></a>
+    <a href="/food/"><span class="no">01</span><span class="ml-name" style="color:var(--clay)">治愈美食</span><span class="ml-line">慢火细炖，把日子熬出香气</span></a>
+    <a href="/home/"><span class="no">02</span><span class="ml-name" style="color:var(--wood)">居家质感</span><span class="ml-line">原木与亚麻之间，安放日常</span></a>
+    <a href="/journey/"><span class="no">03</span><span class="ml-name" style="color:var(--moss)">远方风光</span><span class="ml-line">山路慢慢走，风景慢慢看</span></a>
+    <a href="/posts/"><span class="no">04</span><span class="ml-name">全部文章</span><span class="ml-line">本站所有文章</span></a>
   </nav>
   <p class="menu-foot">风物志 FENGWUZHI · 记录美好事物</p>
 </div>
@@ -228,18 +221,18 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div>
       <h4>栏目</h4>
       <nav class="foot-links" aria-label="页脚栏目">
-        <a href="/food/" data-cursor="进">治愈美食</a>
-        <a href="/home/" data-cursor="进">居家质感</a>
-        <a href="/journey/" data-cursor="进">远方风光</a>
-        <a href="/posts/" data-cursor="进">全部文章</a>
+        <a href="/food/">治愈美食</a>
+        <a href="/home/">居家质感</a>
+        <a href="/journey/">远方风光</a>
+        <a href="/posts/">全部文章</a>
       </nav>
     </div>
     <div>
       <h4>关注我们</h4>
       <div class="socials">
-        <a href="https://x.com/cnre" target="_blank" rel="noopener" aria-label="风物志的 X（原推特）" data-cursor="进"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.9H5.8L17.8 20z"/></svg><span class="visually-hidden">X</span></a>
-        <a href="https://www.instagram.com/waldenzh" target="_blank" rel="noopener" aria-label="风物志的 Instagram" data-cursor="进"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10.1A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.8a1.4 1.4 0 1 1-1.4 1.4 1.4 1.4 0 0 1 1.4-1.4z"/></svg><span class="visually-hidden">Instagram</span></a>
-        <a href="https://www.youtube.com/@fengwuzhi" target="_blank" rel="noopener" aria-label="风物志的 YouTube 频道" data-cursor="进"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg><span class="visually-hidden">YouTube</span></a><a href="https://www.xiaohongshu.com/user/profile/66c01e45000000001d020746" target="_blank" rel="me noopener" aria-label="风物志的小红书主页" data-cursor="进"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.2C10.2 4.7 8 4.2 5 4.2v13.6c3 0 5.2.5 7 2 1.8-1.5 4-2 7-2V4.2c-3 0-5.2.5-7 2z"/><path d="M12 6.2v13.6"/></svg><span class="visually-hidden">小红书</span></a>
+        <a href="https://x.com/cnre" target="_blank" rel="noopener" aria-label="风物志的 X（原推特）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.9H5.8L17.8 20z"/></svg><span class="visually-hidden">X</span></a>
+        <a href="https://www.instagram.com/waldenzh" target="_blank" rel="noopener" aria-label="风物志的 Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10.1A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.8a1.4 1.4 0 1 1-1.4 1.4 1.4 1.4 0 0 1 1.4-1.4z"/></svg><span class="visually-hidden">Instagram</span></a>
+        <a href="https://www.youtube.com/@fengwuzhi" target="_blank" rel="noopener" aria-label="风物志的 YouTube 频道"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg><span class="visually-hidden">YouTube</span></a><a href="https://www.xiaohongshu.com/user/profile/66c01e45000000001d020746" target="_blank" rel="me noopener" aria-label="风物志的小红书主页"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.2C10.2 4.7 8 4.2 5 4.2v13.6c3 0 5.2.5 7 2 1.8-1.5 4-2 7-2V4.2c-3 0-5.2.5-7 2z"/><path d="M12 6.2v13.6"/></svg><span class="visually-hidden">小红书</span></a>
       </div>
     </div>
   </div>
@@ -312,17 +305,6 @@ document.querySelectorAll('a[href^="/"]').forEach(function(a){
   });
 });
 window.addEventListener("pageshow",function(){ink.classList.remove("go");});
-/* 光标 */
-if(window.matchMedia("(pointer:fine)").matches && !reduced){
-  document.documentElement.classList.add("has-cursor");
-  var cur=document.getElementById("cursor"),curTxt=document.getElementById("cursorTxt"),cx=0,cy=0,tx=0,ty=0;
-  document.addEventListener("mousemove",function(e){tx=e.clientX;ty=e.clientY;});
-  (function loop(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.left=cx+"px";cur.style.top=cy+"px";requestAnimationFrame(loop);})();
-  document.querySelectorAll("[data-cursor]").forEach(function(el){
-    el.addEventListener("mouseenter",function(){curTxt.textContent=el.dataset.cursor;cur.classList.add("big");});
-    el.addEventListener("mouseleave",function(){cur.classList.remove("big");});
-  });
-}
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dd6babbbdf14475b8a5689d77e40e83f"}'></script>

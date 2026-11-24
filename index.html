@@ -48,13 +48,6 @@ button{font-family:inherit;background:none;border:none;color:inherit}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .en{font-family:var(--sans);text-transform:uppercase;letter-spacing:.32em;font-weight:500}
 .warm{filter:sepia(.14) saturate(.88) brightness(1.02) contrast(.98)}
-/* ---------- cursor ---------- */
-#cursor{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--ink);z-index:4000;pointer-events:none;display:none;align-items:center;justify-content:center;transform:translate(-50%,-50%);transition:width .3s,height .3s,background-color .3s,opacity .3s}
-#cursor span{font-family:var(--serif);font-size:15px;color:var(--paper);opacity:0;transition:opacity .2s}
-#cursor.big{width:72px;height:72px;background:var(--season-accent)}
-#cursor.big span{opacity:1}
-html.has-cursor,html.has-cursor a,html.has-cursor button{cursor:none}
-html.has-cursor #cursor{display:flex}
 /* ---------- ink transition ---------- */
 #ink{position:fixed;inset:0;z-index:3500;pointer-events:none;background:radial-gradient(circle at var(--ix,50%) var(--iy,50%),var(--ink) 0%,#3A372F 55%,var(--ink) 100%);clip-path:circle(0% at var(--ix,50%) var(--iy,50%));opacity:0}
 #ink.go{opacity:1;transition:clip-path .7s var(--ease);clip-path:circle(150% at var(--ix,50%) var(--iy,50%))}
@@ -241,7 +234,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   .foot-grid{grid-template-columns:1fr}
   .nav-links a.hide-m{display:none}
 }
-@media print{body::after{display:none}.nav,.hero-scroll,#cursor{display:none}}
+@media print{body::after{display:none}.nav,.hero-scroll{display:none}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .hero-img{animation:none}
@@ -289,7 +282,6 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
-<div id="cursor" aria-hidden="true"><span id="cursorTxt">看</span></div>
 <div id="ink" aria-hidden="true"></div>
 
 <header class="nav" id="topnav">
@@ -298,9 +290,9 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <span><span class="brand-name">风物志</span><br><span class="brand-en">Fengwuzhi</span></span>
   </a>
   <nav class="nav-links" aria-label="主导航">
-    <button type="button" id="menuOpen" data-cursor="进">栏目</button>
-    <a href="/posts/" class="hide-m" data-cursor="进">全部文章</a>
-    <a href="/about/" data-cursor="进">关于</a>
+    <button type="button" id="menuOpen">栏目</button>
+    <a href="/posts/" class="hide-m">全部文章</a>
+    <a href="/about/">关于</a>
     <a href="/en/">EN</a>
   </nav>
 </header>
@@ -311,10 +303,10 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <button type="button" class="menu-close" id="menuClose">关闭 ✕</button>
   </div>
   <nav class="menu-list" aria-label="栏目列表">
-    <a href="/food/" data-cursor="进"><span class="no">01</span><span class="ml-name" style="color:var(--clay)">治愈美食</span><span class="ml-line">慢火细炖，把日子熬出香气</span></a>
-    <a href="/home/" data-cursor="进"><span class="no">02</span><span class="ml-name" style="color:var(--wood)">居家质感</span><span class="ml-line">原木与亚麻之间，安放日常</span></a>
-    <a href="/journey/" data-cursor="进"><span class="no">03</span><span class="ml-name" style="color:var(--moss)">远方风光</span><span class="ml-line">山路慢慢走，风景慢慢看</span></a>
-    <a href="/posts/" data-cursor="进"><span class="no">04</span><span class="ml-name">全部文章</span><span class="ml-line">本站所有文章</span></a>
+    <a href="/food/"><span class="no">01</span><span class="ml-name" style="color:var(--clay)">治愈美食</span><span class="ml-line">慢火细炖，把日子熬出香气</span></a>
+    <a href="/home/"><span class="no">02</span><span class="ml-name" style="color:var(--wood)">居家质感</span><span class="ml-line">原木与亚麻之间，安放日常</span></a>
+    <a href="/journey/"><span class="no">03</span><span class="ml-name" style="color:var(--moss)">远方风光</span><span class="ml-line">山路慢慢走，风景慢慢看</span></a>
+    <a href="/posts/"><span class="no">04</span><span class="ml-name">全部文章</span><span class="ml-line">本站所有文章</span></a>
   </nav>
   <p class="menu-foot">风物志 FENGWUZHI · 记录美好事物</p>
 </div>
@@ -339,7 +331,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
       </div>
     </div>
     <div class="hero-term">
-      <button type="button" class="term-chip" id="termChip" data-cursor="进" aria-haspopup="dialog">
+      <button type="button" class="term-chip" id="termChip" aria-haspopup="dialog">
         <span class="t-name"><span id="termName">小雪</span></span><span class="t-fb" id="termFallback">示意图</span>
         <span class="t-hou">当前节气 · <span id="termHou">虹藏不见</span></span>
         <span class="t-hint">点击预览二十四节气</span>
@@ -365,21 +357,21 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     </div>
     <div class="hs-row" id="hsTrack">
       <article class="hs-card">
-        <a href="/food/" data-cursor="看" aria-label="治愈美食栏目">
+        <a href="/food/" aria-label="治愈美食栏目">
           <div class="hs-img"><img class="warm" src="/assets/img/food-07-1200.jpg" alt="深色原木桌上，白瓷金边的盖盅盛着一盅清汤" loading="lazy" width="1200" height="713"></div>
           <div class="wash" style="background:var(--clay)"></div>
           <div class="hs-meta"><div><span class="hs-no">01 / COLUMN</span><h3>治愈美食</h3><p>慢火细炖，把日子熬出香气。</p></div><span class="hs-dot" style="background:var(--clay)"></span></div>
         </a>
       </article>
       <article class="hs-card">
-        <a href="/home/" data-cursor="看" aria-label="居家质感栏目">
+        <a href="/home/" aria-label="居家质感栏目">
           <div class="hs-img"><img class="warm" src="/assets/img/home-07-1200.jpg" alt="大理石花器里插着干花，旁置一盏玻璃球灯与大理石台面" loading="lazy" width="1200" height="800"></div>
           <div class="wash" style="background:var(--wood)"></div>
           <div class="hs-meta"><div><span class="hs-no">02 / COLUMN</span><h3>居家质感</h3><p>原木与亚麻之间，安放日常。</p></div><span class="hs-dot" style="background:var(--wood)"></span></div>
         </a>
       </article>
       <article class="hs-card">
-        <a href="/journey/" data-cursor="看" aria-label="远方风光栏目">
+        <a href="/journey/" aria-label="远方风光栏目">
           <div class="hs-img"><img class="warm" src="/assets/img/journey-01-1200.webp" srcset="/assets/img/journey-01-480.webp 480w, /assets/img/journey-01-800.webp 800w, /assets/img/journey-01-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="雾中山村，屋舍隐在层叠山影里" loading="lazy" width="1200" height="800"></div>
           <div class="wash" style="background:var(--moss)"></div>
           <div class="hs-meta"><div><span class="hs-no">03 / COLUMN</span><h3>远方风光</h3><p>山路慢慢走，风景慢慢看。</p></div><span class="hs-dot" style="background:var(--moss)"></span></div>
@@ -393,7 +385,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div class="sec-head"><span class="sec-no">其一</span><h2>本季精选</h2><span class="sec-en">Featured</span></div>
     <div class="feat-grid feat-even">
       <article class="feat-card feat-big">
-        <a href="/posts/shenzhen-apec-trip.html" data-cursor="看">
+        <a href="/posts/shenzhen-apec-trip.html">
           <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-apec-1.jpg" alt="莲花山顶望福田中心区，市民中心与平安金融中心同框，前景是盛开的簕杜鹃" loading="lazy" width="1600" height="900"></div>
           <div class="fc-body">
             <div class="fc-tags"><span class="fc-tag" style="background:var(--moss)">远方风光</span><span class="fc-date">2026.11.24</span></div>
@@ -404,7 +396,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
       </article>
       <div class="feat-side">
         <article class="feat-card">
-          <a href="/posts/shenzhen-civic-night.html" data-cursor="看">
+          <a href="/posts/shenzhen-civic-night.html">
             <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-civic-night-1.jpg" alt="夜幕下的深圳市民中心，弧形屋顶覆着暖金色的光，左侧楼体打着紫粉色光影" loading="lazy" width="1600" height="900"></div>
             <div class="fc-body">
               <div class="fc-tags"><span class="fc-tag" style="background:var(--moss)">远方风光</span><span class="fc-date">2026.11.23</span></div>
@@ -414,7 +406,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
           </a>
         </article>
         <article class="feat-card">
-          <a href="/posts/xiaoxue-warmth.html" data-cursor="看">
+          <a href="/posts/xiaoxue-warmth.html">
             <div class="fc-img"><img class="warm" src="/assets/img/food-08-1200.webp" srcset="/assets/img/food-08-480.webp 480w, /assets/img/food-08-800.webp 800w, /assets/img/food-08-1200.webp 1200w" sizes="(max-width:860px) 100vw, 40vw" alt="白瓷碗里盛着肉末土豆炖菜，撒着青豆与葱花" loading="lazy" width="1200" height="800"></div>
             <div class="fc-body">
               <div class="fc-tags"><span class="fc-tag" style="background:var(--clay)">治愈美食</span><span class="fc-date">2026.11.22</span></div>
@@ -431,18 +423,18 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div class="sec-head"><span class="sec-no">其二</span><h2>档案馆</h2><span class="sec-en">Archive</span></div>
     <div class="archive-wrap">
       <div class="archive-track" id="archiveTrack">
-        <article class="arc-card"><a href="/posts/beanie-warmth.html" data-cursor="看"><img class="warm" src="/assets/img/legacy/index-5.jpg" alt="米白色粗针织毛线帽" loading="lazy" width="560" height="747"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>把温度戴在头上：属于秋冬的轻软温感</h3><p class="a-mark">档案馆 · No.01</p></a></article>
+        <article class="arc-card"><a href="/posts/beanie-warmth.html"><img class="warm" src="/assets/img/legacy/index-5.jpg" alt="米白色粗针织毛线帽" loading="lazy" width="560" height="747"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>把温度戴在头上：属于秋冬的轻软温感</h3><p class="a-mark">档案馆 · No.01</p></a></article>
         
-        <article class="arc-card"><a href="/posts/wooden-bedroom.html" data-cursor="看"><img class="warm" src="/assets/img/legacy/index-6.jpg" alt="原木卧室，柔光洒在床品上" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>温润木语：在一室柔光中枕着好梦入眠</h3><p class="a-mark">档案馆 · No.02</p></a></article>
+        <article class="arc-card"><a href="/posts/wooden-bedroom.html"><img class="warm" src="/assets/img/legacy/index-6.jpg" alt="原木卧室，柔光洒在床品上" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>温润木语：在一室柔光中枕着好梦入眠</h3><p class="a-mark">档案馆 · No.02</p></a></article>
         
-        <article class="arc-card"><a href="/posts/mountain-house.html" data-cursor="看"><img class="warm" src="/assets/img/legacy/index-7.jpg" alt="远山草甸上的白色屋舍" loading="lazy" width="560" height="373"><p class="a-tag" style="color:var(--moss)">远方风光</p><h3>远山清风：在旷野里寻一处安宁的居所</h3><p class="a-mark">档案馆 · No.02</p></a></article>
+        <article class="arc-card"><a href="/posts/mountain-house.html"><img class="warm" src="/assets/img/legacy/index-7.jpg" alt="远山草甸上的白色屋舍" loading="lazy" width="560" height="373"><p class="a-tag" style="color:var(--moss)">远方风光</p><h3>远山清风：在旷野里寻一处安宁的居所</h3><p class="a-mark">档案馆 · No.02</p></a></article>
         
-        <article class="arc-card"><a href="/posts/quiet-room.html" data-cursor="看"><img class="warm" src="/assets/img/legacy/index-8.jpg" alt="白纱窗帘与暖光的安静居室一角" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>一室微光：在方寸天地里安放松弛</h3><p class="a-mark">档案馆 · No.04</p></a></article>
+        <article class="arc-card"><a href="/posts/quiet-room.html"><img class="warm" src="/assets/img/legacy/index-8.jpg" alt="白纱窗帘与暖光的安静居室一角" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>一室微光：在方寸天地里安放松弛</h3><p class="a-mark">档案馆 · No.04</p></a></article>
         
-        <article class="arc-card"><a href="/posts/meditation-sculpture.html" data-cursor="看"><img class="warm" src="/assets/img/legacy/index-9.jpg" alt="盘坐冥想的雕塑，光影柔和" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>静观内省：在一呼一吸间找回内在的松弛</h3><p class="a-mark">档案馆 · No.05</p></a></article>
+        <article class="arc-card"><a href="/posts/meditation-sculpture.html"><img class="warm" src="/assets/img/legacy/index-9.jpg" alt="盘坐冥想的雕塑，光影柔和" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>静观内省：在一呼一吸间找回内在的松弛</h3><p class="a-mark">档案馆 · No.05</p></a></article>
         
         
-        <article class="arc-card"><a href="/posts/stone-path-courtyard.html" data-cursor="看"><img class="warm" src="/assets/img/legacy/index-10.jpg" alt="青瓦松影下的石板小径与院落" loading="lazy" width="560" height="746"><p class="a-tag" style="color:var(--moss)">远方风光</p><h3>庭院深深：在青瓦松影里寻一缕岁月安然</h3><p class="a-mark">档案馆 · No.03</p></a></article>
+        <article class="arc-card"><a href="/posts/stone-path-courtyard.html"><img class="warm" src="/assets/img/legacy/index-10.jpg" alt="青瓦松影下的石板小径与院落" loading="lazy" width="560" height="746"><p class="a-tag" style="color:var(--moss)">远方风光</p><h3>庭院深深：在青瓦松影里寻一缕岁月安然</h3><p class="a-mark">档案馆 · No.03</p></a></article>
       </div>
     </div>
   </section>
@@ -461,20 +453,20 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div>
       <h4>栏目</h4>
       <nav class="foot-links" aria-label="页脚栏目">
-        <a href="/food/" data-cursor="进">治愈美食</a>
-        <a href="/home/" data-cursor="进">居家质感</a>
-        <a href="/journey/" data-cursor="进">远方风光</a>
-        <a href="/posts/" data-cursor="进">全部文章</a>
+        <a href="/food/">治愈美食</a>
+        <a href="/home/">居家质感</a>
+        <a href="/journey/">远方风光</a>
+        <a href="/posts/">全部文章</a>
       </nav>
     </div>
     <div>
       <h4>关注我们</h4>
       <div class="socials">
-        <a href="https://x.com/cnre" target="_blank" rel="me noopener" aria-label="风物志的 X（原推特）" data-cursor="进"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.9H5.8L17.8 20z"/></svg><span class="visually-hidden">X</span></a>
-        <a href="https://www.instagram.com/waldenzh" target="_blank" rel="me noopener" aria-label="风物志的 Instagram" data-cursor="进"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10.1A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.8a1.4 1.4 0 1 1-1.4 1.4 1.4 1.4 0 0 1 1.4-1.4z"/></svg><span class="visually-hidden">Instagram</span></a>
-        <a href="https://www.youtube.com/@fengwuzhi" target="_blank" rel="me noopener" aria-label="风物志的 YouTube 频道" data-cursor="进"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg><span class="visually-hidden">YouTube</span></a><a href="https://www.xiaohongshu.com/user/profile/66c01e45000000001d020746" target="_blank" rel="me noopener" aria-label="风物志的小红书主页" data-cursor="进"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.2C10.2 4.7 8 4.2 5 4.2v13.6c3 0 5.2.5 7 2 1.8-1.5 4-2 7-2V4.2c-3 0-5.2.5-7 2z"/><path d="M12 6.2v13.6"/></svg><span class="visually-hidden">小红书</span></a>
+        <a href="https://x.com/cnre" target="_blank" rel="me noopener" aria-label="风物志的 X（原推特）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.6 3.9H5.8L17.8 20z"/></svg><span class="visually-hidden">X</span></a>
+        <a href="https://www.instagram.com/waldenzh" target="_blank" rel="me noopener" aria-label="风物志的 Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.9A6.1 6.1 0 1 0 18.1 12 6.1 6.1 0 0 0 12 5.9zm0 10.1A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.8a1.4 1.4 0 1 1-1.4 1.4 1.4 1.4 0 0 1 1.4-1.4z"/></svg><span class="visually-hidden">Instagram</span></a>
+        <a href="https://www.youtube.com/@fengwuzhi" target="_blank" rel="me noopener" aria-label="风物志的 YouTube 频道"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12z"/></svg><span class="visually-hidden">YouTube</span></a><a href="https://www.xiaohongshu.com/user/profile/66c01e45000000001d020746" target="_blank" rel="me noopener" aria-label="风物志的小红书主页"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.2C10.2 4.7 8 4.2 5 4.2v13.6c3 0 5.2.5 7 2 1.8-1.5 4-2 7-2V4.2c-3 0-5.2.5-7 2z"/><path d="M12 6.2v13.6"/></svg><span class="visually-hidden">小红书</span></a>
       </div>
-      <a class="yt-card" href="https://www.youtube.com/watch?v=trS5Oy3kZjs" target="_blank" rel="noopener" data-cursor="进" aria-label="观看风物志最新视频：350 个大气压、能在火星造燃料：猛禽的账算给你看（下）">
+      <a class="yt-card" href="https://www.youtube.com/watch?v=trS5Oy3kZjs" target="_blank" rel="noopener" aria-label="观看风物志最新视频：350 个大气压、能在火星造燃料：猛禽的账算给你看（下）">
         <img src="https://i.ytimg.com/vi/trS5Oy3kZjs/hqdefault.jpg" alt="风物志最新视频封面" loading="lazy" width="480" height="360">
         <span class="yt-txt"><b>最新一集 · 猛禽的账（下）</b><span>YouTube · 2026.11.21 发布，点击观看</span></span>
       </a>
@@ -484,7 +476,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
       <form class="sub-form" id="subForm" action="#" method="post">
         <label class="visually-hidden" for="subEmail">邮箱地址</label>
         <input type="email" id="subEmail" name="email" placeholder="你的邮箱" required autocomplete="email">
-        <button type="submit" id="subBtn" data-cursor="进">订阅</button>
+        <button type="submit" id="subBtn">订阅</button>
       </form>
       <p class="sub-note">每个节气一封信，只报新文章。仅用于发送节气信，可随时退订。</p>
       <p class="sub-status" id="subStatus" role="status"></p>
@@ -666,7 +658,7 @@ applyTerm(today.idx,today.hou);
 var drawer=document.getElementById("termDrawer"), scrim=document.getElementById("scrim"), list=document.getElementById("drawerList");
 TERMS.forEach(function(t,i){
   var b=document.createElement("button");
-  b.type="button"; b.dataset.cursor="进";
+  b.type="button";
   var fbTag=(TERM_HERO[t.n]&&TERM_HERO[t.n].fallback)?'<span class="dl-fb">示意图</span>':"";
   b.innerHTML='<span class="dl-name">'+t.n+fbTag+'</span><span class="dl-date">'+t.m+'月'+t.d+'日 · '+SEASONS[t.s].label+'</span>';
   b.addEventListener("click",function(){applyTerm(i,0);});
@@ -737,17 +729,6 @@ document.querySelectorAll('a[href^="/"]').forEach(function(a){
 });
 window.addEventListener("pageshow",function(){ink.classList.remove("go");});
 
-/* ============ 自定义光标 ============ */
-if(window.matchMedia("(pointer:fine)").matches && !reduced){
-  root.classList.add("has-cursor");
-  var cur=document.getElementById("cursor"), curTxt=document.getElementById("cursorTxt"), cx=0,cy=0,tx=0,ty=0;
-  document.addEventListener("mousemove",function(e){tx=e.clientX;ty=e.clientY;});
-  (function loop(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.left=cx+"px";cur.style.top=cy+"px";requestAnimationFrame(loop);})();
-  document.querySelectorAll("[data-cursor]").forEach(function(el){
-    el.addEventListener("mouseenter",function(){curTxt.textContent=el.dataset.cursor;cur.classList.add("big");});
-    el.addEventListener("mouseleave",function(){cur.classList.remove("big");});
-  });
-}
 
 /* ============ 热气 / 光斑粒子 ============ */
 var canvas=document.getElementById("motes");
