@@ -76,20 +76,17 @@ html.has-cursor #cursor{display:flex}
 .menu-list .ml-line{font-size:14px;opacity:.6}
 .menu-foot{font-size:12.5px;opacity:.55;letter-spacing:.18em}
 /* article */
-.art-hero{padding-top:76px}
-.art-hero img{width:100%;height:min(74vh,640px);object-fit:cover}
-.art-head{max-width:760px;margin:0 auto;padding:clamp(36px,6vh,60px) 22px 0;text-align:left}
-.art-tags{display:flex;gap:10px;align-items:center;font-size:12.5px;letter-spacing:.16em;margin-bottom:18px;flex-wrap:wrap}
-.art-tag{padding:3px 12px;border-radius:2px;color:#fff;font-size:12px;letter-spacing:.18em;background:var(--clay)}
-.art-meta{opacity:.6;font-size:13.5px;letter-spacing:.1em}
-.art-head h1{font-family:var(--serif);font-size:clamp(30px,4.6vw,52px);font-weight:700;line-height:1.45;letter-spacing:.03em}
-.art-meta-line{margin-top:18px;padding-top:16px;border-top:1px solid rgba(43,42,40,.14);font-size:13.5px;opacity:.62;letter-spacing:.12em;display:flex;gap:22px;flex-wrap:wrap}
+.article-wrap{max-width:760px;margin:0 auto;padding:120px 26px 0}
+.article-wrap .chip{display:inline-block;font-size:12.5px;letter-spacing:.24em;color:var(--clay);border:1px solid var(--clay);border-radius:999px;padding:1px 12px}
+.article-wrap h1{font-size:28px;line-height:1.55;font-weight:600;margin:16px 0 10px}
+.article-wrap .meta{color:#a89f93;font-size:13.5px;letter-spacing:.18em;padding-bottom:24px;border-bottom:1px solid rgba(38,35,32,.1)}
 .art-body{max-width:660px;margin:0 auto;padding:clamp(30px,5vh,50px) 22px 10px;font-size:18px;line-height:1.95}
 .art-body p{margin-bottom:1.7em;letter-spacing:.02em}
 .art-body p.dropcap::first-letter{font-family:var(--serif);font-weight:700;font-size:3.1em;float:left;line-height:1.05;padding:6px 12px 0 0;color:var(--clay)}
 .art-body blockquote{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);font-weight:600;line-height:1.8;letter-spacing:.05em;margin:2.2em 0;padding:6px 0 6px 26px;border-left:2px solid var(--clay)}
-.art-body figure{margin:2.4em 0}
-.art-body figure img{width:100%;border-radius:2px;box-shadow:var(--shadow)}
+.art-body .post-img,.art-body>img,.art-body p img{width:100%;border-radius:8px;border:1px solid rgba(38,35,32,.1);margin-bottom:28px;display:block}
+.art-body figure{margin:0 0 28px}
+.art-body figure img{width:100%;border-radius:8px;border:1px solid rgba(38,35,32,.1);display:block}
 .art-body figcaption{font-size:13px;opacity:.55;letter-spacing:.1em;margin-top:10px;text-align:center}
 .reveal-img{clip-path:inset(0 0 0 0)}
 .art-end{max-width:660px;margin:0 auto;padding:14px 22px 0;text-align:center;font-family:var(--serif);letter-spacing:.5em;opacity:.4}
@@ -190,21 +187,14 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 
 <main id="main">
   <article>
-    {% if page.cover %}<div class="art-hero">
-      <img class="warm" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}" fetchpriority="high">
-    </div>{% endif %}
-    <header class="art-head">
-      <div class="art-tags">
-        {% if page.is_index %}<a class="art-tag" href="/notes/" data-cursor="进">站长手记</a>{% else %}<a class="art-tag" href="{{ col_url }}" data-cursor="进">{{ col_name }}</a>{% endif %}
-        <span class="art-meta">站长手记 · Notes</span>
-      </div>
+    <div class="article-wrap">
+      {% if page.is_index %}<span class="chip">站长手记</span>{% else %}<span class="chip">{{ col_name }}</span>{% endif %}
       <h1>{{ page.title }}</h1>
-      <div class="art-meta-line">
-        <span>栏目 · {{ col_name }}</span>{% unless page.is_index %}<span>日期 · {{ page.date | date: "%Y.%m.%d" }}</span><span>阅读 · 约 {{ content | strip_html | size | divided_by: 400 | plus: 1 }} 分钟</span>{% endunless %}<span>当前节气 · <span id="headTerm">小雪</span></span>
-      </div>
-    </header>
+      <div class="meta">{% if page.is_index %}站长手记 · 风物志{% else %}{{ page.date | date: "%Y.%m.%d" }} · 风物志{% endif %} · 当前节气 <span id="headTerm">小雪</span></div>
+    </div>
 
     <div class="art-body">
+      {% if page.cover %}<img class="post-img" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}" loading="lazy">{% endif %}
       {{ content }}
     </div>
     <p class="art-end" aria-hidden="true">· 完 ·</p>
