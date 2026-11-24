@@ -11,3 +11,7 @@ defaults:
       type: notes
     values:
       layout: note
+
+# 站长按北京时间发文，仓库构建在 UTC：对齐时区并允许当天日期立即成页（2026-11-25 修 /notes/ 当日文 404）
+timezone: Asia/Shanghai
+future: true
