@@ -1,3 +1,5 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://cnre.ccwu.cc/</loc><lastmod>2026-11-23</lastmod></url>
@@ -39,4 +41,5 @@
   <url><loc>https://cnre.ccwu.cc/solar-terms/xiaohan/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://cnre.ccwu.cc/solar-terms/dahan/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://cnre.ccwu.cc/solar-terms/lichun/</loc><lastmod>2026-11-23</lastmod></url>
-</urlset>
+{% for n in site.notes %}{% if n.test != true %}  <url><loc>https://cnre.ccwu.cc{{ n.url }}</loc><lastmod>{{ n.date | date: "%Y-%m-%d" }}</lastmod></url>
+{% endif %}{% endfor %}</urlset>

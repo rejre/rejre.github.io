@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en" data-solar-term="Minor Snow">
 <head>
@@ -180,37 +182,37 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   </div>
 
   <section class="masonry" id="masonry" aria-label="Article list">
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/mountain-house.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/en-journey-1.jpg" alt="A white house on a distant meadow" loading="lazy"></div>
+{% assign cnotes = site.notes | where_exp: "n", "n.test != true" | where: "column", "journey" %}
+{% assign cpool = cnotes | concat: site.data.posts %}
+{% assign cgroups = cpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% for g in cgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}{% if i.column == "journey" %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}{% if isnote or i.en %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title_en %}{% assign ee = i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}{% endif %}
+    <article class="m-card" data-kind="season">
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Distant Views</span><span class="mc-kind">From the archive</span></div>
-          <h2>Distant Hills, Clear Wind: A Quiet Dwelling in Open Country</h2>
-          <p>At the meadow's end stands a white house. The wind rolls over the grass all the way to the door; open it, and the sound of the mountains enters first.</p>
+          <div class="mc-tags"><span class="mc-tag">Distant Views</span><span class="mc-kind">This season</span></div>
+          <h2>{{ tt }}</h2>
+          <p>{{ ee }}</p>
         </div>
       <p class="lang-note">In Chinese</p></a>
     </article>
+{% endif %}
+{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% for i in site.data.posts %}{% if i.column == "journey" and i.archive and i.en %}
+{% assign tt = i.title_en %}{% assign ee = i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}
     <article class="m-card" data-kind="archive">
-      <a href="/posts/mountain-courtyard.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/legacy/en-journey-2.jpg" alt="A white-walled courtyard at the foot of green hills, warm light in the windows, stone paving at the door" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
+          <div class="mc-tags"><span class="mc-tag">Distant Views</span><span class="mc-kind">This season</span></div>
           <div class="mc-tags"><span class="mc-tag">Distant Views</span><span class="mc-kind">From the archive</span></div>
-          <h2>White Walls Against Green Hills: A Quiet Place for the Heart</h2>
-          <p>White walls at the foot of green hills; tree shadows climb the plaster. In the afternoon you hear only the wind moving through leaves.</p>
+          <p>{{ ee }}</p>
         </div>
       <p class="lang-note">In Chinese</p></a>
     </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/stone-path-courtyard.html">
-        <div class="mc-img short"><img class="warm" src="/assets/img/legacy/en-journey-3.jpg" alt="A stone path and courtyard under grey tiles and pine shade" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Distant Views</span><span class="mc-kind">From the archive</span></div>
-          <h2>A Deep Courtyard: Quiet Years Under Tiled Roofs and Pine Shade</h2>
-          <p>The stone path is polished by footsteps; pine shadows lean in from both sides. Each step lands with a soft tap.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
-    
+{% endif %}{% endfor %}
     <p class="m-empty" id="mEmpty">Nothing here yet.</p>
   </section>
 </main>

@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en" data-solar-term="Minor Snow">
 <head>
@@ -178,46 +180,37 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   </div>
 
   <section class="masonry" id="masonry" aria-label="Article list">
+{% assign cnotes = site.notes | where_exp: "n", "n.test != true" | where: "column", "food" %}
+{% assign cpool = cnotes | concat: site.data.posts %}
+{% assign cgroups = cpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% for g in cgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}{% if i.column == "food" %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}{% if isnote or i.en %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title_en %}{% assign ee = i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}{% endif %}
     <article class="m-card" data-kind="season">
-      <a href="/posts/autumn-soups.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/en-food-1.jpg" alt="A bowl of clear soup on linen, steam rising" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Healing Food</span><span class="mc-kind">This season · Nov 14, 2026</span></div>
-          <h2>Five Bowls of Soup for Cold Days: An Early-Autumn Warming List</h2>
-          <p>Cold days call for soup first. Five seasonal bowls, from light and clear to deep and rich.</p>
+          <div class="mc-tags"><span class="mc-tag">Healing Food</span><span class="mc-kind">This season</span></div>
+          <h2>{{ tt }}</h2>
+          <p>{{ ee }}</p>
         </div>
       <p class="lang-note">In Chinese</p></a>
     </article>
+{% endif %}
+{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% for i in site.data.posts %}{% if i.column == "food" and i.archive and i.en %}
+{% assign tt = i.title_en %}{% assign ee = i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}
     <article class="m-card" data-kind="archive">
-      <a href="/posts/midnight-soup.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/legacy/en-food-2.jpg" alt="A hot soup topped with thick slices of meat and scallions" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
+          <div class="mc-tags"><span class="mc-tag">Healing Food</span><span class="mc-kind">This season</span></div>
           <div class="mc-tags"><span class="mc-tag">Healing Food</span><span class="mc-kind">From the archive</span></div>
-          <h2>The Broth Completes the Dish: A Steaming Bowl for Late Nights</h2>
-          <p>A rich, savoury broth topped with thick slices of meat and crisp scallions.</p>
+          <p>{{ ee }}</p>
         </div>
       <p class="lang-note">In Chinese</p></a>
     </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/fish-bento.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/en-food-3.jpg" alt="A simple bento: white rice, fish and seasonal vegetables" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Healing Food</span><span class="mc-kind">From the archive</span></div>
-          <h2>Hearth & Home: Everyday Warmth in One Soup, One Dish</h2>
-          <p>One soup, one dish — the warmth of ordinary days.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
-    <article class="m-card" data-kind="season">
-      <a href="/posts/xiaoxue-warmth.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/food-02-1200.webp" srcset="/assets/img/food-02-480.webp 480w, /assets/img/food-02-800.webp 800w, /assets/img/food-02-1200.webp 1200w" sizes="(max-width:860px) 100vw, 46vw" alt="Root vegetables stewed deep in flavour, in a rustic clay bowl with a glossy broth" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Healing Food</span><span class="mc-kind">This season · Minor Snow</span></div>
-          <h2>Minor Snow: A Pot of Stew on the Table, and Winter Has Arrived</h2>
-          <p>A seasonal stew recipe and ways to keep the home warm — a solar-term special.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
+{% endif %}{% endfor %}
     <p class="m-empty" id="mEmpty">Nothing here yet.</p>
   </section>
 </main>

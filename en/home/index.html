@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en" data-solar-term="Minor Snow">
 <head>
@@ -178,76 +180,37 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   </div>
 
   <section class="masonry" id="masonry" aria-label="Article list">
+{% assign cnotes = site.notes | where_exp: "n", "n.test != true" | where: "column", "home" %}
+{% assign cpool = cnotes | concat: site.data.posts %}
+{% assign cgroups = cpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% for g in cgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}{% if i.column == "home" %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}{% if isnote or i.en %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title_en %}{% assign ee = i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}{% endif %}
     <article class="m-card" data-kind="season">
-      <a href="/posts/autumn-home.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/home-04-1200.webp" srcset="/assets/img/home-04-480.webp 480w, /assets/img/home-04-800.webp 800w, /assets/img/home-04-1200.webp 1200w" sizes="(max-width:860px) 100vw, 46vw" alt="Terracotta jars by a niched wall in soft light" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
           <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">This season</span></div>
-          <h2>Autumn: Making Home Warm — Oak, Terracotta and a Soft Lamp</h2>
-          <p>When the air turns cold, the home changes with it: the warmth of wood, the roughness of terracotta, the softness of cloth, and a lamp that doesn't glare.</p>
+          <h2>{{ tt }}</h2>
+          <p>{{ ee }}</p>
         </div>
       <p class="lang-note">In Chinese</p></a>
     </article>
+{% endif %}
+{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% for i in site.data.posts %}{% if i.column == "home" and i.archive and i.en %}
+{% assign tt = i.title_en %}{% assign ee = i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}
     <article class="m-card" data-kind="archive">
-      <a href="/posts/wooden-bedroom.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/en-home-1.jpg" alt="Oak bedding with a blue-grey runner, warm lamps glowing on both sides" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
+          <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">This season</span></div>
           <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">From the archive</span></div>
-          <h2>The Language of Warm Wood: Sleeping Well in a Soft-Lit Room</h2>
-          <p>The bedside lamp spreads its light over the quilt's edge; the grain of the wood slowly emerges in the warmth. Wake in the night, and the room is warm first.</p>
+          <p>{{ ee }}</p>
         </div>
       <p class="lang-note">In Chinese</p></a>
     </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/casper-wave.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/home-01-1200.webp" alt="A close-up of rumpled linen bedding, softly textured" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">From the archive</span></div>
-          <h2>Precise Support: Letting the Body Fully Let Go</h2>
-          <p>The mattress surface follows the curve of shoulders and back, as if hands were holding the spine; turning over, you hear only the soft friction of fabric.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/quiet-room.html">
-        <div class="mc-img short"><img class="warm" src="/assets/img/legacy/en-home-2.jpg" alt="A quiet corner with sheer curtains and warm light" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">From the archive</span></div>
-          <h2>A Room of Soft Light: Unwinding in a Small Space</h2>
-          <p>The sheer curtain sieves the afternoon light fine, letting it fall on the headboard and floor — so quiet you can hear the curtain lift in the breeze.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/casper-nova.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/home-05-1200.webp" alt="A brown knit throw over a sofa, a mug beside it" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">From the archive</span></div>
-          <h2>Wrapped in Cloud: Sleeping into a Light, Soft Night</h2>
-          <p>The moment you lie down, the body sinks into softness; the bedding settles with a faint sound, the lamp goes off, and only the breathing deepens.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/meditation-sculpture.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/legacy/en-home-3.jpg" alt="A seated meditation figure in soft light and shadow" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">From the archive</span></div>
-          <h2>Sitting in Stillness: Finding Ease, Breath by Breath</h2>
-          <p>The seated figure rests where light meets shadow, eyes closed, breathing slow — even passers-by soften their steps.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/braun-air.html">
-        <div class="mc-img short"><img class="warm" src="/assets/img/home-06-1200.webp" alt="A lace curtain's hem resting on the carpet, morning light coming through" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">Home & Texture</span><span class="mc-kind">From the archive</span></div>
-          <h2>Pure Breath: Natural Air in a Small Room</h2>
-          <p>The air from the vent carries a slight coolness, stirring the corner of a page; the room's smells slowly fade until only cleanness remains.</p>
-        </div>
-      <p class="lang-note">In Chinese</p></a>
-    </article>
+{% endif %}{% endfor %}
     <p class="m-empty" id="mEmpty">Nothing here yet.</p>
   </section>
 </main>

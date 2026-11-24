@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="zh-CN" data-solar-term="小雪">
 <head>
@@ -384,37 +386,33 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   <section class="section" aria-label="本季精选">
     <div class="sec-head"><span class="sec-no">其一</span><h2>本季精选</h2><span class="sec-en">Featured</span></div>
     <div class="feat-grid feat-even">
-      <article class="feat-card feat-big">
-        <a href="/posts/shenzhen-apec-trip.html">
-          <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-apec-1.jpg" alt="莲花山顶望福田中心区，市民中心与平安金融中心同框，前景是盛开的簕杜鹃" loading="lazy" width="1600" height="900"></div>
-          <div class="fc-body">
-            <div class="fc-tags"><span class="fc-tag" style="background:var(--moss)">远方风光</span><span class="fc-date">2026.11.24</span></div>
-            <h3>深圳 APEC 会议后旅行</h3>
-            <p>APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。</p>
-          </div>
-        </a>
-      </article>
-      <div class="feat-side">
-        <article class="feat-card">
-          <a href="/posts/shenzhen-civic-night.html">
-            <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-civic-night-1.jpg" alt="夜幕下的深圳市民中心，弧形屋顶覆着暖金色的光，左侧楼体打着紫粉色光影" loading="lazy" width="1600" height="900"></div>
+{% assign fnotes = site.notes | where_exp: "n", "n.test != true" %}
+{% assign fpool = fnotes | concat: site.data.posts %}
+{% assign fgroups = fpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% assign shown = 0 %}
+{% for g in fgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}
+{% if isnote or i.featured %}{% if shown < 3 %}
+{% case i.column %}
+{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}
+{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}
+{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}
+{% endcase %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title %}{% assign ee = i.excerpt_feat | default: i.excerpt_col %}{% assign aa = i.cover_alt %}{% endif %}
+{% if shown == 0 %}<article class="feat-card feat-big">{% elsif shown == 1 %}<div class="feat-side">
+        <article class="feat-card">{% else %}<article class="feat-card">{% endif %}
+          <a href="{{ i.url }}">
+            <div class="fc-img"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"{% if i.cover_w %} width="{{ i.cover_w }}" height="{{ i.cover_h }}"{% endif %}></div>
             <div class="fc-body">
-              <div class="fc-tags"><span class="fc-tag" style="background:var(--moss)">远方风光</span><span class="fc-date">2026.11.23</span></div>
-              <h3>深圳 · 市民中心的夜</h3>
-              <p>小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。</p>
+              <div class="fc-tags"><span class="fc-tag" style="background:var(--{{ ccol }})">{{ clab }}</span><span class="fc-date">{{ i.date | date: "%Y.%m.%d" }}</span></div>
+              <h3>{{ tt }}</h3>
+              {% if ee %}<p>{{ ee }}</p>{% endif %}
             </div>
           </a>
-        </article>
-        <article class="feat-card">
-          <a href="/posts/xiaoxue-warmth.html">
-            <div class="fc-img"><img class="warm" src="/assets/img/food-08-1200.webp" srcset="/assets/img/food-08-480.webp 480w, /assets/img/food-08-800.webp 800w, /assets/img/food-08-1200.webp 1200w" sizes="(max-width:860px) 100vw, 40vw" alt="白瓷碗里盛着肉末土豆炖菜，撒着青豆与葱花" loading="lazy" width="1200" height="800"></div>
-            <div class="fc-body">
-              <div class="fc-tags"><span class="fc-tag" style="background:var(--clay)">治愈美食</span><span class="fc-date">2026.11.22</span></div>
-              <h3>小雪：一锅炖汤上桌，冬天就算来了</h3>
-            </div>
-          </a>
-        </article>
-      </div>
+        </article>{% if shown == 2 %}
+      </div>{% endif %}
+{% assign shown = shown | plus: 1 %}
+{% endif %}{% endif %}{% endfor %}{% endif %}{% endfor %}
     </div>
   </section>
 

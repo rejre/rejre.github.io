@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="zh-CN" data-solar-term="小雪">
 <head>
@@ -179,56 +181,36 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   </div>
 
   <section class="masonry" id="masonry" aria-label="美食文章列表">
+{% assign cnotes = site.notes | where_exp: "n", "n.test != true" | where: "column", "journey" %}
+{% assign cpool = cnotes | concat: site.data.posts %}
+{% assign cgroups = cpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% for g in cgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}{% if i.column == "journey" %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title %}{% assign ee = i.excerpt_col %}{% assign aa = i.cover_alt %}{% endif %}
     <article class="m-card" data-kind="season">
-      <a href="/posts/shenzhen-apec-trip.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/shenzhen-apec-1.jpg" alt="莲花山顶望福田中心区，市民中心与平安金融中心同框，前景簕杜鹃盛开" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">2026.11.24</span></div>
-          <h2>深圳 APEC 会议后旅行</h2>
-          <p>APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。</p>
+          <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">本季</span></div>
+          <h2>{{ tt }}</h2>
+          <p>{{ ee }}</p>
         </div>
       </a>
     </article>
-    <article class="m-card" data-kind="season">
-      <a href="/posts/shenzhen-civic-night.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/shenzhen-civic-night-1.jpg" alt="深圳市民中心夜景，弧形大屋顶覆着暖金色的光" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">2026.11.23</span></div>
-          <h2>深圳 · 市民中心的夜</h2>
-          <p>小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。</p>
-        </div>
-      </a>
-    </article>
+{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% for i in site.data.posts %}{% if i.column == "journey" and i.archive %}
+{% assign tt = i.title %}{% assign ee = i.excerpt_col %}{% assign aa = i.cover_alt %}
     <article class="m-card" data-kind="archive">
-      <a href="/posts/mountain-house.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/journey-1.jpg" alt="远山草甸上的白色屋舍" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
+          <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">本季</span></div>
           <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">旧站精选</span></div>
-          <h2>远山清风：在旷野里寻一处安宁的居所</h2>
-          <p>草甸尽头立着一间白屋，风把草尖吹得一路起伏，涌到门前，推开门，山的声音先进屋。</p>
+          <p>{{ ee }}</p>
         </div>
       </a>
     </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/mountain-courtyard.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/legacy/journey-2.jpg" alt="青山脚下的白墙小院，门窗透着暖光，门前是石板铺地" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">旧站精选</span></div>
-          <h2>青山白墙：在天地交融间安放心灵</h2>
-          <p>白墙立在青山脚下，院里的树影爬上墙面，午后只听得见风穿过叶子的沙沙声。</p>
-        </div>
-      </a>
-    </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/stone-path-courtyard.html">
-        <div class="mc-img short"><img class="warm" src="/assets/img/legacy/journey-3.jpg" alt="青瓦松影下的石板小径与院落" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">远方风光</span><span class="mc-kind">旧站精选</span></div>
-          <h2>庭院深深：在青瓦松影里寻一缕岁月安然</h2>
-          <p>石板路被脚步磨得发亮，两侧松影斜斜压下来，走一步，鞋底轻响一声。</p>
-        </div>
-      </a>
-    </article>
+{% endif %}{% endfor %}
     <p class="m-empty" id="mEmpty">这一类暂时还没有文章。</p>
   </section>
 </main>

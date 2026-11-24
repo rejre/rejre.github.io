@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en" data-solar-term="Minor Snow">
 <head>
@@ -385,37 +387,33 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   <section class="section" aria-label="This Season's Picks">
     <div class="sec-head"><span class="sec-no">Part I</span><h2>This Season's Picks</h2><span class="sec-en">Featured</span></div>
     <div class="feat-grid feat-even">
-      <article class="feat-card feat-big">
-        <a href="/posts/shenzhen-apec-trip.html">
-          <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-apec-1.jpg" alt="Futian skyline from the top of Lianhua Mountain, the Civic Center and Ping An Finance Centre framed by bougainvillea" loading="lazy" width="1600" height="900"></div>
-          <div class="fc-body">
-            <div class="fc-tags"><span class="fc-tag" style="background:var(--moss)">Distant Views</span><span class="fc-date">2026.11.24</span></div>
-            <h3>Shenzhen After APEC</h3>
-            <p>APEC 2026 has wrapped up in Shenzhen — the flower beds, street banners and early-winter blooms are still in place.</p>
-          </div>
-        <p class="lang-note">In Chinese</p></a>
-      </article>
-      <div class="feat-side">
-        <article class="feat-card">
-          <a href="/posts/shenzhen-civic-night.html">
-            <div class="fc-img"><img class="warm" src="/assets/img/shenzhen-civic-night-1.jpg" alt="Shenzhen Civic Center at night, its curved roof washed in golden light" loading="lazy" width="1600" height="900"></div>
+{% assign fnotes = site.notes | where_exp: "n", "n.test != true" %}
+{% assign fpool = fnotes | concat: site.data.posts %}
+{% assign fgroups = fpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% assign shown = 0 %}
+{% for g in fgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}
+{% if isnote or i.featured %}{% if shown < 3 %}
+{% case i.column %}
+{% when "food" %}{% assign clab = "Healing Food" %}{% assign ccol = "clay" %}
+{% when "home" %}{% assign clab = "Home & Texture" %}{% assign ccol = "wood" %}
+{% when "journey" %}{% assign clab = "Distant Views" %}{% assign ccol = "moss" %}
+{% endcase %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title_en %}{% assign ee = i.excerpt_feat_en | default: i.excerpt_col_en %}{% assign aa = i.cover_alt_en %}{% endif %}
+{% if shown == 0 %}<article class="feat-card feat-big">{% elsif shown == 1 %}<div class="feat-side">
+        <article class="feat-card">{% else %}<article class="feat-card">{% endif %}
+          <a href="{{ i.url }}">
+            <div class="fc-img"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"{% if i.cover_w %} width="{{ i.cover_w }}" height="{{ i.cover_h }}"{% endif %}></div>
             <div class="fc-body">
-              <div class="fc-tags"><span class="fc-tag" style="background:var(--moss)">Distant Views</span><span class="fc-date">2026.11.23</span></div>
-              <h3>Shenzhen · A Night at the Civic Center</h3>
-              <p>The light show over Civic Center Square, linking the landmark roof to the skyline across the plaza.</p>
+              <div class="fc-tags"><span class="fc-tag" style="background:var(--{{ ccol }})">{{ clab }}</span><span class="fc-date">{{ i.date | date: "%Y.%m.%d" }}</span></div>
+              <h3>{{ tt }}</h3>
+              {% if ee %}<p>{{ ee }}</p>{% endif %}
             </div>
           <p class="lang-note">In Chinese</p></a>
-        </article>
-        <article class="feat-card">
-          <a href="/posts/xiaoxue-warmth.html">
-            <div class="fc-img"><img class="warm" src="/assets/img/food-08-1200.webp" srcset="/assets/img/food-08-480.webp 480w, /assets/img/food-08-800.webp 800w, /assets/img/food-08-1200.webp 1200w" sizes="(max-width:860px) 100vw, 40vw" alt="Minced meat and potato stew in a white porcelain bowl, with peas and scallions" loading="lazy" width="1200" height="800"></div>
-            <div class="fc-body">
-              <div class="fc-tags"><span class="fc-tag" style="background:var(--clay)">Healing Food</span><span class="fc-date">2026.11.22</span></div>
-              <h3>Minor Snow: A Pot of Stew on the Table, and Winter Has Arrived</h3>
-            </div>
-          <p class="lang-note">In Chinese</p></a>
-        </article>
-      </div>
+        </article>{% if shown == 2 %}
+      </div>{% endif %}
+{% assign shown = shown | plus: 1 %}
+{% endif %}{% endif %}{% endfor %}{% endif %}{% endfor %}
     </div>
   </section>
 

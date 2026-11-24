@@ -1,0 +1,304 @@
+# 风物志 · 静态文章登记表（首页精选 / 栏目页 / 全部文章 数据驱动用）
+# 新增手写文章时在此登记一行；站长自助文章走 _notes 集合，不用登记。
+- slug: autumn-soups
+  title: "天凉了，这五碗汤最暖：入秋暖身汤单"
+  title_en: "Five Bowls of Soup for Cold Days: An Early-Autumn Warming List"
+  url: "/posts/autumn-soups.html"
+  column: "food"
+  date: "2026-11-14"
+  archive: false
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/food-1.jpg"
+  cover_alt: "一碗清汤卧在亚麻布上，热气袅袅"
+  cover_alt_en: "A bowl of clear soup on linen, steam rising"
+  img_class: "tall"
+  excerpt_col: "天凉了，先喝汤。五碗当季的暖身汤单，清润与浓醇都有。"
+  excerpt_col_en: "Cold days call for soup first. Five seasonal bowls, from light and clear to deep and rich."
+  excerpt_index: "五碗入秋暖身汤的做法合集：萝卜排骨、南瓜小米、番茄牛腩、山药鸡汤，再加一杯红糖姜茶，按体质对号入座。"
+  ph: "ph-soup"
+- slug: xiaoxue-warmth
+  title: "小雪：一锅炖汤上桌，冬天就算来了"
+  title_en: "Minor Snow: A Pot of Stew on the Table, and Winter Has Arrived"
+  url: "/posts/xiaoxue-warmth.html"
+  column: "food"
+  date: "2026-11-22"
+  archive: false
+  featured: true
+  en: true
+  cover: "/assets/img/food-02-1200.webp"
+  cover_srcset: "/assets/img/food-02-480.webp 480w, /assets/img/food-02-800.webp 800w, /assets/img/food-02-1200.webp 1200w"
+  cover_sizes: "(max-width:860px) 100vw, 46vw"
+  cover_alt: "粗陶碗里盛着炖到入味的根茎菜，汤汁浓亮"
+  cover_alt_en: "Root vegetables stewed deep in flavour, in a rustic clay bowl with a glossy broth"
+  cover_w: 1200
+  cover_h: 800
+  img_class: "mid"
+  excerpt_col: "小雪时节，应季炖汤的做法与暖居建议。"
+  excerpt_col_en: "A seasonal stew recipe and ways to keep the home warm — a solar-term special."
+- slug: autumn-home
+  title: "秋天，把家收拾成暖的样子：原木、陶土与一盏暖灯"
+  title_en: "Autumn: Making Home Warm — Oak, Terracotta and a Soft Lamp"
+  url: "/posts/autumn-home.html"
+  column: "home"
+  date: "2026-11-22"
+  archive: false
+  featured: true
+  en: true
+  cover: "/assets/img/home-04-1200.webp"
+  cover_srcset: "/assets/img/home-04-480.webp 480w, /assets/img/home-04-800.webp 800w, /assets/img/home-04-1200.webp 1200w"
+  cover_sizes: "(max-width:860px) 100vw, 46vw"
+  cover_alt: "陶土瓶罐立在壁龛墙边，光线柔和"
+  cover_alt_en: "Terracotta jars by a niched wall in soft light"
+  img_class: "tall"
+  excerpt_col: "原木、陶土、布料与暖灯的四重搭配，不动硬装，把秋天的暖意摆进日常起居里。"
+  excerpt_col_en: "When the air turns cold, the home changes with it: the warmth of wood, the roughness of terracotta, the softness of cloth, and a lamp that doesn't glare."
+  excerpt_index: "从木头、陶土、布料到灯光，四处小调整把家过成暖的样子，不用装修，也不用大采购。"
+  ph: "ph-home"
+- slug: shenzhen-apec-trip
+  title: "深圳 APEC 会议后旅行"
+  url: "/posts/shenzhen-apec-trip.html"
+  column: "journey"
+  date: "2026-11-24"
+  archive: false
+  featured: true
+  en: false
+  cover: "/assets/img/shenzhen-apec-1.jpg"
+  cover_alt: "莲花山顶望福田中心区，市民中心与平安金融中心同框，前景簕杜鹃盛开"
+  cover_w: 1600
+  cover_h: 900
+  img_class: "mid"
+  excerpt_col: "APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。"
+  excerpt_feat: "APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。"
+  excerpt_feat_en: "APEC 2026 has wrapped up in Shenzhen — the flower beds, street banners and early-winter blooms are still in place."
+- slug: shenzhen-civic-night
+  title: "深圳 · 市民中心的夜"
+  url: "/posts/shenzhen-civic-night.html"
+  column: "journey"
+  date: "2026-11-23"
+  archive: false
+  featured: true
+  en: false
+  cover: "/assets/img/shenzhen-civic-night-1.jpg"
+  cover_alt: "深圳市民中心夜景，弧形大屋顶覆着暖金色的光"
+  cover_w: 1600
+  cover_h: 900
+  img_class: "mid"
+  excerpt_col: "小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。"
+  excerpt_feat: "小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。"
+  excerpt_feat_en: "The light show over Civic Center Square, linking the landmark roof to the skyline across the plaza."
+- slug: beanie-warmth
+  title: "把温度戴在头上：属于秋冬的轻软温感"
+  url: "/posts/beanie-warmth.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: false
+  cover: "/assets/img/legacy/posts-beanie-warmth-1.jpg"
+  cover_alt: "米白粗针针织帽"
+  img_class: "mid"
+  excerpt_col: "粗针米白针织帽的质感与搭配：蓬松、亲肤、不挑外套，秋冬通勤与散步都合宜。"
+  excerpt_index: "粗针米白针织帽的质感与搭配：蓬松、亲肤、不挑外套，秋冬通勤与散步都合宜。"
+  ph: "ph-beanie-warmth"
+- slug: casper-wave
+  title: "精准承托：给身体一次深度的无压释放"
+  title_en: "Precise Support: Letting the Body Fully Let Go"
+  url: "/posts/casper-wave.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/home-01-1200.webp"
+  cover_alt: "揉皱的亚麻床品特写，纹理柔软"
+  cover_alt_en: "A close-up of rumpled linen bedding, softly textured"
+  img_class: "mid"
+  excerpt_col: "床垫表面的纹路贴着肩背起伏，像有一双手一路托住脊柱，翻身时只听见布料轻轻摩擦。"
+  excerpt_col_en: "The mattress surface follows the curve of shoulders and back, as if hands were holding the spine; turning over, you hear only the soft friction of fabric."
+  excerpt_index: "波浪曲线承托的床垫长什么样：肩背腰臀各有回应，适合想要支撑感又怕硬的人。"
+  ph: "ph-casper-wave"
+- slug: casper-nova
+  title: "云端包裹：睡进轻盈柔和的夜色里"
+  title_en: "Wrapped in Cloud: Sleeping into a Light, Soft Night"
+  url: "/posts/casper-nova.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/home-05-1200.webp"
+  cover_alt: "棕色针织毯搭在沙发上，旁边放着一只马克杯"
+  cover_alt_en: "A brown knit throw over a sofa, a mug beside it"
+  img_class: "tall"
+  excerpt_col: "躺下的一瞬，身体先陷进一层软里，被褥被压实，发出细细的响，灯一关，只剩呼吸变沉。"
+  excerpt_col_en: "The moment you lie down, the body sinks into softness; the bedding settles with a faint sound, the lamp goes off, and only the breathing deepens."
+  excerpt_index: "云感床垫的表层与多层透气结构解析：软、稳、不闷，三点决定它睡起来像不像云。"
+  ph: "ph-casper-nova"
+- slug: memory-pillow
+  title: "温柔回弹：托起肩颈的疲惫与安稳"
+  url: "/posts/memory-pillow.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: false
+  cover: "/assets/img/legacy/posts-memory-pillow-1.jpg"
+  cover_alt: "记忆枕"
+  img_class: "mid"
+  excerpt_col: "慢回弹记忆枕如何贴合颈椎曲线：从按压手感说起，聊聊肩颈放松的关键细节。"
+  excerpt_index: "慢回弹记忆枕如何贴合颈椎曲线：从按压手感说起，聊聊肩颈放松的关键细节。"
+  ph: "ph-memory-pillow"
+- slug: meditation-sculpture
+  title: "静观内省：在一呼一吸间找回内在的松弛"
+  title_en: "Sitting in Stillness: Finding Ease, Breath by Breath"
+  url: "/posts/meditation-sculpture.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/home-3.jpg"
+  cover_alt: "盘坐冥想的雕塑，光影柔和"
+  cover_alt_en: "A seated meditation figure in soft light and shadow"
+  img_class: "mid"
+  excerpt_col: "盘坐的雕塑立在光影交界处，闭着眼，呼吸放得很慢，连路过的人都放轻了脚步。"
+  excerpt_col_en: "The seated figure rests where light meets shadow, eyes closed, breathing slow — even passers-by soften their steps."
+  excerpt_index: "一尊盘坐雕塑摆件的光影与分寸：放在哪里、配什么光，才能成为让人停顿的角落。"
+  ph: "ph-meditation-sculpture"
+- slug: mountain-house
+  title: "远山清风：在旷野里寻一处安宁的居所"
+  title_en: "Distant Hills, Clear Wind: A Quiet Dwelling in Open Country"
+  url: "/posts/mountain-house.html"
+  column: "journey"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/journey-1.jpg"
+  cover_alt: "远山草甸上的白色屋舍"
+  cover_alt_en: "A white house on a distant meadow"
+  img_class: "tall"
+  excerpt_col: "草甸尽头立着一间白屋，风把草尖吹得一路起伏，涌到门前，推开门，山的声音先进屋。"
+  excerpt_col_en: "At the meadow's end stands a white house. The wind rolls over the grass all the way to the door; open it, and the sound of the mountains enters first."
+  excerpt_index: "草甸尽头的白色山屋：当房子只剩山峦与天光作装饰，住进去的节奏会如何改变。"
+  ph: "ph-mountain-house"
+- slug: braun-air
+  title: "纯净呼吸：在方寸之间还原自然之风"
+  title_en: "Pure Breath: Natural Air in a Small Room"
+  url: "/posts/braun-air.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/home-06-1200.webp"
+  cover_alt: "花纱帘下摆落在地毯上，晨光透进来"
+  cover_alt_en: "A lace curtain's hem resting on the carpet, morning light coming through"
+  img_class: "short"
+  excerpt_col: "出风口送出的风带着一点凉意，吹动桌上的纸角，屋里的气味慢慢淡下去，只剩干净。"
+  excerpt_col_en: "The air from the vent carries a slight coolness, stirring the corner of a page; the room's smells slowly fade until only cleanness remains."
+  excerpt_index: "金属网孔与流线机身的空气净化器：关窗的日子里，它怎样把屋里的空气换回清爽。"
+  ph: "ph-braun-air"
+- slug: mountain-courtyard
+  title: "青山白墙：在天地交融间安放心灵"
+  title_en: "White Walls Against Green Hills: A Quiet Place for the Heart"
+  url: "/posts/mountain-courtyard.html"
+  column: "journey"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/journey-2.jpg"
+  cover_alt: "青山脚下的白墙小院，门窗透着暖光，门前是石板铺地"
+  cover_alt_en: "A white-walled courtyard at the foot of green hills, warm light in the windows, stone paving at the door"
+  img_class: "mid"
+  excerpt_col: "白墙立在青山脚下，院里的树影爬上墙面，午后只听得见风穿过叶子的沙沙声。"
+  excerpt_col_en: "White walls at the foot of green hills; tree shadows climb the plaster. In the afternoon you hear only the wind moving through leaves."
+  excerpt_index: "青山脚下的白墙院落：借景不造景，树影与天光自己走进院子里的设计心思。"
+  ph: "ph-mountain-courtyard"
+- slug: fish-bento
+  title: "人间烟火：一饭一菜里的寻常温暖"
+  title_en: "Hearth & Home: Everyday Warmth in One Soup, One Dish"
+  url: "/posts/fish-bento.html"
+  column: "food"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/food-3.jpg"
+  cover_alt: "一饭一菜的便当：白米饭、鱼片与时蔬"
+  cover_alt_en: "A simple bento: white rice, fish and seasonal vegetables"
+  img_class: "tall"
+  excerpt_col: "一饭一菜，都是寻常日子里的温暖。"
+  excerpt_col_en: "One soup, one dish — the warmth of ordinary days."
+  excerpt_index: "白米饭、鱼片与时蔬的一餐便当：不多不少的分寸感，是寻常日子最稳的吃法。"
+  ph: "ph-fish-bento"
+- slug: wooden-bedroom
+  title: "温润木语：在一室柔光中枕着好梦入眠"
+  title_en: "The Language of Warm Wood: Sleeping Well in a Soft-Lit Room"
+  url: "/posts/wooden-bedroom.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/home-1.jpg"
+  cover_alt: "原木床品与灰蓝床旗，床头两侧亮着暖黄的灯"
+  cover_alt_en: "Oak bedding with a blue-grey runner, warm lamps glowing on both sides"
+  img_class: "tall"
+  excerpt_col: "床头的灯把光摊在被角上，原木的纹理在暖光里慢慢显出来，夜里醒来，屋里先是暖的。"
+  excerpt_col_en: "The bedside lamp spreads its light over the quilt's edge; the grain of the wood slowly emerges in the warmth. Wake in the night, and the room is warm first."
+  excerpt_index: "原木床架、灰蓝床旗与暖黄床头灯：一间卧室的低色温搭配，睡前先让眼睛安静。"
+  ph: "ph-wooden-bedroom"
+- slug: midnight-soup
+  title: "原汤化原食：一碗热气腾腾的深夜慰藉"
+  title_en: "The Broth Completes the Dish: A Steaming Bowl for Late Nights"
+  url: "/posts/midnight-soup.html"
+  column: "food"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/food-2.jpg"
+  cover_alt: "一碗铺着大块切片肉与葱花的热汤"
+  cover_alt_en: "A hot soup topped with thick slices of meat and scallions"
+  img_class: "mid"
+  excerpt_col: "原汤打底、肉片铺面、葱花提香——深夜里最实在的慰藉，是一碗趁热喝完的汤。"
+  excerpt_col_en: "A rich, savoury broth topped with thick slices of meat and crisp scallions."
+  excerpt_index: "深夜里的一碗原汤：大块切片肉与葱花铺满碗面，讲讲「原汤化原食」的老理儿。"
+  ph: "ph-midnight-soup"
+- slug: stone-path-courtyard
+  title: "庭院深深：在青瓦松影里寻一缕岁月安然"
+  title_en: "A Deep Courtyard: Quiet Years Under Tiled Roofs and Pine Shade"
+  url: "/posts/stone-path-courtyard.html"
+  column: "journey"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/journey-3.jpg"
+  cover_alt: "青瓦松影下的石板小径与院落"
+  cover_alt_en: "A stone path and courtyard under grey tiles and pine shade"
+  img_class: "short"
+  excerpt_col: "石板路被脚步磨得发亮，两侧松影斜斜压下来，走一步，鞋底轻响一声。"
+  excerpt_col_en: "The stone path is polished by footsteps; pine shadows lean in from both sides. Each step lands with a soft tap."
+  excerpt_index: "青瓦松影间的石板小径：被脚步磨亮的路面与常青松柏，一动一静的院子时间。"
+  ph: "ph-stone-path-courtyard"
+- slug: quiet-room
+  title: "一室微光：在方寸天地里安放松弛"
+  title_en: "A Room of Soft Light: Unwinding in a Small Space"
+  url: "/posts/quiet-room.html"
+  column: "home"
+  # no date (archive)
+  archive: true
+  featured: false
+  en: true
+  cover: "/assets/img/legacy/home-2.jpg"
+  cover_alt: "白纱窗帘与暖光的安静居室一角"
+  cover_alt_en: "A quiet corner with sheer curtains and warm light"
+  img_class: "short"
+  excerpt_col: "白纱帘把午后的光筛得很细，落在床头和地板上，安静得能听见窗帘被风掀起的轻响。"
+  excerpt_col_en: "The sheer curtain sieves the afternoon light fine, letting it fall on the headboard and floor — so quiet you can hear the curtain lift in the breeze."
+  excerpt_index: "白纱帘、木床头与一盏暖灯组成的小房间：留白与柔软触感，拼出独处的好眠角落。"
+  ph: "ph-quiet-room"

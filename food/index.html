@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="zh-CN" data-solar-term="小雪">
 <head>
@@ -177,46 +179,36 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   </div>
 
   <section class="masonry" id="masonry" aria-label="美食文章列表">
+{% assign cnotes = site.notes | where_exp: "n", "n.test != true" | where: "column", "food" %}
+{% assign cpool = cnotes | concat: site.data.posts %}
+{% assign cgroups = cpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
+{% for g in cgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}{% if i.column == "food" %}
+{% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}
+{% if isnote %}{% assign tt = i.title %}{% assign ee = i.description %}{% assign aa = i.title %}{% else %}{% assign tt = i.title %}{% assign ee = i.excerpt_col %}{% assign aa = i.cover_alt %}{% endif %}
     <article class="m-card" data-kind="season">
-      <a href="/posts/autumn-soups.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/food-1.jpg" alt="一碗清汤卧在亚麻布上，热气袅袅" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">治愈美食</span><span class="mc-kind">本季 · 2026.11.14</span></div>
-          <h2>天凉了，这五碗汤最暖：入秋暖身汤单</h2>
-          <p>天凉了，先喝汤。五碗当季的暖身汤单，清润与浓醇都有。</p>
+          <div class="mc-tags"><span class="mc-tag">治愈美食</span><span class="mc-kind">本季</span></div>
+          <h2>{{ tt }}</h2>
+          <p>{{ ee }}</p>
         </div>
       </a>
     </article>
+{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% for i in site.data.posts %}{% if i.column == "food" and i.archive %}
+{% assign tt = i.title %}{% assign ee = i.excerpt_col %}{% assign aa = i.cover_alt %}
     <article class="m-card" data-kind="archive">
-      <a href="/posts/midnight-soup.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/legacy/food-2.jpg" alt="一碗铺着大块切片肉与葱花的热汤" loading="lazy"></div>
+      <a href="{{ i.url }}">
+        <div class="mc-img {{ i.img_class | default: "mid" }}"><img class="warm" src="{{ i.cover }}"{% if i.cover_srcset %} srcset="{{ i.cover_srcset }}" sizes="{{ i.cover_sizes }}"{% endif %} alt="{{ aa }}" loading="lazy"></div>
         <div class="mc-body">
+          <div class="mc-tags"><span class="mc-tag">治愈美食</span><span class="mc-kind">本季</span></div>
           <div class="mc-tags"><span class="mc-tag">治愈美食</span><span class="mc-kind">旧站精选</span></div>
-          <h2>原汤化原食：一碗热气腾腾的深夜慰藉</h2>
-          <p>原汤打底、肉片铺面、葱花提香——深夜里最实在的慰藉，是一碗趁热喝完的汤。</p>
+          <p>{{ ee }}</p>
         </div>
       </a>
     </article>
-    <article class="m-card" data-kind="archive">
-      <a href="/posts/fish-bento.html">
-        <div class="mc-img tall"><img class="warm" src="/assets/img/legacy/food-3.jpg" alt="一饭一菜的便当：白米饭、鱼片与时蔬" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">治愈美食</span><span class="mc-kind">旧站精选</span></div>
-          <h2>人间烟火：一饭一菜里的寻常温暖</h2>
-          <p>一饭一菜，都是寻常日子里的温暖。</p>
-        </div>
-      </a>
-    </article>
-    <article class="m-card" data-kind="season">
-      <a href="/posts/xiaoxue-warmth.html">
-        <div class="mc-img mid"><img class="warm" src="/assets/img/food-02-1200.webp" srcset="/assets/img/food-02-480.webp 480w, /assets/img/food-02-800.webp 800w, /assets/img/food-02-1200.webp 1200w" sizes="(max-width:860px) 100vw, 46vw" alt="粗陶碗里盛着炖到入味的根茎菜，汤汁浓亮" loading="lazy"></div>
-        <div class="mc-body">
-          <div class="mc-tags"><span class="mc-tag">治愈美食</span><span class="mc-kind">节气特辑</span></div>
-          <h2>小雪：一锅炖汤上桌，冬天就算来了</h2>
-          <p>小雪时节，应季炖汤的做法与暖居建议。</p>
-        </div>
-      </a>
-    </article>
+{% endif %}{% endfor %}
     <p class="m-empty" id="mEmpty">这一类暂时还没有文章。</p>
   </section>
 </main>
