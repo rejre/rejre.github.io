@@ -1,0 +1,13 @@
+# 风物志 · 站长自助发文通道（Pages CMS 试点，2026-11-24）
+# 只新增 _notes 集合与 note 布局，不改变现有手写页面的任何处理方式。
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note

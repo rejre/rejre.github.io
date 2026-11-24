@@ -1,0 +1,14 @@
+---
+layout: note
+title: 站长手记
+is_index: true
+permalink: /notes/
+---
+
+<p>这里是风物志的自助发文通道：站长自己写的手记，按日期从新到旧排列。现有文章仍在<a href="/posts/">全部文章</a>里，这里是新增的一册。</p>
+
+{% assign sorted = site.notes | sort: "date" | reverse %}
+{% for n in sorted %}
+<h3 style="margin-top:1.6em"><a href="{{ n.url }}">{{ n.title }}</a></h3>
+<p style="opacity:.72;font-size:.94em">{{ n.date | date: "%Y.%m.%d" }} · {% case n.column %}{% when 'food' %}治愈美食{% when 'home' %}居家质感{% else %}远方风光{% endcase %}</p>
+{% endfor %}

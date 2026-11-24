@@ -1,0 +1,57 @@
+# 风物志 · Pages CMS 配置（站长自助发文试点，2026-11-24）
+# 后台地址：https://app.pagescms.org —— 用 GitHub 账号登录并授权本仓库后，
+# 在「站长手记」里填标题、选栏目、写正文、传封面图，点保存即自动上线。
+media:
+  - name: uploads
+    label: 文章图片
+    input: assets/uploads
+    output: /assets/uploads
+    categories: [image]
+
+content:
+  - name: notes
+    label: 站长手记
+    type: collection
+    path: _notes
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, column]
+      primary: title
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 标题
+        type: string
+        required: true
+      - name: date
+        label: 日期
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: column
+        label: 栏目
+        type: select
+        required: true
+        options:
+          values:
+            - { value: food, label: 治愈美食 }
+            - { value: home, label: 居家质感 }
+            - { value: journey, label: 远方风光 }
+      - name: cover
+        label: 封面图
+        type: image
+        options:
+          media: uploads
+      - name: description
+        label: 摘要（一句话，会出现在搜索结果里）
+        type: text
+      - name: body
+        label: 正文
+        type: rich-text
+        options:
+          media: uploads
+          format: markdown
