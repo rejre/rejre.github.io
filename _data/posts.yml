@@ -63,7 +63,7 @@
   date: "2026-11-24"
   archive: false
   featured: true
-  en: false
+  en: true
   cover: "/assets/img/shenzhen-apec-1.jpg"
   cover_alt: "莲花山顶望福田中心区，市民中心与平安金融中心同框，前景簕杜鹃盛开"
   cover_alt_en: "Futian skyline from the top of Lianhua Mountain, the Civic Center and Ping An Finance Centre framed by bougainvillea"
@@ -71,6 +71,7 @@
   cover_h: 900
   img_class: "mid"
   excerpt_col: "APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。"
+  excerpt_col_en: "After APEC wrapped up, the flower beds at the International Exchange Center, the banners along the streets, and the trees and flowers on Lianhua Mountain are all still there."
   excerpt_feat: "APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。"
   excerpt_feat_en: "APEC 2026 has wrapped up in Shenzhen — the flower beds, street banners and early-winter blooms are still in place."
 - slug: shenzhen-civic-night
@@ -81,7 +82,7 @@
   date: "2026-11-23"
   archive: false
   featured: true
-  en: false
+  en: true
   cover: "/assets/img/shenzhen-civic-night-1.jpg"
   cover_alt: "深圳市民中心夜景，弧形大屋顶覆着暖金色的光"
   cover_alt_en: "Shenzhen Civic Center at night, its curved roof washed in golden light"
@@ -89,20 +90,24 @@
   cover_h: 900
   img_class: "mid"
   excerpt_col: "小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。"
+  excerpt_col_en: "A night outing to Civic Center Square after Minor Snow, where the light show links the Civic Center and the skyline across the way into one stretch of light."
   excerpt_feat: "小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。"
   excerpt_feat_en: "The light show over Civic Center Square, linking the landmark roof to the skyline across the plaza."
 - slug: beanie-warmth
   title: "把温度戴在头上：属于秋冬的轻软温感"
+  title_en: "Wearing the Warmth on Your Head: A Light, Soft Warmth for Autumn and Winter"
   url: "/posts/beanie-warmth.html"
   column: "home"
   # no date (archive)
   archive: true
   featured: false
-  en: false
+  en: true
   cover: "/assets/img/legacy/posts-beanie-warmth-1.jpg"
   cover_alt: "米白粗针针织帽"
+  cover_alt_en: "An off-white chunky-knit beanie"
   img_class: "mid"
   excerpt_col: "粗针米白针织帽的质感与搭配：蓬松、亲肤、不挑外套，秋冬通勤与散步都合宜。"
+  excerpt_col_en: "The texture and styling of a chunky-knit off-white beanie: fluffy, gentle on the skin, easy with any coat — fitting for autumn-winter commutes and walks alike."
   excerpt_index: "粗针米白针织帽的质感与搭配：蓬松、亲肤、不挑外套，秋冬通勤与散步都合宜。"
   ph: "ph-beanie-warmth"
 - slug: casper-wave
@@ -141,16 +146,19 @@
   ph: "ph-casper-nova"
 - slug: memory-pillow
   title: "温柔回弹：托起肩颈的疲惫与安稳"
+  title_en: "Gentle Rebound: Cradling Tired Shoulders and Neck into Steady Rest"
   url: "/posts/memory-pillow.html"
   column: "home"
   # no date (archive)
   archive: true
   featured: false
-  en: false
+  en: true
   cover: "/assets/img/legacy/posts-memory-pillow-1.jpg"
   cover_alt: "记忆枕"
+  cover_alt_en: "A memory foam pillow"
   img_class: "mid"
   excerpt_col: "慢回弹记忆枕如何贴合颈椎曲线：从按压手感说起，聊聊肩颈放松的关键细节。"
+  excerpt_col_en: "How a slow-rebound memory pillow follows the curve of the neck: starting with the feel of pressing it down, a look at the key details in relaxing the shoulders and neck."
   excerpt_index: "慢回弹记忆枕如何贴合颈椎曲线：从按压手感说起，聊聊肩颈放松的关键细节。"
   ph: "ph-memory-pillow"
 - slug: meditation-sculpture
