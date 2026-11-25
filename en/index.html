@@ -22,11 +22,12 @@
   font-weight:400;
   font-display:swap;
 }
+footer{--paper:#EFEAE2}
 </style>
 <link rel="preload" as="image" href="/assets/img/term-xiaoxue-hero-1600.webp?v=r4" id="heroPreload">
 <style>
 :root{
-  --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
+  --paper:#FFFFFF; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
   --season-accent:#7C766E; --grain:.05;
   --serif:"Noto Serif SC","Songti SC","STSong",serif;
   --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
@@ -62,7 +63,7 @@ button{font-family:inherit;background:none;border:none;color:inherit}
 .brand .brand-en{font-size:10px;letter-spacing:.32em;opacity:.55;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:clamp(18px,3vw,40px)}
 .nav-links a,.nav-links button{font-size:15px;letter-spacing:.14em;position:relative;padding:10px 2px;min-height:44px;display:inline-flex;align-items:center}
-.nav{color:#F4EFE6}.nav a,.nav button{text-shadow:0 1px 6px rgba(0,0,0,.45)}.nav.scrolled{color:var(--ink)}.nav.scrolled a,.nav.scrolled button{text-shadow:none}.nav:not(.scrolled) .nav-links a::after,.nav:not(.scrolled) .nav-links button::after{background:#F4EFE6}
+.nav{color:#FFFFFF}.nav a,.nav button{text-shadow:0 1px 6px rgba(0,0,0,.45)}.nav.scrolled{color:var(--ink)}.nav.scrolled a,.nav.scrolled button{text-shadow:none}.nav:not(.scrolled) .nav-links a::after,.nav:not(.scrolled) .nav-links button::after{background:#FFFFFF}
 .nav-links a::after,.nav-links button::after{content:"";position:absolute;left:0;bottom:4px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
 .nav-links a:hover::after,.nav-links button:hover::after{transform:scaleX(1);transform-origin:left}
 /* ---------- menu overlay ---------- */
@@ -84,13 +85,13 @@ button{font-family:inherit;background:none;border:none;color:inherit}
 .hero-pic{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none}
 .hero-pic.on{opacity:1}
 .hero-meta{position:absolute;top:92px;right:clamp(18px,4vw,54px);z-index:6;display:flex;align-items:center;gap:8px}
-.hero-fb,.hero-credit{background:rgba(244,239,230,.86);border:1px solid rgba(43,42,40,.16);border-radius:2px;padding:3px 9px;font-size:11px;letter-spacing:.14em;color:var(--ink)}
+.hero-fb,.hero-credit{background:rgba(255,255,255,.86);border:1px solid rgba(43,42,40,.16);border-radius:2px;padding:3px 9px;font-size:11px;letter-spacing:.14em;color:var(--ink)}
 .hero-credit{letter-spacing:.04em}
 .term-chip .t-fb{display:none;font-size:10.5px;border:1px solid rgba(43,42,40,.3);border-radius:2px;padding:1px 6px;letter-spacing:.12em;margin-left:8px;vertical-align:2px}
 .term-chip .t-fb.on{display:inline-block}
 @keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-1.2%,1.5%)}}
 .hero-shade{position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(180deg,rgba(20,24,20,.6),rgba(20,24,20,0));pointer-events:none;z-index:3}
-.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,239,230,.22) 0%,rgba(244,239,230,0) 30%,rgba(244,239,230,0) 62%,rgba(43,42,40,.18) 100%)}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 62%,rgba(43,42,40,.18) 100%)}
 #motes{position:absolute;inset:0;pointer-events:none}
 .hero-center{position:absolute;top:72px;left:0;right:0;display:flex;justify-content:center;text-align:center;z-index:6}
 .hero-logo-card{background:color-mix(in srgb,var(--paper) 92%,transparent);border:1px solid rgba(43,42,40,.14);border-radius:2px;width:clamp(92px,12vw,176px);padding:18px 8px 14px;box-sizing:border-box;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -361,21 +362,21 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div class="hs-row" id="hsTrack">
       <article class="hs-card">
         <a href="/en/food/" aria-label="Healing FoodColumns">
-          <div class="hs-img"><img class="warm" src="/assets/img/food-07-1200.jpg" alt="A clear soup in a white porcelain lidded bowl with gold trim, on a dark wooden table" loading="lazy" width="1200" height="713"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/food-08-1200.webp" srcset="/assets/img/food-08-480.webp 480w, /assets/img/food-08-800.webp 800w, /assets/img/food-08-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="Minced pork and potato stew in a white bowl, bright with peas and spring onion" loading="lazy" width="1200" height="800"></div>
           <div class="wash" style="background:var(--clay)"></div>
           <div class="hs-meta"><div><span class="hs-no">01 / COLUMN</span><h3>Healing Food</h3><p>Slow-simmered, until the days turn fragrant。</p></div><span class="hs-dot" style="background:var(--clay)"></span></div>
         </a>
       </article>
       <article class="hs-card">
         <a href="/en/home/" aria-label="Home & TextureColumns">
-          <div class="hs-img"><img class="warm" src="/assets/img/home-07-1200.jpg" alt="Dried flowers in a marble vase beside a glass globe lamp on a marble-top table" loading="lazy" width="1200" height="800"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/home-06-1200.webp" alt="Morning light through a floral sheer curtain onto the rug" loading="lazy" width="1200" height="676"></div>
           <div class="wash" style="background:var(--wood)"></div>
           <div class="hs-meta"><div><span class="hs-no">02 / COLUMN</span><h3>Home & Texture</h3><p>Between oak and linen, a place for everyday life。</p></div><span class="hs-dot" style="background:var(--wood)"></span></div>
         </a>
       </article>
       <article class="hs-card">
         <a href="/en/journey/" aria-label="Distant ViewsColumns">
-          <div class="hs-img"><img class="warm" src="/assets/img/journey-01-1200.webp" srcset="/assets/img/journey-01-480.webp 480w, /assets/img/journey-01-800.webp 800w, /assets/img/journey-01-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="A village in the mist, houses tucked into layered ridges" loading="lazy"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/journey-02-1200.webp" srcset="/assets/img/journey-02-480.webp 480w, /assets/img/journey-02-800.webp 800w, /assets/img/journey-02-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="A white-walled Chinese courtyard with a scholar's-rock arrangement on a stone table" loading="lazy" width="1200" height="1800"></div>
           <div class="wash" style="background:var(--moss)"></div>
           <div class="hs-meta"><div><span class="hs-no">03 / COLUMN</span><h3>Distant Views</h3><p>Walk the mountain paths slowly; take the views slowly too。</p></div><span class="hs-dot" style="background:var(--moss)"></span></div>
         </a>
@@ -538,10 +539,10 @@ var TERMS=[
 {n:"Winter Solstice",m:12,d:21,s:"winter",h:["Earthworms curl up","Elk shed their antlers","Springs begin to stir"]}
 ];
 var SEASONS={
-  spring:{paper:"#F3F1E4",accent:"#8FA07A",grain:.03,label:"Spring"},
-  summer:{paper:"#F5F0E2",accent:"#7A9A8C",grain:.02,label:"Summer"},
-  autumn:{paper:"#F4EBDD",accent:"#B5704F",grain:.04,label:"Autumn"},
-  winter:{paper:"#EFEAE2",accent:"#7C766E",grain:.05,label:"Winter"}
+  spring:{paper:"#FFFFFF",accent:"#8FA07A",grain:.03,label:"Spring"},
+  summer:{paper:"#FFFFFF",accent:"#7A9A8C",grain:.02,label:"Summer"},
+  autumn:{paper:"#FFFFFF",accent:"#B5704F",grain:.04,label:"Autumn"},
+  winter:{paper:"#FFFFFF",accent:"#7C766E",grain:.05,label:"Winter"}
 };
 /* ============ Hero images by solar term (R3 term-based engine; alt text and credits follow the assets/CREDITS.md ledger) ============ */
 var IMG_VER="?v=r4";

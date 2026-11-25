@@ -31,10 +31,11 @@
   font-weight:400;
   font-display:swap;
 }
+footer{--paper:#EFEAE2}
 </style>
 <style>
 :root{
-  --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
+  --paper:#FFFFFF; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
   --season-accent:#7C766E; --grain:.05;
   --serif:"Noto Serif SC","Songti SC","STSong",serif;
   --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
@@ -260,7 +261,7 @@ var TERMS=[
 {n:"寒露",m:10,d:8,s:"autumn",h:["鸿雁来宾","雀入大水为蛤","菊有黄华"]},{n:"霜降",m:10,d:23,s:"autumn",h:["豺乃祭兽","草木黄落","蛰虫咸俯"]},
 {n:"立冬",m:11,d:7,s:"winter",h:["水始冰","地始冻","雉入大水为蜃"]},{n:"小雪",m:11,d:22,s:"winter",h:["虹藏不见","天气上升地气下降","闭塞而成冬"]},
 {n:"大雪",m:12,d:7,s:"winter",h:["鹖鴠不鸣","虎始交","荔挺出"]},{n:"冬至",m:12,d:21,s:"winter",h:["蚯蚓结","麋角解","水泉动"]}];
-var SEASONS={spring:{paper:"#F3F1E4",accent:"#8FA07A",grain:.03},summer:{paper:"#F5F0E2",accent:"#7A9A8C",grain:.02},autumn:{paper:"#F4EBDD",accent:"#B5704F",grain:.04},winter:{paper:"#EFEAE2",accent:"#7C766E",grain:.05}};
+var SEASONS={spring:{paper:"#FFFFFF",accent:"#8FA07A",grain:.03},summer:{paper:"#FFFFFF",accent:"#7A9A8C",grain:.02},autumn:{paper:"#FFFFFF",accent:"#B5704F",grain:.04},winter:{paper:"#FFFFFF",accent:"#7C766E",grain:.05}};
 (function(){
   var now=new Date(),y=now.getFullYear(),idx=TERMS.length-1,start=null;
   for(var i=0;i<TERMS.length;i++){var t=new Date(y,TERMS[i].m-1,TERMS[i].d);if(now>=t){idx=i;start=t;}}

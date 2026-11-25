@@ -22,11 +22,12 @@
   font-weight:400;
   font-display:swap;
 }
+footer{--paper:#EFEAE2}
 </style>
 <link rel="preload" as="image" href="/assets/img/term-xiaoxue-hero-1600.webp?v=r4" id="heroPreload">
 <style>
 :root{
-  --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
+  --paper:#FFFFFF; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
   --season-accent:#7C766E; --grain:.05;
   --serif:"Noto Serif SC","Songti SC","STSong",serif;
   --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
@@ -62,7 +63,7 @@ button{font-family:inherit;background:none;border:none;color:inherit}
 .brand .brand-en{font-size:10px;letter-spacing:.32em;opacity:.55;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:clamp(18px,3vw,40px)}
 .nav-links a,.nav-links button{font-size:15px;letter-spacing:.14em;position:relative;padding:10px 2px;min-height:44px;display:inline-flex;align-items:center}
-.nav{color:#F4EFE6}.nav a,.nav button{text-shadow:0 1px 6px rgba(0,0,0,.45)}.nav.scrolled{color:var(--ink)}.nav.scrolled a,.nav.scrolled button{text-shadow:none}.nav:not(.scrolled) .nav-links a::after,.nav:not(.scrolled) .nav-links button::after{background:#F4EFE6}
+.nav{color:#FFFFFF}.nav a,.nav button{text-shadow:0 1px 6px rgba(0,0,0,.45)}.nav.scrolled{color:var(--ink)}.nav.scrolled a,.nav.scrolled button{text-shadow:none}.nav:not(.scrolled) .nav-links a::after,.nav:not(.scrolled) .nav-links button::after{background:#FFFFFF}
 .nav-links a::after,.nav-links button::after{content:"";position:absolute;left:0;bottom:4px;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .35s ease}
 .nav-links a:hover::after,.nav-links button:hover::after{transform:scaleX(1);transform-origin:left}
 /* ---------- menu overlay ---------- */
@@ -84,13 +85,13 @@ button{font-family:inherit;background:none;border:none;color:inherit}
 .hero-pic{position:absolute;inset:0;opacity:0;transition:opacity .55s ease;pointer-events:none}
 .hero-pic.on{opacity:1}
 .hero-meta{position:absolute;top:92px;right:clamp(18px,4vw,54px);z-index:6;display:flex;align-items:center;gap:8px}
-.hero-fb,.hero-credit{background:rgba(244,239,230,.86);border:1px solid rgba(43,42,40,.16);border-radius:2px;padding:3px 9px;font-size:11px;letter-spacing:.14em;color:var(--ink)}
+.hero-fb,.hero-credit{background:rgba(255,255,255,.86);border:1px solid rgba(43,42,40,.16);border-radius:2px;padding:3px 9px;font-size:11px;letter-spacing:.14em;color:var(--ink)}
 .hero-credit{letter-spacing:.04em}
 .term-chip .t-fb{display:none;font-size:10.5px;border:1px solid rgba(43,42,40,.3);border-radius:2px;padding:1px 6px;letter-spacing:.12em;margin-left:8px;vertical-align:2px}
 .term-chip .t-fb.on{display:inline-block}
 @keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.09) translate(-1.2%,1.5%)}}
 .hero-shade{position:absolute;top:0;left:0;right:0;height:120px;background:linear-gradient(180deg,rgba(20,24,20,.6),rgba(20,24,20,0));pointer-events:none;z-index:3}
-.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,239,230,.22) 0%,rgba(244,239,230,0) 30%,rgba(244,239,230,0) 62%,rgba(43,42,40,.18) 100%)}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 62%,rgba(43,42,40,.18) 100%)}
 #motes{position:absolute;inset:0;pointer-events:none}
 .hero-center{position:absolute;top:72px;left:0;right:0;display:flex;justify-content:center;text-align:center;z-index:6}
 .hero-logo-card{background:color-mix(in srgb,var(--paper) 92%,transparent);border:1px solid rgba(43,42,40,.14);border-radius:2px;width:clamp(92px,12vw,176px);padding:18px 8px 14px;box-sizing:border-box;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -360,21 +361,21 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div class="hs-row" id="hsTrack">
       <article class="hs-card">
         <a href="/food/" aria-label="治愈美食栏目">
-          <div class="hs-img"><img class="warm" src="/assets/img/food-07-1200.jpg" alt="深色原木桌上，白瓷金边的盖盅盛着一盅清汤" loading="lazy" width="1200" height="713"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/food-08-1200.webp" srcset="/assets/img/food-08-480.webp 480w, /assets/img/food-08-800.webp 800w, /assets/img/food-08-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="白瓷碗盛着肉末土豆炖菜，豌豆与葱花翠绿鲜亮" loading="lazy" width="1200" height="800"></div>
           <div class="wash" style="background:var(--clay)"></div>
           <div class="hs-meta"><div><span class="hs-no">01 / COLUMN</span><h3>治愈美食</h3><p>慢火细炖，把日子熬出香气。</p></div><span class="hs-dot" style="background:var(--clay)"></span></div>
         </a>
       </article>
       <article class="hs-card">
         <a href="/home/" aria-label="居家质感栏目">
-          <div class="hs-img"><img class="warm" src="/assets/img/home-07-1200.jpg" alt="大理石花器里插着干花，旁置一盏玻璃球灯与大理石台面" loading="lazy" width="1200" height="800"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/home-06-1200.webp" alt="晨光透过花纱帘，洒在地毯上" loading="lazy" width="1200" height="676"></div>
           <div class="wash" style="background:var(--wood)"></div>
           <div class="hs-meta"><div><span class="hs-no">02 / COLUMN</span><h3>居家质感</h3><p>原木与亚麻之间，安放日常。</p></div><span class="hs-dot" style="background:var(--wood)"></span></div>
         </a>
       </article>
       <article class="hs-card">
         <a href="/journey/" aria-label="远方风光栏目">
-          <div class="hs-img"><img class="warm" src="/assets/img/journey-01-1200.webp" srcset="/assets/img/journey-01-480.webp 480w, /assets/img/journey-01-800.webp 800w, /assets/img/journey-01-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="雾中山村，屋舍隐在层叠山影里" loading="lazy" width="1200" height="800"></div>
+          <div class="hs-img"><img class="warm" src="/assets/img/journey-02-1200.webp" srcset="/assets/img/journey-02-480.webp 480w, /assets/img/journey-02-800.webp 800w, /assets/img/journey-02-1200.webp 1200w" sizes="(max-width:860px) 100vw, 33vw" alt="白墙中式庭院，石桌上置着太湖石盆景" loading="lazy" width="1200" height="1800"></div>
           <div class="wash" style="background:var(--moss)"></div>
           <div class="hs-meta"><div><span class="hs-no">03 / COLUMN</span><h3>远方风光</h3><p>山路慢慢走，风景慢慢看。</p></div><span class="hs-dot" style="background:var(--moss)"></span></div>
         </a>
@@ -536,10 +537,10 @@ var TERMS=[
 {n:"冬至",m:12,d:21,s:"winter",h:["蚯蚓结","麋角解","水泉动"]}
 ];
 var SEASONS={
-  spring:{paper:"#F3F1E4",accent:"#8FA07A",grain:.03,label:"春"},
-  summer:{paper:"#F5F0E2",accent:"#7A9A8C",grain:.02,label:"夏"},
-  autumn:{paper:"#F4EBDD",accent:"#B5704F",grain:.04,label:"秋"},
-  winter:{paper:"#EFEAE2",accent:"#7C766E",grain:.05,label:"冬"}
+  spring:{paper:"#FFFFFF",accent:"#8FA07A",grain:.03,label:"春"},
+  summer:{paper:"#FFFFFF",accent:"#7A9A8C",grain:.02,label:"夏"},
+  autumn:{paper:"#FFFFFF",accent:"#B5704F",grain:.04,label:"秋"},
+  winter:{paper:"#FFFFFF",accent:"#7C766E",grain:.05,label:"冬"}
 };
 /* ============ 首屏节气图映射（R3 按节气换图；alt 与作者逐条抄自 assets/CREDITS.md 台账） ============ */
 var IMG_VER="?v=r4";

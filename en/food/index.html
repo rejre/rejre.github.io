@@ -22,10 +22,11 @@
   font-weight:400;
   font-display:swap;
 }
+footer{--paper:#EFEAE2}
 </style>
 <style>
 :root{
-  --paper:#EFEAE2; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
+  --paper:#FFFFFF; --ink:#2B2A28; --clay:#B5704F; --wood:#A08462; --moss:#6F7D5C; --mist:#E6DFD2;
   --season-accent:#7C766E; --grain:.05;
   --serif:"Noto Serif SC","Songti SC","STSong",serif;
   --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
@@ -264,7 +265,7 @@ var TERMS=[
 {n:"Cold Dew",m:10,d:8,s:"autumn",h:["The last geese arrive","Sparrows turn into clams (old lore)","Chrysanthemums bloom yellow"]},{n:"Frost's Descent",m:10,d:23,s:"autumn",h:["Wolves present their prey","Leaves yellow and fall","Insects settle into hibernation"]},
 {n:"Start of Winter",m:11,d:7,s:"winter",h:["Water begins to freeze","The ground begins to harden","Pheasants turn into clams (old lore)"]},{n:"Minor Snow",m:11,d:22,s:"winter",h:["Rainbows disappear","Heaven's qi rises, earth's qi sinks","All is sealed — winter is complete"]},
 {n:"Major Snow",m:12,d:7,s:"winter",h:["Nightjars fall silent","Tigers begin to mate","A winter herb pushes through"]},{n:"Winter Solstice",m:12,d:21,s:"winter",h:["Earthworms curl up","Elk shed their antlers","Springs begin to stir"]}];
-var SEASONS={spring:{paper:"#F3F1E4",accent:"#8FA07A",grain:.03},summer:{paper:"#F5F0E2",accent:"#7A9A8C",grain:.02},autumn:{paper:"#F4EBDD",accent:"#B5704F",grain:.04},winter:{paper:"#EFEAE2",accent:"#7C766E",grain:.05}};
+var SEASONS={spring:{paper:"#FFFFFF",accent:"#8FA07A",grain:.03},summer:{paper:"#FFFFFF",accent:"#7A9A8C",grain:.02},autumn:{paper:"#FFFFFF",accent:"#B5704F",grain:.04},winter:{paper:"#FFFFFF",accent:"#7C766E",grain:.05}};
 (function(){
   var now=new Date(),y=now.getFullYear(),idx=TERMS.length-1,start=null;
   for(var i=0;i<TERMS.length;i++){var t=new Date(y,TERMS[i].m-1,TERMS[i].d);if(now>=t){idx=i;start=t;}}
