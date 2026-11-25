@@ -17,25 +17,6 @@
   excerpt_col_en: "Cold days call for soup first. Five seasonal bowls, from light and clear to deep and rich."
   excerpt_index: "五碗入秋暖身汤的做法合集：萝卜排骨、南瓜小米、番茄牛腩、山药鸡汤，再加一杯红糖姜茶，按体质对号入座。"
   ph: "ph-soup"
-- slug: xiaoxue-warmth
-  title: "小雪：一锅炖汤上桌，冬天就算来了"
-  title_en: "Minor Snow: A Pot of Stew on the Table, and Winter Has Arrived"
-  url: "/posts/xiaoxue-warmth.html"
-  column: "food"
-  date: "2026-11-22"
-  archive: false
-  featured: true
-  en: true
-  cover: "/assets/img/food-02-1200.webp"
-  cover_srcset: "/assets/img/food-02-480.webp 480w, /assets/img/food-02-800.webp 800w, /assets/img/food-02-1200.webp 1200w"
-  cover_sizes: "(max-width:860px) 100vw, 46vw"
-  cover_alt: "粗陶碗里盛着炖到入味的根茎菜，汤汁浓亮"
-  cover_alt_en: "Root vegetables stewed deep in flavour, in a rustic clay bowl with a glossy broth"
-  cover_w: 1200
-  cover_h: 800
-  img_class: "mid"
-  excerpt_col: "小雪时节，应季炖汤的做法与暖居建议。"
-  excerpt_col_en: "A seasonal stew recipe and ways to keep the home warm — a solar-term special."
 - slug: autumn-home
   title: "秋天，把家收拾成暖的样子：原木、陶土与一盏暖灯"
   title_en: "Autumn: Making Home Warm — Oak, Terracotta and a Soft Lamp"
@@ -55,44 +36,6 @@
   excerpt_col_en: "When the air turns cold, the home changes with it: the warmth of wood, the roughness of terracotta, the softness of cloth, and a lamp that doesn't glare."
   excerpt_index: "从木头、陶土、布料到灯光，四处小调整把家过成暖的样子，不用装修，也不用大采购。"
   ph: "ph-home"
-- slug: shenzhen-apec-trip
-  title: "深圳 APEC 会议后旅行"
-  title_en: "Shenzhen After APEC"
-  url: "/posts/shenzhen-apec-trip.html"
-  column: "journey"
-  date: "2026-11-24"
-  archive: false
-  featured: true
-  en: true
-  cover: "/assets/img/shenzhen-apec-1.jpg"
-  cover_alt: "莲花山顶望福田中心区，市民中心与平安金融中心同框，前景簕杜鹃盛开"
-  cover_alt_en: "Futian skyline from the top of Lianhua Mountain, the Civic Center and Ping An Finance Centre framed by bougainvillea"
-  cover_w: 1600
-  cover_h: 900
-  img_class: "mid"
-  excerpt_col: "APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。"
-  excerpt_col_en: "After APEC wrapped up, the flower beds at the International Exchange Center, the banners along the streets, and the trees and flowers on Lianhua Mountain are all still there."
-  excerpt_feat: "APEC 落幕之后，国际交流中心的花坛、街上的道旗和莲花山的花木都还在。"
-  excerpt_feat_en: "APEC 2026 has wrapped up in Shenzhen — the flower beds, street banners and early-winter blooms are still in place."
-- slug: shenzhen-civic-night
-  title: "深圳 · 市民中心的夜"
-  title_en: "Shenzhen · A Night at the Civic Center"
-  url: "/posts/shenzhen-civic-night.html"
-  column: "journey"
-  date: "2026-11-23"
-  archive: false
-  featured: true
-  en: true
-  cover: "/assets/img/shenzhen-civic-night-1.jpg"
-  cover_alt: "深圳市民中心夜景，弧形大屋顶覆着暖金色的光"
-  cover_alt_en: "Shenzhen Civic Center at night, its curved roof washed in golden light"
-  cover_w: 1600
-  cover_h: 900
-  img_class: "mid"
-  excerpt_col: "小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。"
-  excerpt_col_en: "A night outing to Civic Center Square after Minor Snow, where the light show links the Civic Center and the skyline across the way into one stretch of light."
-  excerpt_feat: "小雪后夜游市民广场，灯光秀把市民中心和对岸天际线连成一片。"
-  excerpt_feat_en: "The light show over Civic Center Square, linking the landmark roof to the skyline across the plaza."
 - slug: beanie-warmth
   title: "把温度戴在头上：属于秋冬的轻软温感"
   title_en: "Wearing the Warmth on Your Head: A Light, Soft Warmth for Autumn and Winter"
