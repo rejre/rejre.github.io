@@ -245,7 +245,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 @media (max-height:450px){.hero{height:min(100svh - 54px,336px)}.hero-center{top:48px}.hero-en{display:none}.hero-seal{width:28px;height:28px}.hero-seal span{font-size:11px}.hero-shade{height:70px}}
 
 /* ---------- 2026-11-23 首页改版：栏目静态居中行 + 精选左一右二等高 ---------- */
-.handscroll--static{padding:clamp(48px,7vh,88px) clamp(18px,5vw,72px);max-width:1560px;margin:0 auto}
+.handscroll--static{padding:clamp(28px,4.5vh,52px) clamp(18px,5vw,72px);max-width:1560px;margin:0 auto}
 .hs-head{text-align:center;margin-bottom:clamp(28px,4vh,44px)}
 .hs-head .hs-kicker{font-size:11.5px;letter-spacing:.32em;color:var(--season-accent)}
 .hs-head h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,44px);font-weight:600;letter-spacing:.14em;line-height:1.5;margin-top:12px}
@@ -421,19 +421,12 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
     <div class="sec-head"><span class="sec-no">其二</span><h2>档案馆</h2><span class="sec-en">Archive</span></div>
     <div class="archive-wrap">
       <div class="archive-track" id="archiveTrack">
-        <article class="arc-card"><a href="/posts/beanie-warmth.html"><img class="warm" src="/assets/img/legacy/index-5.jpg" alt="米白色粗针织毛线帽" loading="lazy" width="560" height="747"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>把温度戴在头上：属于秋冬的轻软温感</h3><p class="a-mark">档案馆 · No.01</p></a></article>
-        
-        <article class="arc-card"><a href="/posts/wooden-bedroom.html"><img class="warm" src="/assets/img/legacy/index-6.jpg" alt="原木卧室，柔光洒在床品上" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>温润木语：在一室柔光中枕着好梦入眠</h3><p class="a-mark">档案馆 · No.02</p></a></article>
-        
-        <article class="arc-card"><a href="/posts/mountain-house.html"><img class="warm" src="/assets/img/legacy/index-7.jpg" alt="远山草甸上的白色屋舍" loading="lazy" width="560" height="373"><p class="a-tag" style="color:var(--moss)">远方风光</p><h3>远山清风：在旷野里寻一处安宁的居所</h3><p class="a-mark">档案馆 · No.02</p></a></article>
-        
-        <article class="arc-card"><a href="/posts/quiet-room.html"><img class="warm" src="/assets/img/legacy/index-8.jpg" alt="白纱窗帘与暖光的安静居室一角" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>一室微光：在方寸天地里安放松弛</h3><p class="a-mark">档案馆 · No.04</p></a></article>
-        
-        <article class="arc-card"><a href="/posts/meditation-sculpture.html"><img class="warm" src="/assets/img/legacy/index-9.jpg" alt="盘坐冥想的雕塑，光影柔和" loading="lazy"><p class="a-tag" style="color:var(--wood)">居家质感</p><h3>静观内省：在一呼一吸间找回内在的松弛</h3><p class="a-mark">档案馆 · No.05</p></a></article>
-        
-        
-        <article class="arc-card"><a href="/posts/stone-path-courtyard.html"><img class="warm" src="/assets/img/legacy/index-10.jpg" alt="青瓦松影下的石板小径与院落" loading="lazy" width="560" height="746"><p class="a-tag" style="color:var(--moss)">远方风光</p><h3>庭院深深：在青瓦松影里寻一缕岁月安然</h3><p class="a-mark">档案馆 · No.03</p></a></article>
-      </div>
+{% assign anotes = site.notes | where_exp: "n", "n.test != true" %}{% assign adated = anotes | concat: site.data.posts | where_exp: "i", "i.date" %}{% assign agroups = adated | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}{% assign aundated = site.data.posts | where_exp: "i", "i.date == nil" %}{% assign ano = 0 %}
+{% for g in agroups %}{% assign gitems = g.items | reverse %}{% for i in gitems %}{% assign ano = ano | plus: 1 %}{% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}{% endcase %}{% assign ialt = i.cover_alt | default: i.title %}
+        <article class="arc-card"><a href="{{ i.url }}"><img class="warm" src="{{ i.cover }}" alt="{{ ialt }}" loading="lazy"><p class="a-tag" style="color:var(--{{ ccol }})">{{ clab }}</p><h3>{{ i.title }}</h3><p class="a-mark">档案馆 · No.{% if ano < 10 %}0{% endif %}{{ ano }}</p></a></article>{% endfor %}{% endfor %}
+{% for i in aundated %}{% assign ano = ano | plus: 1 %}{% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}{% endcase %}{% assign ialt = i.cover_alt | default: i.title %}
+        <article class="arc-card"><a href="{{ i.url }}"><img class="warm" src="{{ i.cover }}" alt="{{ ialt }}" loading="lazy"><p class="a-tag" style="color:var(--{{ ccol }})">{{ clab }}</p><h3>{{ i.title }}</h3><p class="a-mark">档案馆 · No.{% if ano < 10 %}0{% endif %}{{ ano }}</p></a></article>{% endfor %}
+            </div>
     </div>
   </section>
 </main>
