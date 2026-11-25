@@ -17,8 +17,12 @@ permalink: /posts/shenzhen-civic-night.html
 
 <p class="dropcap">小雪刚过，深圳福田市民广场的灯光秀入夜亮起。这是 2026 年 11 月 23 日夜里，在市民中心一带拍下的三张照片。</p>
 <figure>
+<video class="warm" style="width:100%;height:auto;display:block" controls preload="none" playsinline poster="/assets/img/shenzhen-civic-night-poster.jpg" src="/assets/video/shenzhen-civic-night-narrated.mp4"></video>
+<figcaption>市民中心灯光秀 · 配音版（2 分钟）：从白天的市民中心与莲花山，到入夜的灯光秀</figcaption>
+</figure>
+<figure>
 <video class="warm" style="width:100%;height:auto;display:block" controls preload="none" playsinline poster="/assets/img/shenzhen-civic-night-1.jpg" src="/assets/video/shenzhen-civic-night.mp4"></video>
-<figcaption>市民中心灯光秀 · 14 秒</figcaption>
+<figcaption>市民中心灯光秀 · 原始片段 14 秒</figcaption>
 </figure>
 <figure>
 <img class="warm" src="/assets/img/shenzhen-civic-night-1.jpg" alt="深圳市民中心正面夜景，弧形大屋顶亮着暖金色的光，左侧楼体是紫粉色光影" loading="lazy">
