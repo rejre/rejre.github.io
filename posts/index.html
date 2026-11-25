@@ -96,6 +96,12 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px
 .ph-quiet-room{background-image:url(/assets/img/legacy/posts-13.jpg)}
 .ph-soup{background-image:url(/assets/img/legacy/posts-14.jpg)}
 .ph-home{background-image:url(/assets/img/legacy/posts-15.jpg)}/* desktop proportions fix 2026-11-24 */@media (min-width:1024px){body{font-size:18.5px}.article-wrap{max-width:840px}.article-wrap h1{font-size:34px}.article-wrap h2{font-size:23px}}
+
+.post-filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.post-filters button{border:1px solid rgba(43,42,40,.25);background:transparent;border-radius:999px;padding:6px 14px;font-size:12.5px;letter-spacing:.12em;color:inherit;cursor:pointer}
+.post-filters button .n{opacity:.55;font-size:11px;margin-left:5px}
+.post-filters button.on{background:#2B2A28;color:#fff;border-color:#2B2A28}
+.post[hidden]{display:none}
 </style>
 <link rel="canonical" href="https://cnre.ccwu.cc/posts/">
 <meta property="og:title" content="全部文章 · 风物志">
@@ -116,7 +122,7 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px
 <nav class="topnav"><a href="/">首页</a><a href="/#cats">治愈美食</a><a href="/#cats">居家质感</a><a href="/#cats">远方风光</a></nav>
 </div></div>
 <div class="page-head"><div class="en">ALL POSTS</div><h1 class="zh">全部文章</h1></div>
-<div class="list-wrap"><div class="posts">
+<div class="list-wrap"><div class="post-filters" role="group" aria-label="按栏目筛选"><button type="button" class="on" data-f="all">全部<span class="n"></span></button><button type="button" data-f="food">治愈美食<span class="n"></span></button><button type="button" data-f="home">居家质感<span class="n"></span></button><button type="button" data-f="journey">远方风光<span class="n"></span></button></div><div class="posts">
 {% assign pnotes = site.notes | where_exp: "n", "n.test != true" %}
 {% assign ppool = pnotes | concat: site.data.posts %}
 {% assign pgroups = ppool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
@@ -124,7 +130,7 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px
 {% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}
 {% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% when "home" %}{% assign clab = "居家质感" %}{% else %}{% assign clab = "远方风光" %}{% endcase %}
 {% if isnote %}{% assign ee = i.description %}{% else %}{% assign ee = i.excerpt_index | default: i.excerpt_col %}{% endif %}
-<div class="post"><a class="thumb" href="{{ i.url }}"><div class="zoom{% if i.ph %} {{ i.ph }}{% endif %}"{% unless i.ph %} style="background-image:url('{{ i.cover }}')"{% endunless %}></div></a><div>
+<div class="post" data-col="{{ i.column }}"><a class="thumb" href="{{ i.url }}"><div class="zoom{% if i.ph %} {{ i.ph }}{% endif %}"{% unless i.ph %} style="background-image:url('{{ i.cover }}')"{% endunless %}></div></a><div>
 <span class="chip">{{ clab }}</span>
 <a href="{{ i.url }}"><h3>{{ i.title }}</h3></a>
 <p>{{ ee }}</p>
@@ -132,7 +138,7 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px
 {% endfor %}{% endif %}{% endfor %}
 {% for i in site.data.posts %}{% if i.archive %}
 {% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% when "home" %}{% assign clab = "居家质感" %}{% else %}{% assign clab = "远方风光" %}{% endcase %}
-<div class="post"><a class="thumb" href="{{ i.url }}"><div class="zoom{% if i.ph %} {{ i.ph }}{% endif %}"{% unless i.ph %} style="background-image:url('{{ i.cover }}')"{% endunless %}></div></a><div>
+<div class="post" data-col="{{ i.column }}"><a class="thumb" href="{{ i.url }}"><div class="zoom{% if i.ph %} {{ i.ph }}{% endif %}"{% unless i.ph %} style="background-image:url('{{ i.cover }}')"{% endunless %}></div></a><div>
 <span class="chip">{{ clab }}</span>
 <a href="{{ i.url }}"><h3>{{ i.title }}</h3></a>
 <p>{{ i.excerpt_index | default: i.excerpt_col }}</p>
@@ -152,5 +158,23 @@ footer{background:var(--footer);border-top:1px solid var(--line);margin-top:84px
 <div class="copyright">© 2026 风物志 FENGWUZHI · 记录美好事物</div>
 </footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dd6babbbdf14475b8a5689d77e40e83f"}'></script>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll(".post-filters button"), items=document.querySelectorAll(".posts .post[data-col]");
+  if(!chips.length||!items.length) return;
+  var counts={all:items.length};
+  items.forEach(function(c){var k=c.getAttribute("data-col");counts[k]=(counts[k]||0)+1;});
+  chips.forEach(function(ch){
+    var f=ch.getAttribute("data-f"), n=ch.querySelector(".n");
+    if(n) n.textContent=(counts[f]||0);
+    ch.setAttribute("aria-pressed", ch.classList.contains("on")?"true":"false");
+    ch.addEventListener("click",function(){
+      chips.forEach(function(x){var on=(x===ch);x.classList.toggle("on",on);x.setAttribute("aria-pressed",on?"true":"false");});
+      items.forEach(function(c){c.hidden=!(f==="all"||c.getAttribute("data-col")===f);});
+    });
+  });
+})();
+</script>
 </body>
 </html>
