@@ -390,7 +390,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 {% assign fpool = fnotes | concat: site.data.posts %}
 {% assign fgroups = fpool | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}
 {% assign shown = 0 %}
-{% for g in fgroups %}{% if g.name > "2020-01-01" %}{% for i in g.items %}
+{% for g in fgroups %}{% if g.name > "2020-01-01" %}{% assign gitems = g.items | reverse %}{% for i in gitems %}
 {% assign isnote = false %}{% if i.url contains "/notes/" %}{% assign isnote = true %}{% endif %}
 {% if isnote or i.featured %}{% if shown < 3 %}
 {% case i.column %}
