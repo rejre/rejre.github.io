@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>风物志 · 新版首页样板（预览）</title>
+<style>
+  :root{
+    --ink:#2B2A28; --soft:#6F6A63; --line:#E9E6E0; --accent:#B5704F;
+    --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(12px,3vw,24px)}
+  .overline{font-size:11px;letter-spacing:.42em;color:var(--soft);text-transform:uppercase;text-align:center}
+  .sec-title{font-family:var(--serif);font-size:clamp(19px,3.4vw,26px);font-weight:600;text-align:center;margin-top:6px;letter-spacing:.12em}
+  section{padding:clamp(22px,4.5vw,40px) 0}
+  /* 顶部导航 */
+  header{border-bottom:1px solid var(--line)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{width:34px;height:34px;object-fit:contain}
+  .brand .bn{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.34em}
+  nav{display:flex;gap:clamp(10px,3vw,30px);font-size:clamp(11px,2.4vw,14px);color:var(--ink);white-space:nowrap}
+  nav a{opacity:.85} nav a:hover{opacity:1;color:var(--accent)}
+  /* 首屏：左文右图，商标裸放不加框 */
+  .hero{display:grid;grid-template-columns:5fr 7fr;gap:clamp(14px,4vw,52px);align-items:center;padding-top:clamp(18px,3.5vw,34px)}
+  .hero-logo{width:clamp(92px,17vw,164px);height:auto}
+  .hero h1{font-family:var(--serif);font-size:clamp(32px,6.4vw,52px);font-weight:600;letter-spacing:.3em;margin-top:clamp(10px,2vw,18px);line-height:1.3}
+  .hero .slogan{font-family:var(--serif);font-size:clamp(14px,2.6vw,19px);margin-top:clamp(8px,1.8vw,14px);line-height:1.9}
+  .hero .en{font-size:10px;letter-spacing:.4em;color:var(--soft);margin-top:10px;text-transform:uppercase}
+  .btn{display:inline-block;margin-top:clamp(12px,2.4vw,20px);padding:9px 22px;border:1px solid var(--ink);font-size:clamp(12px,2.4vw,14px);letter-spacing:.14em;background:#fff}
+  .btn:hover{background:var(--ink);color:#fff}
+  .hero-img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  /* 三栏目 */
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,2.4vw,24px);margin-top:clamp(14px,3vw,26px)}
+  .col img{width:100%;aspect-ratio:3/2;object-fit:cover}
+  .col h3{font-family:var(--serif);font-size:clamp(14px,2.8vw,19px);font-weight:600;margin-top:10px;letter-spacing:.08em}
+  .col p{font-size:clamp(11px,2.2vw,13.5px);color:var(--soft);margin-top:2px}
+  /* 最新一期：左右分栏 */
+  .latest{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(14px,4vw,52px);align-items:center;margin-top:clamp(14px,3vw,26px)}
+  .latest img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .meta{font-size:clamp(11px,2.2vw,12.5px);letter-spacing:.18em;color:var(--accent)}
+  .latest h3{font-family:var(--serif);font-size:clamp(18px,3.6vw,29px);font-weight:600;line-height:1.55;margin-top:8px}
+  .latest p{color:var(--soft);font-size:clamp(12.5px,2.4vw,15px);margin-top:10px;line-height:1.9}
+  /* 四宫格：与分栏同宽对齐 */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2.4vw,24px);margin-top:clamp(14px,3vw,26px)}
+  .gcard img{width:100%;aspect-ratio:3/2;object-fit:cover}
+  .gcard .meta{margin-top:8px;font-size:clamp(10px,2vw,11.5px)}
+  .gcard h4{font-family:var(--serif);font-size:clamp(12.5px,2.5vw,16px);font-weight:600;line-height:1.6;margin-top:3px}
+  /* 页脚 */
+  footer{border-top:1px solid var(--line);padding:clamp(18px,3.5vw,28px) 0;text-align:center}
+  footer img{width:40px;height:40px;object-fit:contain;margin:0 auto}
+  footer .bn{font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.34em;margin-top:8px}
+  footer .links{display:flex;justify-content:center;gap:clamp(12px,3vw,26px);font-size:clamp(11px,2.2vw,13px);color:var(--soft);margin-top:10px;flex-wrap:nowrap}
+  footer .cp{font-size:11px;color:#A39E96;margin-top:10px;letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="风物志商标">
+      <span class="bn">风物志</span>
+    </a>
+    <nav>
+      <a href="/">首页</a>
+      <a href="/food/">治愈美食</a>
+      <a href="/home/">居家质感</a>
+      <a href="/journey/">远方风光</a>
+      <a href="/posts/">全部文章</a>
+      <a href="/en/">EN</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- 首屏 -->
+  <section class="hero">
+    <div>
+      <img class="hero-logo" src="/assets/logo.png" alt="风物志商标">
+      <h1>风物志</h1>
+      <p class="slogan">记录美好事物，从一碗汤、一盏灯、一段山路开始。</p>
+      <p class="en">Record the good things</p>
+      <a class="btn" href="#latest">读最新一期 →</a>
+    </div>
+    <img class="hero-img" src="/assets/img/term-xiaoxue-hero-1600.webp" alt="小雪 · 冬日山林">
+  </section>
+
+  <!-- 三栏目 -->
+  <section>
+    <p class="overline">Columns</p>
+    <h2 class="sec-title">三个栏目 · 一本手账</h2>
+    <div class="cols">
+      <a class="col" href="/food/">
+        <img src="/assets/img/food-07-1200.jpg" alt="治愈美食">
+        <h3>治愈美食</h3>
+        <p>慢火细炖，把日子熬出香气。</p>
+      </a>
+      <a class="col" href="/home/">
+        <img src="/assets/img/home-07-1200.jpg" alt="居家质感">
+        <h3>居家质感</h3>
+        <p>原木与亚麻之间，安放日常。</p>
+      </a>
+      <a class="col" href="/journey/">
+        <img src="/assets/img/journey-01-1200.webp" alt="远方风光">
+        <h3>远方风光</h3>
+        <p>山路慢慢走，风景慢慢看。</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 最新一期 -->
+  <section id="latest">
+    <p class="overline">Latest</p>
+    <h2 class="sec-title">最新一期</h2>
+    <div class="latest">
+      <a href="/notes/2026-11-25/"><img src="/assets/uploads/1795539289866.jpg" alt="原汁原味的烟火气：大片羊肉与翠绿葱花熬出的地道滋味"></a>
+      <div>
+        <p class="meta">治愈美食 · 2026.11.25</p>
+        <h3>原汁原味的烟火气：大片羊肉与翠绿葱花熬出的地道滋味</h3>
+        <p>一碗羊肉汤：在原汁原味里品尝生活的踏实。</p>
+        <a class="btn" href="/notes/2026-11-25/">阅读全文 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 本季精选四宫格 -->
+  <section>
+    <p class="overline">Featured</p>
+    <h2 class="sec-title">本季精选</h2>
+    <div class="grid4">
+      <a class="gcard" href="/notes/2026-11-24/">
+        <img src="/assets/uploads/fbfb329a03db5825086017a70a929650%20(1).jpg" alt="光影漫过白墙与纱帘">
+        <p class="meta">居家质感 · 2026.11.24</p>
+        <h4>光影漫过白墙与纱帘：在留白与克制里安放家的温度</h4>
+      </a>
+      <a class="gcard" href="/posts/shenzhen-apec-trip.html">
+        <img src="/assets/img/shenzhen-apec-1.jpg" alt="深圳 APEC 会议后旅行">
+        <p class="meta">远方风光 · 2026.11.24</p>
+        <h4>深圳 APEC 会议后旅行</h4>
+      </a>
+      <a class="gcard" href="/posts/shenzhen-civic-night.html">
+        <img src="/assets/img/shenzhen-civic-night-1.jpg" alt="深圳 · 市民中心的夜">
+        <p class="meta">远方风光 · 2026.11.23</p>
+        <h4>深圳 · 市民中心的夜</h4>
+      </a>
+      <a class="gcard" href="/posts/xiaoxue-warmth.html">
+        <img src="/assets/img/food-02-1200.webp" alt="小雪：一锅炖汤上桌">
+        <p class="meta">治愈美食 · 2026.11.22</p>
+        <h4>小雪：一锅炖汤上桌，冬天就算来了</h4>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img src="/assets/logo.png" alt="风物志商标">
+    <p class="bn">风物志</p>
+    <div class="links">
+      <a href="/food/">治愈美食</a>
+      <a href="/home/">居家质感</a>
+      <a href="/journey/">远方风光</a>
+      <a href="/posts/">全部文章</a>
+      <a href="/en/">English</a>
+    </div>
+    <p class="cp">© 2026 风物志 FENGWUZHI · 记录美好事物</p>
+  </div>
+</footer>
+
+</body>
+</html>
