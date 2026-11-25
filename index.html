@@ -23,6 +23,21 @@
   font-display:swap;
 }
 footer{--paper:#EFEAE2}
+
+/* tier-1 upgrades: archive filter/excerpts, drawer state, external marks */
+.arc-filters{display:flex;gap:8px;flex-wrap:wrap;padding:0 clamp(18px,5vw,72px);margin:-14px 0 2px}
+.arc-filters button{border:1px solid rgba(43,42,40,.25);background:transparent;border-radius:999px;padding:6px 14px;font-size:12.5px;letter-spacing:.12em;color:var(--ink);cursor:pointer;transition:background-color .25s,color .25s,border-color .25s}
+.arc-filters button .n{opacity:.55;font-size:11px;margin-left:5px}
+.arc-filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.arc-card[hidden]{display:none}
+.arc-card .a-ex{font-size:12.5px;line-height:1.75;opacity:.72;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.d-state{font-size:12.5px;letter-spacing:.05em;margin:-4px 0 14px;padding:8px 12px;border:1px solid rgba(43,42,40,.16);border-radius:2px;background:var(--mist)}
+.drawer-list .dl-now{display:inline-block;font-size:10.5px;background:var(--season-accent);color:#fff;border-radius:2px;padding:1px 6px;letter-spacing:.12em;margin-left:8px;vertical-align:2px}
+.socials a{position:relative}
+.socials a::after{content:"\2197";position:absolute;top:-5px;right:-5px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:1px solid rgba(43,42,40,.35);font-size:9px;line-height:14px;text-align:center;color:var(--ink)}
+.yt-card{position:relative}
+.yt-card::after{content:"\2197 YouTube";position:absolute;top:8px;right:8px;font-size:10.5px;letter-spacing:.06em;background:rgba(43,42,40,.72);color:#fff;border-radius:2px;padding:2px 7px}
+.sub-note a{text-decoration:underline}
 </style>
 <link rel="preload" as="image" href="/assets/img/term-xiaoxue-hero-1600.webp?v=r4" id="heroPreload">
 <style>
@@ -420,13 +435,14 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
   <!-- ======= ARCHIVE ======= -->
   <section class="section" style="padding-top:0" aria-label="档案馆">
     <div class="sec-head"><span class="sec-no">其二</span><h2>档案馆</h2><span class="sec-en">Archive</span></div>
+    <div class="arc-filters" role="group" aria-label="按栏目筛选档案馆"><button type="button" class="on" data-f="all">全部<span class="n"></span></button><button type="button" data-f="food">治愈美食<span class="n"></span></button><button type="button" data-f="home">居家质感<span class="n"></span></button><button type="button" data-f="journey">远方风光<span class="n"></span></button></div>
     <div class="archive-wrap">
       <div class="archive-track" id="archiveTrack">
 {% assign anotes = site.notes | where_exp: "n", "n.test != true" %}{% assign adated = anotes | concat: site.data.posts | where_exp: "i", "i.date" %}{% assign agroups = adated | group_by_exp: "i", "i.date | date: '%Y-%m-%d'" | sort: "name" | reverse %}{% assign aundated = site.data.posts | where_exp: "i", "i.date == nil" %}{% assign ano = 0 %}
-{% for g in agroups %}{% assign gitems = g.items | reverse %}{% for i in gitems %}{% assign ano = ano | plus: 1 %}{% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}{% endcase %}{% assign ialt = i.cover_alt | default: i.title %}
-        <article class="arc-card"><a href="{{ i.url }}"><img class="warm" src="{{ i.cover }}" alt="{{ ialt }}" loading="lazy"><p class="a-tag" style="color:var(--{{ ccol }})">{{ clab }}</p><h3>{{ i.title }}</h3><p class="a-mark">档案馆 · No.{% if ano < 10 %}0{% endif %}{{ ano }}</p></a></article>{% endfor %}{% endfor %}
-{% for i in aundated %}{% assign ano = ano | plus: 1 %}{% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}{% endcase %}{% assign ialt = i.cover_alt | default: i.title %}
-        <article class="arc-card"><a href="{{ i.url }}"><img class="warm" src="{{ i.cover }}" alt="{{ ialt }}" loading="lazy"><p class="a-tag" style="color:var(--{{ ccol }})">{{ clab }}</p><h3>{{ i.title }}</h3><p class="a-mark">档案馆 · No.{% if ano < 10 %}0{% endif %}{{ ano }}</p></a></article>{% endfor %}
+{% for g in agroups %}{% assign gitems = g.items | reverse %}{% for i in gitems %}{% assign ano = ano | plus: 1 %}{% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}{% endcase %}{% assign ialt = i.cover_alt | default: i.title %}{% assign iex = i.description | default: i.excerpt_col %}
+        <article class="arc-card" data-col="{{ i.column }}"><a href="{{ i.url }}"><img class="warm" src="{{ i.cover }}" alt="{{ ialt }}" loading="lazy"><p class="a-tag" style="color:var(--{{ ccol }})">{{ clab }}</p><h3>{{ i.title }}</h3>{% if iex %}<p class="a-ex">{{ iex }}</p>{% endif %}<p class="a-mark">档案馆 · No.{% if ano < 10 %}0{% endif %}{{ ano }} · {{ i.date | date: "%Y.%m.%d" }}</p></a></article>{% endfor %}{% endfor %}
+{% for i in aundated %}{% assign ano = ano | plus: 1 %}{% case i.column %}{% when "food" %}{% assign clab = "治愈美食" %}{% assign ccol = "clay" %}{% when "home" %}{% assign clab = "居家质感" %}{% assign ccol = "wood" %}{% when "journey" %}{% assign clab = "远方风光" %}{% assign ccol = "moss" %}{% endcase %}{% assign ialt = i.cover_alt | default: i.title %}{% assign iex = i.description | default: i.excerpt_col %}
+        <article class="arc-card" data-col="{{ i.column }}"><a href="{{ i.url }}"><img class="warm" src="{{ i.cover }}" alt="{{ ialt }}" loading="lazy"><p class="a-tag" style="color:var(--{{ ccol }})">{{ clab }}</p><h3>{{ i.title }}</h3>{% if iex %}<p class="a-ex">{{ iex }}</p>{% endif %}<p class="a-mark">档案馆 · No.{% if ano < 10 %}0{% endif %}{{ ano }}</p></a></article>{% endfor %}
             </div>
     </div>
   </section>
@@ -470,7 +486,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
         <input type="email" id="subEmail" name="email" placeholder="你的邮箱" required autocomplete="email">
         <button type="submit" id="subBtn">订阅</button>
       </form>
-      <p class="sub-note">每个节气一封信，只报新文章。仅用于发送节气信，可随时退订。</p>
+      <p class="sub-note">每个节气一封信，只报新文章。仅用于发送节气信，可随时退订，详见<a href="/privacy/">隐私政策</a>。</p>
       <p class="sub-status" id="subStatus" role="status"></p>
       <p class="sub-done" id="subDone">订阅成功，谢谢你。确认邮件已发出，请留意收件箱。</p>
     </div>
@@ -486,6 +502,7 @@ footer h4{font-size:13px;letter-spacing:.3em;margin-bottom:16px;color:var(--seas
 <aside class="drawer" id="termDrawer" role="dialog" aria-modal="true" aria-label="二十四节气预览">
   <h3>节气抽屉</h3>
   <p class="d-sub">点任意节气，预览整站皮肤与首屏物候。物候句出自《逸周书·时训解》传统体系。</p>
+  <p class="d-state" id="drawerState" role="status"></p>
   <div class="hou-prog" id="houProg">
     <p class="hp-title" id="houTitle">今日物候</p>
     <div class="hp-segs">
@@ -643,6 +660,8 @@ function applyTerm(idx,hou){
   segs.forEach(function(sg,i){sg.querySelector("b").textContent=t.h[i];sg.classList.toggle("on",i===hou);});
   var ht=document.getElementById("houTitle");
   if(ht) ht.textContent=(idx===today.idx?"今日物候":t.n+" · 物候三候");
+  var ds=document.getElementById("drawerState");
+  if(ds) ds.textContent=(idx===today.idx?("当前节气 · "+t.n+"（今日）"):("正在预览 · "+t.n+"——皮肤与物候为预览效果"));
 }
 applyTerm(today.idx,today.hou);
 
@@ -652,7 +671,7 @@ TERMS.forEach(function(t,i){
   var b=document.createElement("button");
   b.type="button";
   var fbTag=(TERM_HERO[t.n]&&TERM_HERO[t.n].fallback)?'<span class="dl-fb">示意图</span>':"";
-  b.innerHTML='<span class="dl-name">'+t.n+fbTag+'</span><span class="dl-date">'+t.m+'月'+t.d+'日 · '+SEASONS[t.s].label+'</span>';
+  b.innerHTML='<span class="dl-name">'+t.n+fbTag+(i===today.idx?'<span class="dl-now">当前</span>':"")+'</span><span class="dl-date">'+t.m+'月'+t.d+'日 · '+SEASONS[t.s].label+'</span>';
   b.addEventListener("click",function(){applyTerm(i,0);});
   list.appendChild(b);
 });
@@ -798,5 +817,24 @@ if(at){
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "dd6babbbdf14475b8a5689d77e40e83f"}'></script>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll(".arc-filters button"), cards=document.querySelectorAll("#archiveTrack .arc-card"), track=document.getElementById("archiveTrack");
+  if(!chips.length||!cards.length) return;
+  var counts={all:cards.length};
+  cards.forEach(function(c){var k=c.getAttribute("data-col");counts[k]=(counts[k]||0)+1;});
+  chips.forEach(function(ch){
+    var f=ch.getAttribute("data-f"), n=ch.querySelector(".n");
+    if(n) n.textContent=(counts[f]||0);
+    ch.setAttribute("aria-pressed", ch.classList.contains("on")?"true":"false");
+    ch.addEventListener("click",function(){
+      chips.forEach(function(x){var on=(x===ch);x.classList.toggle("on",on);x.setAttribute("aria-pressed",on?"true":"false");});
+      cards.forEach(function(c){c.hidden=!(f==="all"||c.getAttribute("data-col")===f);});
+      if(track) track.scrollLeft=0;
+    });
+  });
+})();
+</script>
 </body>
 </html>
