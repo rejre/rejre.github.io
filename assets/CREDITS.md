@@ -12,7 +12,7 @@
 
 | 文件名 | 来源站 | 原图链接 | 作者 | 许可类型 | 原图尺寸 | 拟使用页面 | 状态 |
 |---|---|---|---|---|---|---|---|
-| term-xiaoxue-hero | Pexels | https://www.pexels.com/photo/1276530/ | Maksim Dyachuk | Pexels License | 4896×3264 | 首页 · 小雪首屏（初雪松林） | 定稿 · 待本站原创替换 |
+| term-xiaoxue-hero | 本站原创 | — | 站长合成 | 本站原创 | 3840×1706 | 首页 · 小雪首屏（深圳市民中心灯光秀夜景，商标与站名已合成入图） | 2026-11-25 替换定稿（原 Pexels 松林图退役） |
 | term-xiaoxue-hero-alt | Pexels | https://www.pexels.com/photo/30814777/ | Elina Volkova | Pexels License | 3648×5472 | 首页 · 小雪首屏备选（林间落雪，竖） | 备选 |
 | term-daxue-hero | Pexels | https://www.pexels.com/photo/10522349/ | Dimka Nevedimka | Pexels License | 2670×4000 | 首页 · 大雪首屏（雪原木屋村落黄昏，竖） | 定稿 · 待本站原创替换 |
 | term-daxue-hero-alt | Pexels | https://www.pexels.com/photo/11340795/ | ConfinedRiley | Pexels License | 3464×5196 | 首页 · 大雪首屏备选（松林 A 型木屋，竖） | 备选 |
