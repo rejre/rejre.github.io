@@ -1,6 +1,6 @@
 ---
 title: 冬日温暖卧室：米白、原木与一窗柔光
-date: 2026-11-25
+date: 2026-11-25 16:10:00 +0800
 column: home
 cover: /assets/uploads/winter-warm-bedroom.jpg
 cover_alt: 米白与原木色的冬日卧室，落地窗透进柔光，窗边两张单椅
