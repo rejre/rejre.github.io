@@ -1,13 +1,8 @@
 ---
 title: 一鱼一蔬一碗饭
-date: 2026-11-26 16:45:00 +0800
+date: 2026-11-26
 column: food
-cover: /assets/uploads/meal-fish-1.jpg
-cover_alt: 白托盘上一套清淡的饭：两片清蒸鱼、蒜蓉西兰花苔和一碗白米饭
-description: 一鱼一蔬一碗饭——清蒸的鱼、蒜蓉的青菜、热乎的汤和一碗饭，最经得起天天吃的清淡搭配。
-permalink: /notes/2026-11-26-one-fish-one-veg/
 ---
-
 治愈的饭不用复杂：一块鱼、一把青菜、一碗饭，蒸的蒸、炒的炒，端上桌还是热的。这样的搭配，看着就让人安心。
 
 ![白托盘一套：清蒸鱼片、蒜蓉西兰花苔、一碗白米饭](/assets/uploads/meal-fish-1.jpg)
