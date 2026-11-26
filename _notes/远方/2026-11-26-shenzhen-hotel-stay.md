@@ -1,5 +1,5 @@
 ---
-title: 深圳住酒店：大理石的光，原木的暖
+title: 大理石的光，原木的暖
 date: 2026-11-26 13:25:00 +0800
 column: journey
 cover: /assets/uploads/shenzhen-hotel-4.jpg
