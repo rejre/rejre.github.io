@@ -140,3 +140,17 @@
 | food-07 | Pexels | https://www.pexels.com/photo/27381535/ | Change C.C | Pexels License | 6000×3564 | 首页 · 治愈美食栏目卡（白瓷金边盖盅清汤，深色原木桌） | 定稿 · 待本站原创替换 |
 | home-07 | Pexels | https://www.pexels.com/photo/6825327/ | kaboompics | Pexels License | 6312×4208 | 首页 · 居家质感栏目卡 + 本季精选 autumn-home 卡（大理石花器、玻璃球灯、大理石台面边几） | 定稿 · 待本站原创替换 |
 | food-08 | Pexels | https://www.pexels.com/photo/34429590/ | Laura oliveira | Pexels License | 5184×3456 | 首页 · 本季精选小雪卡（白瓷碗肉末土豆炖菜） | 定稿 · 待本站原创替换 |
+
+---
+
+# 第 4 批（2026-11-26 · 小雪节气页眉换图）
+
+- 缘起：站长反馈小雪页眉松林图与节气不呼应，并供了一张雪山图作方向；站长供图仅 736×306、分辨率不足以做全幅页眉，未直接采用，按其构图（雪峰群峰＋蓝天白云）另选同题高清图。
+- 替换关系：term-xiaoxue-peak 替 term-xiaoxue-hero（松林，Maksim Dyachuk）作小雪节气页眉（首页中英文版的节气配置与静态首屏同步更换）；旧图文件保留在仓库，改配置即可回滚。
+- 输出文件：横版 800 / 1200 / 1600 / 2400w JPEG＋WebP、1600w AVIF；竖版 1400×2100 JPEG＋WebP（自原图中央群峰裁切）。
+
+## 十、节气页眉（第 4 批）
+
+| 文件名 | 来源站 | 原图链接 | 作者 | 许可类型 | 原图尺寸 | 拟使用页面 | 状态 |
+|---|---|---|---|---|---|---|---|
+| term-xiaoxue-peak | Pexels | https://www.pexels.com/photo/13922581/ | Marek Piwnicki | Pexels License | 4968×2795 | 首页 · 小雪节气页眉（勃朗峰群峰穿云，蓝天开阔） | 定稿 |
