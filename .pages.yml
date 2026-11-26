@@ -49,6 +49,14 @@ content:
       - name: description
         label: 摘要（一句话，会出现在搜索结果里）
         type: text
+      - name: cover_alt
+        label: 封面说明（图片看不到时显示的文字，可不填）
+        type: string
+        required: false
+      - name: permalink
+        label: 固定链接（已发布文章不要改，改了网址就变了）
+        type: string
+        required: false
       - name: body
         label: 正文
         type: rich-text
